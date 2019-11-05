@@ -53,6 +53,7 @@ class Compare(object):
         # Set the path to the trained model (make sure you've downloaded it first from http://bit.ly/tfoptflow)
         # Set the batch size
         ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-lg-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-595000'
+        ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-sm-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-592000'
         batch_size = 1
 
         # Configure the model for inference, starting with the default options
@@ -66,8 +67,8 @@ class Compare(object):
 
         # We're running the PWC-Net-large model in quarter-resolution mode
         # That is, with a 6 level pyramid, and upsampling of level 2 by 4 in each dimension as the final flow prediction
-        nn_opts['use_dense_cx'] = True
-        nn_opts['use_res_cx'] = True
+        nn_opts['use_dense_cx'] = False
+        nn_opts['use_res_cx'] = False
         nn_opts['pyr_lvls'] = 6
         nn_opts['flow_pred_lvl'] = 2
 

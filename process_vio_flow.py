@@ -7,6 +7,7 @@ import os
 import natsort
 import argparse
 import time
+import collections
 
 
 class ComputeFlow(object):
@@ -19,15 +20,15 @@ class ComputeFlow(object):
         # Set the number of samples to visually inspect after inference
         # Set the path to the trained model (make sure you've downloaded it first from http://bit.ly/tfoptflow)
         # Set the batch size
-        ckpt_path = './models/pwcnet-lg-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-595000'
-        # ckpt_path = './models/pwcnet-sm-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-592000'
-        batch_size = 1
+        ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-lg-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-595000'
+        # ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-sm-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-592000'
+        self.batch_size = 1
 
         # Configure the model for inference, starting with the default options
         nn_opts = deepcopy(_DEFAULT_PWCNET_TEST_OPTIONS)
         nn_opts['verbose'] = True
         nn_opts['ckpt_path'] = ckpt_path
-        nn_opts['batch_size'] = batch_size
+        nn_opts['batch_size'] = self.batch_size
         nn_opts['use_tf_data'] = True
         nn_opts['gpu_devices'] = gpu_devices
         nn_opts['controller'] = controller
@@ -50,7 +51,7 @@ class ComputeFlow(object):
     def compute_nn_full_flow(self, im1, im2):
         im1 = np.stack([im1, im1, im1], axis=-1)
         im2 = np.stack([im2, im2, im2], axis=-1)
-        return self.nn.predict_from_img_pairs(((im1, im2,),), batch_size=1, verbose=False)
+        return self.nn.predict_from_img_pairs(((im1, im2,),) * self.batch_size, verbose=False)
 
     def compute_nn_flow(self, im1, im2, cur_pts):
         ret = self.compute_nn_full_flow(im1, im2)
@@ -83,11 +84,16 @@ def main():
         raise NotImplementedError("Not implemented")
 
     prev_image = skimage.img_as_ubyte(skimage.io.imread(images[0]))
+    tictocs_sliding_window = collections.deque(maxlen=100)
     for i in range(1, len(images)):
         curr_img = skimage.img_as_ubyte(skimage.io.imread(images[i]))
         start_time = time.time()
         flow_computer.compute_nn_full_flow(prev_image, curr_img)
-        print("Time: %.10f" % (time.time() - start_time))
+        tictocs_sliding_window.append(time.time() - start_time)
+        print("Time: %.2f std: %.2f max: %.2f" %
+              (np.mean(tictocs_sliding_window) * 1000,
+               np.std(tictocs_sliding_window) * 1000,
+               np.max(tictocs_sliding_window) * 1000))
 
 
 if __name__ == "__main__":
