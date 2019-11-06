@@ -1,0 +1,616 @@
+[DEBUG][2019-11-05 16:57:05,044][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:05,216][file_interface.read_euroc_csv_trajectory():201]
+Loaded 36382 stamps and poses from: /home/cs4li/Dev/EUROC/MH_01_easy/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:05,228][file_interface.read_tum_trajectory_file():112]
+Loaded 1825 stamps and poses from: /home/cs4li/Dev/dump/MH_01/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:05,228][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:05,319][sync.associate_trajectories():106]
+Found 1814 of max. 36382 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/MH_01_easy/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/MH_01/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:05,320][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:05,320][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:05,328][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-8.99746794e-01 -4.36172400e-01 -1.44687199e-02]
+ [ 4.36412115e-01 -8.99220267e-01 -3.07795053e-02]
+ [ 4.14604520e-04 -3.40080858e-02  9.99421472e-01]]
+Translation of alignment:
+[ 4.51883803 -1.22825515  0.65762462]
+[DEBUG][2019-11-05 16:57:05,328][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:05,398][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:05,398][metrics.process_data():374]
+Compared 1814 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:05,398][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:05,403][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:05,403][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.878552
+      mean	0.420947
+    median	0.414513
+       min	0.044320
+      rmse	0.472189
+       sse	404.454511
+       std	0.213932
+
+[DEBUG][2019-11-05 16:57:05,945][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:05,945][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:06,848][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/MH_01/plot
+[DEBUG][2019-11-05 16:57:06,848][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:06,848][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/MH_01/results.zip...
+[DEBUG][2019-11-05 16:57:07,002][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:07,145][file_interface.read_euroc_csv_trajectory():201]
+Loaded 29993 stamps and poses from: /home/cs4li/Dev/EUROC/MH_02_easy/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:07,155][file_interface.read_tum_trajectory_file():112]
+Loaded 1506 stamps and poses from: /home/cs4li/Dev/dump/MH_02/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:07,155][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:07,217][sync.associate_trajectories():106]
+Found 1495 of max. 29993 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/MH_02_easy/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/MH_02/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:07,219][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:07,219][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:07,225][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.92553863 -0.37857664  0.00761467]
+ [ 0.37854562 -0.92556789 -0.00522536]
+ [ 0.0090261  -0.00195377  0.99995736]]
+Translation of alignment:
+[ 4.44986368 -1.67976214  0.59320062]
+[DEBUG][2019-11-05 16:57:07,225][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:07,281][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:07,282][metrics.process_data():374]
+Compared 1495 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:07,282][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:07,285][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:07,285][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.830382
+      mean	0.224848
+    median	0.167637
+       min	0.012656
+      rmse	0.299180
+       sse	133.815449
+       std	0.197362
+
+[DEBUG][2019-11-05 16:57:07,836][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:07,836][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:08,650][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/MH_02/plot
+[DEBUG][2019-11-05 16:57:08,650][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:08,650][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/MH_02/results.zip...
+[DEBUG][2019-11-05 16:57:08,800][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:08,926][file_interface.read_euroc_csv_trajectory():201]
+Loaded 26302 stamps and poses from: /home/cs4li/Dev/EUROC/MH_03_medium/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:08,935][file_interface.read_tum_trajectory_file():112]
+Loaded 1307 stamps and poses from: /home/cs4li/Dev/dump/MH_03/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:08,935][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:08,984][sync.associate_trajectories():106]
+Found 1296 of max. 26302 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/MH_03_medium/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/MH_03/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:08,986][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:08,986][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:08,991][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.84106266 -0.54090659  0.00580216]
+ [ 0.54080904 -0.84104817 -0.01278889]
+ [ 0.01179749 -0.0076184   0.99990138]]
+Translation of alignment:
+[ 4.73619514 -2.19416261  0.67480444]
+[DEBUG][2019-11-05 16:57:08,991][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:09,040][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:09,040][metrics.process_data():374]
+Compared 1296 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:09,040][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:09,044][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:09,044][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	1.048804
+      mean	0.447709
+    median	0.436749
+       min	0.060564
+      rmse	0.488531
+       sse	309.307153
+       std	0.195498
+
+[DEBUG][2019-11-05 16:57:09,591][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:09,591][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:10,374][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/MH_03/plot
+[DEBUG][2019-11-05 16:57:10,374][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:10,374][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/MH_03/results.zip...
+[DEBUG][2019-11-05 16:57:10,524][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:10,622][file_interface.read_euroc_csv_trajectory():201]
+Loaded 19753 stamps and poses from: /home/cs4li/Dev/EUROC/MH_04_difficult/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:10,628][file_interface.read_tum_trajectory_file():112]
+Loaded 995 stamps and poses from: /home/cs4li/Dev/dump/MH_04/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:10,629][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:10,658][sync.associate_trajectories():106]
+Found 983 of max. 19753 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/MH_04_difficult/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/MH_04/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:10,659][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:10,659][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:10,663][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.67981894 -0.73316022  0.01795247]
+ [ 0.73316943  0.68000665  0.00731702]
+ [-0.01757235  0.00818796  0.99981207]]
+Translation of alignment:
+[ 4.98141444 -1.90143947  0.46027753]
+[DEBUG][2019-11-05 16:57:10,663][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:10,701][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:10,701][metrics.process_data():374]
+Compared 983 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:10,701][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:10,704][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:10,704][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	1.319991
+      mean	0.617630
+    median	0.556617
+       min	0.107245
+      rmse	0.680309
+       sse	454.952505
+       std	0.285225
+
+[DEBUG][2019-11-05 16:57:11,268][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:11,268][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:11,953][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/MH_04/plot
+[DEBUG][2019-11-05 16:57:11,954][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:11,954][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/MH_04/results.zip...
+[DEBUG][2019-11-05 16:57:12,105][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:12,214][file_interface.read_euroc_csv_trajectory():201]
+Loaded 22212 stamps and poses from: /home/cs4li/Dev/EUROC/MH_05_difficult/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:12,221][file_interface.read_tum_trajectory_file():112]
+Loaded 1071 stamps and poses from: /home/cs4li/Dev/dump/MH_05/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:12,221][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:12,256][sync.associate_trajectories():106]
+Found 1060 of max. 22212 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/MH_05_difficult/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/MH_05/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:12,257][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:12,257][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:12,261][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.73929285 -0.6732685   0.0124743 ]
+ [ 0.67326338  0.73938422  0.00523414]
+ [-0.01274728  0.00452893  0.99990849]]
+Translation of alignment:
+[ 4.66221645 -1.53145117  0.77087196]
+[DEBUG][2019-11-05 16:57:12,261][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:12,302][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:12,302][metrics.process_data():374]
+Compared 1060 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:12,302][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:12,305][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:12,305][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.871947
+      mean	0.513327
+    median	0.607317
+       min	0.112847
+      rmse	0.568239
+       sse	342.269702
+       std	0.243703
+
+[DEBUG][2019-11-05 16:57:12,857][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:12,857][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:13,591][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/MH_05/plot
+[DEBUG][2019-11-05 16:57:13,591][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:13,591][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/MH_05/results.zip...
+[DEBUG][2019-11-05 16:57:13,740][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:13,876][file_interface.read_euroc_csv_trajectory():201]
+Loaded 28712 stamps and poses from: /home/cs4li/Dev/EUROC/V1_01_easy/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:13,886][file_interface.read_tum_trajectory_file():112]
+Loaded 1395 stamps and poses from: /home/cs4li/Dev/dump/V1_01/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:13,886][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:13,942][sync.associate_trajectories():106]
+Found 1386 of max. 28712 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/V1_01_easy/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/V1_01/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:13,943][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:13,943][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:13,949][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.96350753 -0.26681679  0.02149518]
+ [ 0.26721248  0.96346438 -0.01827204]
+ [-0.01583456  0.02334903  0.99960197]]
+Translation of alignment:
+[0.86023007 2.11913168 1.05344356]
+[DEBUG][2019-11-05 16:57:13,949][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:14,002][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:14,002][metrics.process_data():374]
+Compared 1386 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:14,002][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:14,005][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:14,005][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.240284
+      mean	0.107319
+    median	0.092366
+       min	0.012081
+      rmse	0.119057
+       sse	19.646030
+       std	0.051549
+
+[DEBUG][2019-11-05 16:57:14,548][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:14,548][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:15,354][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/V1_01/plot
+[DEBUG][2019-11-05 16:57:15,354][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:15,354][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/V1_01/results.zip...
+[DEBUG][2019-11-05 16:57:15,501][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:15,584][file_interface.read_euroc_csv_trajectory():201]
+Loaded 16702 stamps and poses from: /home/cs4li/Dev/EUROC/V1_02_medium/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:15,590][file_interface.read_tum_trajectory_file():112]
+Loaded 795 stamps and poses from: /home/cs4li/Dev/dump/V1_02/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:15,590][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:15,611][sync.associate_trajectories():106]
+Found 786 of max. 16702 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/V1_02_medium/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/V1_02/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:15,612][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:15,613][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:15,616][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 8.61889598e-01  5.07091099e-01 -2.22214428e-03]
+ [-5.07090869e-01  8.61892308e-01  7.07664176e-04]
+ [ 2.27409926e-03  5.16900681e-04  9.99997281e-01]]
+Translation of alignment:
+[0.64668555 1.92147143 1.19958316]
+[DEBUG][2019-11-05 16:57:15,616][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:15,646][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:15,646][metrics.process_data():374]
+Compared 786 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:15,646][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:15,648][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:15,648][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.211240
+      mean	0.126984
+    median	0.128623
+       min	0.017524
+      rmse	0.136620
+       sse	14.670806
+       std	0.050401
+
+[DEBUG][2019-11-05 16:57:16,193][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:16,193][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:16,824][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/V1_02/plot
+[DEBUG][2019-11-05 16:57:16,824][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:16,825][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/V1_02/results.zip...
+[DEBUG][2019-11-05 16:57:16,974][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:17,075][file_interface.read_euroc_csv_trajectory():201]
+Loaded 20932 stamps and poses from: /home/cs4li/Dev/EUROC/V1_03_difficult/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:17,081][file_interface.read_tum_trajectory_file():112]
+Loaded 1004 stamps and poses from: /home/cs4li/Dev/dump/V1_03/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:17,082][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:17,112][sync.associate_trajectories():106]
+Found 994 of max. 20932 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/V1_03_difficult/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/V1_03/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:17,113][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:17,114][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:17,117][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99954956 -0.01023915 -0.02821054]
+ [ 0.00966203  0.99974279 -0.02051837]
+ [ 0.02841337  0.02023656  0.9993914 ]]
+Translation of alignment:
+[0.7960871  2.02963979 1.13537811]
+[DEBUG][2019-11-05 16:57:17,118][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:17,155][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:17,155][metrics.process_data():374]
+Compared 994 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:17,155][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:17,158][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:17,158][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.423059
+      mean	0.116271
+    median	0.104843
+       min	0.029742
+      rmse	0.127784
+       sse	16.230676
+       std	0.053006
+
+[DEBUG][2019-11-05 16:57:17,706][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:17,706][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:18,373][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/V1_03/plot
+[DEBUG][2019-11-05 16:57:18,373][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:18,373][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/V1_03/results.zip...
+[DEBUG][2019-11-05 16:57:18,527][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:18,632][file_interface.read_euroc_csv_trajectory():201]
+Loaded 22401 stamps and poses from: /home/cs4li/Dev/EUROC/V2_01_easy/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:18,640][file_interface.read_tum_trajectory_file():112]
+Loaded 1079 stamps and poses from: /home/cs4li/Dev/dump/V2_01/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:18,640][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:18,675][sync.associate_trajectories():106]
+Found 1071 of max. 22401 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/V2_01_easy/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/V2_01/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:18,676][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:18,676][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:18,680][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99756209 -0.0687879   0.01175161]
+ [ 0.06894675 -0.99752636  0.01369326]
+ [ 0.01078061  0.01447012  0.99983718]]
+Translation of alignment:
+[-1.1841439   0.40530613  1.35101712]
+[DEBUG][2019-11-05 16:57:18,680][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:18,722][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:18,722][metrics.process_data():374]
+Compared 1071 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:18,722][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:18,724][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:18,725][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.221251
+      mean	0.063958
+    median	0.048965
+       min	0.002678
+      rmse	0.079939
+       sse	6.843926
+       std	0.047954
+
+[DEBUG][2019-11-05 16:57:19,271][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:19,271][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:19,979][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/V2_01/plot
+[DEBUG][2019-11-05 16:57:19,979][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:19,979][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/V2_01/results.zip...
+[DEBUG][2019-11-05 16:57:20,129][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:20,239][file_interface.read_euroc_csv_trajectory():201]
+Loaded 23091 stamps and poses from: /home/cs4li/Dev/EUROC/V2_02_medium/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:20,246][file_interface.read_tum_trajectory_file():112]
+Loaded 1133 stamps and poses from: /home/cs4li/Dev/dump/V2_02/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:20,246][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:20,284][sync.associate_trajectories():106]
+Found 1126 of max. 23091 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/V2_02_medium/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/V2_02/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:20,285][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:20,285][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:20,290][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99947692  0.02841885  0.01543582]
+ [-0.02818142 -0.99948438  0.01538748]
+ [ 0.01586516  0.01494443  0.99976245]]
+Translation of alignment:
+[-0.91723804  0.34384803  1.36902451]
+[DEBUG][2019-11-05 16:57:20,290][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:20,334][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:20,334][metrics.process_data():374]
+Compared 1126 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:20,334][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:20,337][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:20,337][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.255564
+      mean	0.088811
+    median	0.067209
+       min	0.018184
+      rmse	0.104222
+       sse	12.230929
+       std	0.054543
+
+[DEBUG][2019-11-05 16:57:20,886][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:20,886][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:21,632][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/V2_02/plot
+[DEBUG][2019-11-05 16:57:21,632][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:21,632][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/V2_02/results.zip...
+[DEBUG][2019-11-05 16:57:21,779][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:21,892][file_interface.read_euroc_csv_trajectory():201]
+Loaded 22970 stamps and poses from: /home/cs4li/Dev/EUROC/V2_03_difficult/mav0/state_groundtruth_estimate0/data.csv
+[DEBUG][2019-11-05 16:57:21,899][file_interface.read_tum_trajectory_file():112]
+Loaded 893 stamps and poses from: /home/cs4li/Dev/dump/V2_03/vinsmono_output.tum
+[DEBUG][2019-11-05 16:57:21,899][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 16:57:21,928][sync.associate_trajectories():106]
+Found 889 of max. 22970 possible matching timestamps between...
+	/home/cs4li/Dev/EUROC/V2_03_difficult/mav0/state_groundtruth_estimate0/data.csv
+and:	/home/cs4li/Dev/dump/V2_03/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 16:57:21,929][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:21,929][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 16:57:21,933][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99699173 -0.0759265   0.01557723]
+ [ 0.07551326 -0.99681629 -0.02559346]
+ [ 0.01747086 -0.02434018  0.99955106]]
+Translation of alignment:
+[-0.86741103  0.31021374  1.60477011]
+[DEBUG][2019-11-05 16:57:21,933][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 16:57:21,966][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:21,967][metrics.process_data():374]
+Compared 889 absolute pose pairs.
+[DEBUG][2019-11-05 16:57:21,967][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 16:57:21,969][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 16:57:21,969][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.438889
+      mean	0.215317
+    median	0.214101
+       min	0.035683
+      rmse	0.230525
+       sse	47.242837
+       std	0.082343
+
+[DEBUG][2019-11-05 16:57:22,512][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:22,512][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 16:57:23,198][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/V2_03/plot
+[DEBUG][2019-11-05 16:57:23,198][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 16:57:23,198][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/V2_03/results.zip...

@@ -1,0 +1,718 @@
+[DEBUG][2019-11-05 18:49:29,810][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:29,832][file_interface.read_tum_trajectory_file():112]
+Loaded 6229 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-corridor1_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:29,841][file_interface.read_tum_trajectory_file():112]
+Loaded 2978 stamps and poses from: /home/cs4li/Dev/dump/corridor1/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:29,841][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:29,881][sync.associate_trajectories():106]
+Found 502 of max. 6229 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-corridor1_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/corridor1/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:29,882][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:29,882][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:29,885][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.9848784   0.1705829  -0.03026565]
+ [ 0.16928291 -0.98470153 -0.04130619]
+ [-0.03684876  0.03555812 -0.99868803]]
+Translation of alignment:
+[ 1.40680949 -2.63715885  1.30376766]
+[DEBUG][2019-11-05 18:49:29,885][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:29,904][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:29,904][metrics.process_data():374]
+Compared 502 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:29,904][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:29,905][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:29,905][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	4.736812
+      mean	2.225486
+    median	2.215345
+       min	0.648874
+      rmse	2.263567
+       sse	2572.116271
+       std	0.413462
+
+[DEBUG][2019-11-05 18:49:30,497][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:30,497][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:31,091][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/corridor1/plot
+[DEBUG][2019-11-05 18:49:31,091][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:31,091][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/corridor1/results.zip...
+[DEBUG][2019-11-05 18:49:31,288][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:31,317][file_interface.read_tum_trajectory_file():112]
+Loaded 8519 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-corridor2_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:31,327][file_interface.read_tum_trajectory_file():112]
+Loaded 3365 stamps and poses from: /home/cs4li/Dev/dump/corridor2/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:31,328][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:31,383][sync.associate_trajectories():106]
+Found 689 of max. 8519 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-corridor2_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/corridor2/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:31,385][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:31,385][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:31,388][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.9328882   0.35791281 -0.04022477]
+ [ 0.35985524 -0.92161259  0.14537692]
+ [ 0.01496061 -0.15009551 -0.9885583 ]]
+Translation of alignment:
+[ 0.66035397 -1.08087285  1.49645804]
+[DEBUG][2019-11-05 18:49:31,388][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:31,414][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:31,414][metrics.process_data():374]
+Compared 689 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:31,414][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:31,417][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:31,417][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	2.884633
+      mean	0.992184
+    median	0.922280
+       min	0.178283
+      rmse	1.108301
+       sse	846.320080
+       std	0.493863
+
+[DEBUG][2019-11-05 18:49:31,990][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:31,990][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:32,613][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/corridor2/plot
+[DEBUG][2019-11-05 18:49:32,613][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:32,613][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/corridor2/results.zip...
+[DEBUG][2019-11-05 18:49:32,798][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:32,828][file_interface.read_tum_trajectory_file():112]
+Loaded 7186 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-corridor3_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:32,836][file_interface.read_tum_trajectory_file():112]
+Loaded 2859 stamps and poses from: /home/cs4li/Dev/dump/corridor3/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:32,837][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:32,878][sync.associate_trajectories():106]
+Found 557 of max. 7186 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-corridor3_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/corridor3/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:32,879][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:32,879][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:32,882][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.98888449  0.14864272 -0.00357937]
+ [ 0.1389633  -0.91539159  0.37781931]
+ [ 0.05288357 -0.37411706 -0.92587243]]
+Translation of alignment:
+[ 0.75905536 -1.68962922  1.2996959 ]
+[DEBUG][2019-11-05 18:49:32,882][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:32,904][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:32,904][metrics.process_data():374]
+Compared 557 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:32,904][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:32,905][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:32,905][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	3.861777
+      mean	1.290795
+    median	1.205161
+       min	0.041530
+      rmse	1.495012
+       sse	1244.929209
+       std	0.754261
+
+[DEBUG][2019-11-05 18:49:33,484][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:33,485][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:34,179][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/corridor3/plot
+[DEBUG][2019-11-05 18:49:34,179][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:34,179][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/corridor3/results.zip...
+[DEBUG][2019-11-05 18:49:34,357][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:34,380][file_interface.read_tum_trajectory_file():112]
+Loaded 6316 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-corridor4_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:34,383][file_interface.read_tum_trajectory_file():112]
+Loaded 947 stamps and poses from: /home/cs4li/Dev/dump/corridor4/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:34,383][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:34,397][sync.associate_trajectories():106]
+Found 527 of max. 6316 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-corridor4_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/corridor4/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:34,399][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:34,399][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:34,402][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.83251109 -0.07056397  0.54949614]
+ [ 0.55157155  0.01264399 -0.83403175]
+ [ 0.05190476  0.99742712  0.04944734]]
+Translation of alignment:
+[-0.14432804 -0.02454077  1.93738898]
+[DEBUG][2019-11-05 18:49:34,402][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:34,423][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:34,423][metrics.process_data():374]
+Compared 527 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:34,423][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:34,425][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:34,425][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	1.817214
+      mean	0.731110
+    median	0.701111
+       min	0.244059
+      rmse	0.768325
+       sse	311.100610
+       std	0.236225
+
+[DEBUG][2019-11-05 18:49:35,017][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:35,018][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:35,618][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/corridor4/plot
+[DEBUG][2019-11-05 18:49:35,618][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:35,618][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/corridor4/results.zip...
+[DEBUG][2019-11-05 18:49:35,805][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:35,824][file_interface.read_tum_trajectory_file():112]
+Loaded 4764 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-corridor5_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:35,832][file_interface.read_tum_trajectory_file():112]
+Loaded 2943 stamps and poses from: /home/cs4li/Dev/dump/corridor5/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:35,833][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:35,864][sync.associate_trajectories():106]
+Found 398 of max. 4764 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-corridor5_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/corridor5/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:35,865][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:35,865][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:35,867][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.90318221  0.36062115 -0.23283959]
+ [ 0.12960229  0.28802194  0.94881326]
+ [ 0.40922504 -0.88712781  0.21339897]]
+Translation of alignment:
+[ 0.54043259 -0.2412281   1.13462125]
+[DEBUG][2019-11-05 18:49:35,867][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:35,883][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:35,883][metrics.process_data():374]
+Compared 398 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:35,883][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:35,884][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:35,884][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	3.573878
+      mean	0.814989
+    median	0.493251
+       min	0.182430
+      rmse	1.171373
+       sse	546.101447
+       std	0.841372
+
+[DEBUG][2019-11-05 18:49:36,466][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:36,466][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:37,022][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/corridor5/plot
+[DEBUG][2019-11-05 18:49:37,022][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:37,022][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/corridor5/results.zip...
+[DEBUG][2019-11-05 18:49:37,228][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:37,263][file_interface.read_tum_trajectory_file():112]
+Loaded 14218 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-magistrale1_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:37,265][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/magistrale1/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:37,412][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:37,447][file_interface.read_tum_trajectory_file():112]
+Loaded 11732 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-magistrale2_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:37,449][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/magistrale2/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:37,599][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:37,638][file_interface.read_tum_trajectory_file():112]
+Loaded 12469 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-magistrale3_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:37,640][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/magistrale3/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:37,816][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:37,860][file_interface.read_tum_trajectory_file():112]
+Loaded 17684 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-magistrale4_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:37,863][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/magistrale4/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:38,006][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:38,043][file_interface.read_tum_trajectory_file():112]
+Loaded 12151 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-magistrale5_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:38,045][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/magistrale5/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:38,182][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:38,214][file_interface.read_tum_trajectory_file():112]
+Loaded 9436 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-magistrale6_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:38,215][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/magistrale6/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:38,364][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:38,406][file_interface.read_tum_trajectory_file():112]
+Loaded 14257 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors1_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:38,408][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors1/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:38,554][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:38,593][file_interface.read_tum_trajectory_file():112]
+Loaded 12776 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:38,595][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors2/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:38,748][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:38,790][file_interface.read_tum_trajectory_file():112]
+Loaded 14375 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors3_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:38,792][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors3/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:38,951][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:38,994][file_interface.read_tum_trajectory_file():112]
+Loaded 15300 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors4_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:38,996][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors4/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:39,151][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:39,204][file_interface.read_tum_trajectory_file():112]
+Loaded 16480 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors5_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:39,207][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors5/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:39,352][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:39,395][file_interface.read_tum_trajectory_file():112]
+Loaded 13599 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors6_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:39,397][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors6/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:39,554][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:39,578][file_interface.read_tum_trajectory_file():112]
+Loaded 9708 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors7_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:39,580][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors7/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:39,721][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:39,758][file_interface.read_tum_trajectory_file():112]
+Loaded 12111 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-outdoors8_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:39,760][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/outdoors8/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:39,934][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:39,979][file_interface.read_tum_trajectory_file():112]
+Loaded 16541 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-room1_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:39,985][file_interface.read_tum_trajectory_file():112]
+Loaded 1287 stamps and poses from: /home/cs4li/Dev/dump/room1/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:39,985][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:40,027][sync.associate_trajectories():106]
+Found 1257 of max. 16541 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-room1_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/room1/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:40,028][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:40,029][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:40,033][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99979066 -0.02020997 -0.00319418]
+ [ 0.02023384  0.99976618  0.00762784]
+ [ 0.00303928 -0.00769088  0.99996581]]
+Translation of alignment:
+[ 0.72839224 -0.18158639  1.09437906]
+[DEBUG][2019-11-05 18:49:40,033][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:40,083][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:40,083][metrics.process_data():374]
+Compared 1257 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:40,083][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:40,086][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:40,086][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.197033
+      mean	0.100020
+    median	0.093367
+       min	0.028668
+      rmse	0.109089
+       sse	14.958726
+       std	0.043547
+
+[DEBUG][2019-11-05 18:49:40,664][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:40,664][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:41,510][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/room1/plot
+[DEBUG][2019-11-05 18:49:41,510][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:41,511][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/room1/results.zip...
+[DEBUG][2019-11-05 18:49:41,735][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:41,777][file_interface.read_tum_trajectory_file():112]
+Loaded 15477 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-room2_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:41,782][file_interface.read_tum_trajectory_file():112]
+Loaded 1427 stamps and poses from: /home/cs4li/Dev/dump/room2/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:41,782][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:41,825][sync.associate_trajectories():106]
+Found 1280 of max. 15477 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-room2_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/room2/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:41,826][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:41,826][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:41,831][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.991043   -0.13339874 -0.00620801]
+ [ 0.13335196  0.99104094 -0.00742359]
+ [ 0.00714269  0.00652925  0.99995317]]
+Translation of alignment:
+[ 0.47518707 -0.36769485  1.22679497]
+[DEBUG][2019-11-05 18:49:41,831][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:41,881][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:41,881][metrics.process_data():374]
+Compared 1280 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:41,881][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:41,885][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:41,885][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.278683
+      mean	0.124379
+    median	0.124902
+       min	0.017323
+      rmse	0.138047
+       sse	24.392958
+       std	0.059891
+
+[DEBUG][2019-11-05 18:49:42,447][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:42,447][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:43,269][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/room2/plot
+[DEBUG][2019-11-05 18:49:43,269][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:43,270][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/room2/results.zip...
+[DEBUG][2019-11-05 18:49:43,489][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:43,532][file_interface.read_tum_trajectory_file():112]
+Loaded 15200 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-room3_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:43,537][file_interface.read_tum_trajectory_file():112]
+Loaded 1395 stamps and poses from: /home/cs4li/Dev/dump/room3/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:43,538][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:43,579][sync.associate_trajectories():106]
+Found 1266 of max. 15200 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-room3_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/room3/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:43,580][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:43,580][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:43,585][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 9.92642397e-01 -1.21082143e-01 -4.31588213e-04]
+ [ 1.21078093e-01  9.92628383e-01 -5.38406127e-03]
+ [ 1.08032039e-03  5.29219161e-03  9.99985413e-01]]
+Translation of alignment:
+[ 1.02114179 -0.43360161  1.24114294]
+[DEBUG][2019-11-05 18:49:43,585][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:43,636][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:43,636][metrics.process_data():374]
+Compared 1266 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:43,636][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:43,639][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:43,639][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.307871
+      mean	0.164387
+    median	0.160874
+       min	0.025781
+      rmse	0.179224
+       sse	40.665476
+       std	0.071400
+
+[DEBUG][2019-11-05 18:49:44,201][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:44,201][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:44,974][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/room3/plot
+[DEBUG][2019-11-05 18:49:44,974][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:44,974][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/room3/results.zip...
+[DEBUG][2019-11-05 18:49:45,183][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:45,223][file_interface.read_tum_trajectory_file():112]
+Loaded 13075 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-room4_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:45,228][file_interface.read_tum_trajectory_file():112]
+Loaded 1073 stamps and poses from: /home/cs4li/Dev/dump/room4/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:45,228][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:45,256][sync.associate_trajectories():106]
+Found 1054 of max. 13075 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-room4_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/room4/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:45,258][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:45,258][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:45,262][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99524397 -0.09714391 -0.00724551]
+ [ 0.09708279  0.99524122 -0.00835792]
+ [ 0.00802296  0.00761475  0.99993882]]
+Translation of alignment:
+[ 0.7498527  -0.32144198  1.2651442 ]
+[DEBUG][2019-11-05 18:49:45,262][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:45,305][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:45,305][metrics.process_data():374]
+Compared 1054 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:45,305][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:45,308][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:45,308][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.171490
+      mean	0.064818
+    median	0.059353
+       min	0.007367
+      rmse	0.071248
+       sse	5.350349
+       std	0.029577
+
+[DEBUG][2019-11-05 18:49:45,880][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:45,880][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:46,608][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/room4/plot
+[DEBUG][2019-11-05 18:49:46,608][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:46,608][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/room4/results.zip...
+[DEBUG][2019-11-05 18:49:46,831][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:46,879][file_interface.read_tum_trajectory_file():112]
+Loaded 16999 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-room5_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:46,885][file_interface.read_tum_trajectory_file():112]
+Loaded 1384 stamps and poses from: /home/cs4li/Dev/dump/room5/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:46,885][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:46,930][sync.associate_trajectories():106]
+Found 1379 of max. 16999 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-room5_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/room5/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:46,931][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:46,931][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:46,936][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99824764 -0.05880744  0.00658318]
+ [ 0.05895176  0.99796162 -0.02443955]
+ [-0.00513253  0.02478481  0.99967963]]
+Translation of alignment:
+[ 0.54895989 -0.40189946  1.40157505]
+[DEBUG][2019-11-05 18:49:46,936][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:46,989][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:46,989][metrics.process_data():374]
+Compared 1379 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:46,990][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:46,993][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:46,993][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.234042
+      mean	0.092228
+    median	0.088758
+       min	0.026584
+      rmse	0.098780
+       sse	13.455679
+       std	0.035376
+
+[DEBUG][2019-11-05 18:49:47,552][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:47,552][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:48,375][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/room5/plot
+[DEBUG][2019-11-05 18:49:48,375][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:48,375][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/room5/results.zip...
+[DEBUG][2019-11-05 18:49:48,604][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:48,645][file_interface.read_tum_trajectory_file():112]
+Loaded 15244 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-room6_512_16/mav0/mocap0/data_tum.csv
+[DEBUG][2019-11-05 18:49:48,650][file_interface.read_tum_trajectory_file():112]
+Loaded 1297 stamps and poses from: /home/cs4li/Dev/dump/room6/vinsmono_output.tum
+[DEBUG][2019-11-05 18:49:48,651][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-05 18:49:48,689][sync.associate_trajectories():106]
+Found 1261 of max. 15244 possible matching timestamps between...
+	/home/cs4li/Dev/TUMVIO/dataset-room6_512_16/mav0/mocap0/data_tum.csv
+and:	/home/cs4li/Dev/dump/room6/vinsmono_output.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-05 18:49:48,690][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:48,690][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-05 18:49:48,695][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.9998742  -0.01547599 -0.00347531]
+ [ 0.01543955  0.99982796 -0.01027993]
+ [ 0.00363381  0.01022498  0.99994112]]
+Translation of alignment:
+[ 0.43154624 -0.26291946  1.27039194]
+[DEBUG][2019-11-05 18:49:48,695][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-05 18:49:48,744][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:48,744][metrics.process_data():374]
+Compared 1261 absolute pose pairs.
+[DEBUG][2019-11-05 18:49:48,744][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-05 18:49:48,747][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-05 18:49:48,747][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.245865
+      mean	0.109516
+    median	0.095312
+       min	0.026437
+      rmse	0.119062
+       sse	17.875715
+       std	0.046713
+
+[DEBUG][2019-11-05 18:49:49,315][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:49,315][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-05 18:49:50,102][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/room6/plot
+[DEBUG][2019-11-05 18:49:50,102][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:50,103][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/room6/results.zip...
+[DEBUG][2019-11-05 18:49:50,294][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:50,334][file_interface.read_tum_trajectory_file():112]
+Loaded 12972 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-slides1_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:50,336][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/slides1/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:50,474][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:50,505][file_interface.read_tum_trajectory_file():112]
+Loaded 9966 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-slides2_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:50,506][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/slides2/vinsmono_output.tum does not exist
+[DEBUG][2019-11-05 18:49:50,647][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-05 18:49:50,682][file_interface.read_tum_trajectory_file():112]
+Loaded 11559 stamps and poses from: /home/cs4li/Dev/TUMVIO/dataset-slides3_512_16/mav0/mocap0/data_tum.csv
+[ERROR][2019-11-05 18:49:50,684][entry_points.launch():96]
+csv file /home/cs4li/Dev/dump/slides3/vinsmono_output.tum does not exist
