@@ -104,7 +104,7 @@ function run_tumvio() {
         --save_results  ${dump_dir}/results.zip \
         --plot_mode xyz --save_plot ${dump_dir}/plot \
         --no_warnings
-    evo_traj tum "${dump_dir}/okvis_estimator_output.tum" --save_plot ${dump_dir}/plot_xyz --plot_mode xyz
+    evo_traj tum "${dump_dir}/okvis_estimator_output.tum" --save_plot ${dump_dir}/plot_xyz --plot_mode xyz --no_warnings
     unzip -o ${dump_dir}/results.zip -d ${dump_dir}/
     jq ".rmse" ${dump_dir}/stats.json >> $4
 }

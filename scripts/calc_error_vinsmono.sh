@@ -64,6 +64,24 @@ tumvio_seqs[25]="slides1"
 tumvio_seqs[26]="slides2"
 tumvio_seqs[27]="slides3"
 
+declare -a uzh_fpv_seqs
+uzh_fpv_seqs[0]="indoor_45_2"
+uzh_fpv_seqs[1]="indoor_45_4"
+uzh_fpv_seqs[2]="indoor_45_9"
+uzh_fpv_seqs[3]="indoor_45_12"
+uzh_fpv_seqs[4]="indoor_45_13"
+uzh_fpv_seqs[5]="indoor_45_14"
+uzh_fpv_seqs[6]="indoor_forward_3"
+uzh_fpv_seqs[7]="indoor_forward_5"
+uzh_fpv_seqs[8]="indoor_forward_6"
+uzh_fpv_seqs[9]="indoor_forward_7"
+uzh_fpv_seqs[10]="indoor_forward_9"
+uzh_fpv_seqs[11]="indoor_forward_10"
+uzh_fpv_seqs[12]="outdoor_45_1"
+uzh_fpv_seqs[13]="outdoor_forward_1"
+uzh_fpv_seqs[14]="outdoor_forward_3"
+uzh_fpv_seqs[15]="outdoor_forward_5"
+
 function run_euroc() {
     seq_dir=$1
     traj_path=$2
@@ -87,6 +105,7 @@ function run_euroc() {
         --plot_mode xyz --save_plot ${dump_dir}/plot \
         --no_warnings
     unzip -o ${dump_dir}/results.zip -d ${dump_dir}/
+    evo_traj tum "${dump_dir}/vinsmono_output.tum" --save_plot ${dump_dir}/plot_xyz --plot_mode xyz --no_warnings
     jq ".rmse" ${dump_dir}/stats.json >> $4
 }
 
@@ -96,6 +115,11 @@ function run_tumvio() {
     dump_dir=$3
     traj_dir=$(dirname "${traj_path}")
     this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
+
+    if [[ ! -f ${traj_path} ]]; then
+        echo "${traj_path} does not exist, skipping..."
+        return
+    fi
 
     mkdir -p "${dump_dir}"
 
@@ -116,6 +140,37 @@ function run_tumvio() {
         --plot_mode xyz --save_plot ${dump_dir}/plot \
         --no_warnings
     unzip -o ${dump_dir}/results.zip -d ${dump_dir}/
+    evo_traj tum "${dump_dir}/vinsmono_output.tum" --save_plot ${dump_dir}/plot_xyz --plot_mode xyz --no_warnings
+    jq ".rmse" ${dump_dir}/stats.json >> $4
+}
+
+function run_uzh_fpv() {
+    seq_dir=$1
+    traj_path=$2
+    dump_dir=$3
+    traj_dir=$(dirname "${traj_path}")
+    this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
+
+    mkdir -p "${dump_dir}"
+
+    echo "seq_dir ${seq_dir}"
+    echo "this_script_dir ${this_script_dir}"
+
+    echo "****Converting vins estimator output to tum format..."
+    python ${this_script_dir}/vinsmono_output2tum.py "${traj_path}"
+    mv ${traj_dir}/vinsmono_output.tum ${dump_dir}
+
+    echo "****Converting uzh fpv gt to tum format..."
+    python ${this_script_dir}/uzh_fpv_gt2tum.py ${seq_dir}/groundtruth.txt
+
+    echo "****evo evaluation..."
+    evo_ape tum "${seq_dir}/groundtruth_tum.txt" "${dump_dir}/vinsmono_output.tum" \
+        --align --logfile ${traj_dir}/record.txt \
+        --save_results  ${dump_dir}/results.zip \
+        --plot_mode xyz --save_plot ${dump_dir}/plot \
+        --no_warnings
+    unzip -o ${dump_dir}/results.zip -d ${dump_dir}/
+    evo_traj tum "${dump_dir}/vinsmono_output.tum" --save_plot ${dump_dir}/plot_xyz --plot_mode xyz --no_warnings
     jq ".rmse" ${dump_dir}/stats.json >> $4
 }
 
@@ -137,6 +192,13 @@ elif [[ $1 == "tumvio" ]]; then
     do
       key=${tumvio_seqs[$i]}
       run_tumvio ${tumvio_dir}/dataset-${key}_512_16/mav0 ${results_dir}/${key}_vins_result_no_loop.csv ${results_dir}/${key} ${results_dir}/stats_dump.txt
+    done
+elif  [[ $1 == "uzh_fpv" ]]; then
+    uzh_fpv_dir="/home/cs4li/Dev/UZH_FPV"
+    for i in "${!uzh_fpv_seqs[@]}"
+    do
+      key=${uzh_fpv_seqs[$i]}
+      run_uzh_fpv ${uzh_fpv_dir}/${key}_snapdragon_with_gt ${results_dir}/${key}_vins_result_no_loop.csv ${results_dir}/${key} ${results_dir}/stats_dump.txt
     done
 fi
 
