@@ -176,13 +176,13 @@ else
 fi
 
 if [[ ${dataset} == "euroc" ]]; then
-    seqs_to_run=${euroc_seqs[@]}
+    seqs_to_run=(${euroc_seqs[@]})
     dataset_dir=${euroc_dataset_dir}
 elif [[ ${dataset} == "tumvio" ]]; then
-    seqs_to_run=${tumvio_seqs[@]}
+    seqs_to_run=(${tumvio_seqs[@]})
     dataset_dir=${tumvio_dataset_dir}
 elif [[ ${dataset} == "uzh_fpv" ]]; then
-    seqs_to_run=( "${uzh_fpv_seqs_w_gt[@]}" "${uzh_fpv_seqs_no_gt[@]}" )
+    seqs_to_run=("${uzh_fpv_seqs_w_gt[@]}" "${uzh_fpv_seqs_no_gt[@]}")
     dataset_dir=${uzh_fpv_dataset_dir}
 else
     echo "dataset not valid"
@@ -209,7 +209,6 @@ if [[ ${estimator} == "vins_mono" ]]; then
         if [[ ${dataset} == "euroc" ]]; then
             launch_file="euroc.launch"
         elif [[ ${dataset} == "tumvio" ]]; then
-            seqs_to_run=${tumvio_seqs[@]}
             launch_file="tum.launch"
         elif [[ ${dataset} == "uzh_fpv" ]]; then
             launch_file="uzh_fpv.launch"

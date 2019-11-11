@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+#set -x
 trap 'exit 130' INT
 
 declare -a euroc_seqs
@@ -70,63 +71,51 @@ uzh_fpv_seqs_w_gt[15]="outdoor_forward_5"
 dataset=$1
 results_dir=$2
 seqs=$3
-#this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
-#
-#stats_dump_file=${results_dir}/stats_dump.txt
-#tumvio_mocap2tum_script="${this_script_dir}/tumvio_mocap2tum.py"
-#uzh_fpv_gt2tum_script="${this_script_dir}/uzh_fpv_gt2tum.py"
-#euroc_dataset_dir="/home/cs4li/Dev/EUROC"
-#tumvio_dataset_dir="/home/cs4li/Dev/TUMVIO"
-#uzh_fpv_dataset_dir="/home/cs4li/Dev/UZH_FPV"
-#
-#rm -rf ${stats_dump_file}
-#
-#function fullseqname() {
-#    seq=$2
-#    if [[ $1 == "euroc" ]]; then
-#        echo ${seq}
-#    elif [[ $1 == "tumvio" ]]; then
-#        echo dataset-${seq}_512_16
-#    elif [[ $1 == "uzh_fpv" ]]; then
-#        echo ${seq}_snapdragon_with_gt
-#    else
-#        echo "full seq name error"
-#    fi
-#}
+this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
 
-seqs_to_run=${tumvio_seqs[@]}
+stats_dump_file=${results_dir}/stats_dump.txt
+tumvio_mocap2tum_script="${this_script_dir}/tumvio_mocap2tum.py"
+uzh_fpv_gt2tum_script="${this_script_dir}/uzh_fpv_gt2tum.py"
+euroc_dataset_dir="/home/cs4li/Dev/EUROC"
+tumvio_dataset_dir="/home/cs4li/Dev/TUMVIO"
+uzh_fpv_dataset_dir="/home/cs4li/Dev/UZH_FPV"
 
-#cd ${results_dir}
-#
-#if [[ ${dataset} == "euroc" ]]; then
-#    seqs_to_run=${euroc_seqs[@]}
-#    dataset_dir=${euroc_dataset_dir}
-#elif [[ ${dataset} == "tumvio" ]]; then
-#    seqs_to_run=${tumvio_seqs[@]}
-#    dataset_dir=${tumvio_dataset_dir}
-#elif [[ ${dataset} == "uzh_fpv" ]]; then
-#    seqs_to_run=${uzh_fpv_seqs_w_gt[@]}
-#    dataset_dir=${uzh_fpv_dataset_dir}
-#else
-#    echo "dataset not valid"
-#    exit 1
-#fi
+rm -rf ${stats_dump_file}
 
-echo ${tumvio_seqs[0]}
-echo ${tumvio_seqs[1]}
-echo ${tumvio_seqs[2]}
+function fullseqname() {
+    seq=$2
+    if [[ $1 == "euroc" ]]; then
+        echo ${seq}
+    elif [[ $1 == "tumvio" ]]; then
+        echo dataset-${seq}_512_16
+    elif [[ $1 == "uzh_fpv" ]]; then
+        echo ${seq}_snapdragon_with_gt
+    else
+        echo "full seq name error"
+    fi
+}
 
-echo "HELLO"
-echo ${seqs_to_run[1]}
-exit
-#echo ${seqs_to_run[1]}
-#echo ${seqs_to_run[2]}
+cd ${results_dir}
 
-#if [[ ${seqs} != "all" ]]; then
-#    unset seqs_to_run
-#    declare -a seqs_to_run
-#    seqs_to_run[0]=${seqs}
-#fi
+if [[ ${dataset} == "euroc" ]]; then
+    seqs_to_run=(${euroc_seqs[@]})
+    dataset_dir=${euroc_dataset_dir}
+elif [[ ${dataset} == "tumvio" ]]; then
+    seqs_to_run=(${tumvio_seqs[@]})
+    dataset_dir=${tumvio_dataset_dir}
+elif [[ ${dataset} == "uzh_fpv" ]]; then
+    seqs_to_run=(${uzh_fpv_seqs_w_gt[@]})
+    dataset_dir=${uzh_fpv_dataset_dir}
+else
+    echo "dataset not valid"
+    exit 1
+fi
+
+if [[ ${seqs} != "all" ]]; then
+    unset seqs_to_run
+    declare -a seqs_to_run
+    seqs_to_run[0]=${seqs}
+fi
 
 echo "========= Running sequences ${seqs_to_run[@]} ========="
 echo "========= dataset ${dataset} ========="
@@ -135,12 +124,17 @@ echo "========= seqs ${seqs} ========="
 for i in "${!seqs_to_run[@]}"
 do
     seq=${seqs_to_run[$i]}
+    traj_path=$(find ${results_dir} -maxdepth 1 -name ${seq}_*.tum)
+    if [[ -z ${traj_path} ]]; then
+        echo "*** ${seq} not found, skipped"
+        continue
+    fi
     seq_dir=${dataset_dir}/$(fullseqname ${dataset} ${seq})
-
-    echo "working on ${seq}"
-    exit
-    traj_path=${results_dir}/$(find ${results_dir} -name ${seq}_*.tum)
     seq_results_dir=${results_dir}/${seq}
+
+    echo "seq ${seq}"
+    echo "seq_dir ${seq_dir}"
+    echo "traj_path ${traj_path}"
 
     mkdir -p "${seq_results_dir}"
     cp ${traj_path} ${seq_results_dir}/est.tum
@@ -148,7 +142,7 @@ do
     echo "seq_dir ${seq_dir}"
 
     if [[ ${dataset} == "euroc" ]]; then
-        evo_traj euroc ${seq_dir}/mav0/state_groundtruth_estimate0/data.csv
+        evo_traj euroc ${seq_dir}/mav0/state_groundtruth_estimate0/data.csv --save_as_tum
         mv data.tum ${seq_results_dir}/gt.tum
     elif [[ ${dataset} == "tumvio" ]]; then
         python ${tumvio_mocap2tum_script} ${seq_dir}/mav0/mocap0/data.csv
@@ -165,13 +159,14 @@ do
         --plot_mode xyz --save_plot ${seq_results_dir}/plot.pdf \
         --no_warnings
 
-    evo_traj tum ${seq_results_dir}/gt.tum --save_plot ${seq_results_dir}/plot_gt.pdf --plot_mode xyz
-    evo_traj tum ${seq_results_dir}/est.tum --save_plot ${seq_results_dir}/plot_est.pdf --plot_mode xyz
-    evo_traj tum ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum --save_plot ${seq_results_dir}/plot_overlay.pdf --plot_mode xyz --align
+    evo_traj tum ${seq_results_dir}/gt.tum --save_plot ${seq_results_dir}/plot_gt.pdf --plot_mode xyz --no_warnings
+    evo_traj tum ${seq_results_dir}/est.tum --save_plot ${seq_results_dir}/plot_est.pdf --plot_mode xyz --no_warnings
+    evo_traj tum ${seq_results_dir}/est.tum --ref ${seq_results_dir}/gt.tum --save_plot ${seq_results_dir}/plot_overlay.pdf --plot_mode xyz --align --no_warnings
 
-    echo '#!/usr/bin/env bash' >> ${seq_results_dir}/view_overlay.sh
+    echo '#!/usr/bin/env bash' > ${seq_results_dir}/view_overlay.sh
     echo 'DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )' >> ${seq_results_dir}/view_overlay.sh
-    echo 'evo_traj tum ${DIR}/gt.tum ${DIR}/est.tum --save_plot ${seq_results_dir}/plot_overlay.pdf --plot --align' >> ${seq_results_dir}/view_overlay.sh
+    echo 'evo_traj tum ${DIR}/est.tum --ref ${DIR}/gt.tum --save_plot ${seq_results_dir}/plot_overlay.pdf --plot --align' >> ${seq_results_dir}/view_overlay.sh
+    chmod +x ${seq_results_dir}/view_overlay.sh
 
     unzip -o ${seq_results_dir}/results.zip -d ${seq_results_dir}/
     rm -rf ${seq_results_dir}/results.zip
