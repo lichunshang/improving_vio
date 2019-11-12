@@ -40,22 +40,22 @@ run /home/cs4li/Dev/TUMVIO/bags/dataset-corridor3_512_16.bag corridor3 ${opt}
 run /home/cs4li/Dev/TUMVIO/bags/dataset-corridor4_512_16.bag corridor4 ${opt}
 run /home/cs4li/Dev/TUMVIO/bags/dataset-corridor5_512_16.bag corridor5 ${opt}
 
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale1_512_16.bag magistrale1 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale2_512_16.bag magistrale2 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale3_512_16.bag magistrale3 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale4_512_16.bag magistrale4 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale5_512_16.bag magistrale5 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale6_512_16.bag magistrale6 ${opt}
-#
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors1_512_16.bag outdoors1 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors2_512_16.bag outdoors2 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors3_512_16.bag outdoors3 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors4_512_16.bag outdoors4 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors5_512_16.bag outdoors5 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors6_512_16.bag outdoors6 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors7_512_16.bag outdoors7 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors8_512_16.bag outdoors8 ${opt}
-#
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-slides1_512_16.bag slides1 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-slides2_512_16.bag slides2 ${opt}
-#run /home/cs4li/Dev/TUMVIO/bags/dataset-slides3_512_16.bag slides3 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale1_512_16.bag magistrale1 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale2_512_16.bag magistrale2 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale3_512_16.bag magistrale3 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale4_512_16.bag magistrale4 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale5_512_16.bag magistrale5 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-magistrale6_512_16.bag magistrale6 ${opt}
+
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors1_512_16.bag outdoors1 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors2_512_16.bag outdoors2 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors3_512_16.bag outdoors3 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors4_512_16.bag outdoors4 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors5_512_16.bag outdoors5 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors6_512_16.bag outdoors6 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors7_512_16.bag outdoors7 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-outdoors8_512_16.bag outdoors8 ${opt}
+
+run /home/cs4li/Dev/TUMVIO/bags/dataset-slides1_512_16.bag slides1 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-slides2_512_16.bag slides2 ${opt}
+run /home/cs4li/Dev/TUMVIO/bags/dataset-slides3_512_16.bag slides3 ${opt}

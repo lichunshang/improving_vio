@@ -262,7 +262,14 @@ elif [[ ${estimator} == "okvis" ]]; then
         mv ${dump_dir}/okvis_estimator_output.tum ${dump_dir}/${seq}_okvis_estimator_output.tum
     done
 elif [[ ${estimator} == "open_vins" ]]; then
-    pass
+        if [[ ${dataset} == "euroc" ]]; then
+        launch_file="euroc.launch"
+    elif [[ ${dataset} == "tumvio" ]]; then
+        launch_file="tum.launch"
+    elif [[ ${dataset} == "uzh_fpv" ]]; then
+
+    fi
 else
-    pass
+    echo "Bad estimator"
+    exit 1
 fi
