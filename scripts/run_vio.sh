@@ -135,6 +135,8 @@ function run_okvis_ros() {
     sleep 2
 }
 
+function run_
+
 array_contains() {
     local array="$1[@]"
     local seeking=$2
@@ -263,12 +265,13 @@ elif [[ ${estimator} == "okvis" ]]; then
     done
 elif [[ ${estimator} == "open_vins" ]]; then
         if [[ ${dataset} == "euroc" ]]; then
-        launch_file="euroc.launch"
+        launch_file="pgeneva_eth.launch"
     elif [[ ${dataset} == "tumvio" ]]; then
-        launch_file="tum.launch"
+        launch_file="pgeneva_tum.launch"
     elif [[ ${dataset} == "uzh_fpv" ]]; then
-
+        launch_file="uzh_fpv.launch"
     fi
+
 else
     echo "Bad estimator"
     exit 1
