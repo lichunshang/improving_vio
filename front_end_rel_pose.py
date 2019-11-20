@@ -6,25 +6,35 @@ import matplotlib.pyplot as plt
 
 np.set_printoptions(linewidth=1024)
 
-rel_pose_est_path = "/home/cs4li/Dev/dump/room1_feature_tracker_rel_pose.txt"
-gt_tum_path = "/home/cs4li/Dev/TUMVIO/dataset-room1_512_16/mav0/mocap0/data_tum.csv"
+rel_pose_est_path = "/home/cs4li/Dev/dump/feature_tracker_rel_pose.txt"
+gt_tum_path = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/mocap0/data_tum.csv"
 output_dir = "/home/cs4li/Dev/dump"
 
+start_time = 1520430766.554749
 
-def plot(rel_est_data, rel_gt_data):
+
+# command = "rosbag play dataset-outdoors2_512_16.bag -s 875"
+
+def plot(rel_est_data, rel_gt_data, gt_rel_se3s_no_est):
     labels = ["Trans X", "Trans Y", "Trans Z", "Rot X", "Rot Y", "Rot Z"]
 
-    for j in range(0, 6):
+    for j in range(1, 7):
         # rel estimates
+        plt.figure(j)
         plt.clf()
-        plt.plot(rel_gt_data[:, j], color="b")
-        plt.plot(rel_est_data[:, j], color="r")
+        w = 0.5
+        plt.plot(rel_est_data[:, 0] - start_time, rel_est_data[:, j], color="r", linewidth=w)
+        plt.plot(rel_gt_data[:, 0] - start_time, rel_gt_data[:, j], color="b", linewidth=w)
+        plt.plot(gt_rel_se3s_no_est[:, 0] - start_time, gt_rel_se3s_no_est[:, j], color="g", linewidth=w)
         plt.xlabel("frame # []")
-        plt.ylabel(labels[j].lower())
-        plt.title("%s %s Plot" % ("Rel Gt", labels[j]))
+        plt.ylabel(labels[j - 1].lower())
+        plt.title("%s %s Plot" % ("Rel Gt", labels[j - 1]))
+        plt.grid(which='both')
+        plt.minorticks_on()
         plt.savefig(
-                os.path.join(output_dir, "%s_%s_plt.png" % ("rel", "_".join(labels[j].lower().split()))))
+                os.path.join(output_dir, "%s_%s_plt.svg" % ("rel", "_".join(labels[j - 1].lower().split()))),  format='svg', dpi=2000)
 
+    # plt.show()
 
 def find_bounding_index(gt_timestmaps, ts1, ts2):
     ts1_idx1 = np.nonzero(ts1 >= gt_timestamps)[0]
@@ -91,21 +101,31 @@ for line in rel_poses_est_file:
     rel_poses_est_lines.append([float(l) for l in line.split()])
 
 gt_rel_se3s = []
+gt_rel_se3s_no_est = []
 est_rel_se3s = []
 for i in range(0, len(rel_poses_est_lines)):
-    if len(rel_poses_est_lines[i]) == 1:
-        print "No solution"
-        gt_rel_se3s.append(np.array([np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
-        est_rel_se3s.append(np.array([np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
-        continue
 
     try:
+        if len(rel_poses_est_lines[i]) == 1:
+            print "No solution"
+            est_rel_se3s.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
+
+            gt_rel_T = find_gt_rel_pose(gt_timestamps, gt_poses, rel_poses_est_lines[i][0] - 0.1, rel_poses_est_lines[i][0])
+            gt_rel_T = np.linalg.inv(T_vc).dot(gt_rel_T.dot(T_vc))
+            gt_rel_se3s_no_est.append(np.array([rel_poses_est_lines[i][0]] + list(se3.log_SE3(gt_rel_T))))
+            gt_rel_se3s.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
+            continue
+        else:
+            gt_rel_se3s_no_est.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
+
         gt_rel_T = find_gt_rel_pose(gt_timestamps, gt_poses, rel_poses_est_lines[i][1], rel_poses_est_lines[i][0])
         gt_rel_T = np.linalg.inv(T_vc).dot(gt_rel_T.dot(T_vc))
+
+        gt_rel_se3s.append(np.array([rel_poses_est_lines[i][0]] + list(se3.log_SE3(gt_rel_T))))
     except AssertionError as e:
         print "Bad Assertion", e
-        gt_rel_se3s.append(np.array([np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
-        est_rel_se3s.append(np.array([np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
+        gt_rel_se3s.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
+        est_rel_se3s.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
         continue
 
     est_rel_T = np.array(rel_poses_est_lines[i][2:])
@@ -116,8 +136,7 @@ for i in range(0, len(rel_poses_est_lines)):
     scale = np.linalg.norm(gt_rel_T[:3, 3]) / np.linalg.norm(est_rel_T[:3, 3])
     est_rel_T[:3, 3] = scale * est_rel_T[:3, 3]
 
-    gt_rel_se3s.append(se3.log_SE3(gt_rel_T))
-    est_rel_se3s.append(se3.log_SE3(est_rel_T))
+    est_rel_se3s.append(np.array([rel_poses_est_lines[i][0]] + list(se3.log_SE3(est_rel_T))))
 
     # print "%.15f" % rel_poses_est_lines[i][0]
     # print "gt_rel_se3\n", gt_rel_se3s[-1]
@@ -128,6 +147,7 @@ for i in range(0, len(rel_poses_est_lines)):
 
 gt_rel_se3s = np.array(gt_rel_se3s)
 est_rel_se3s = np.array(est_rel_se3s)
-plot(est_rel_se3s, gt_rel_se3s)
+gt_rel_se3s_no_est = np.array(gt_rel_se3s_no_est)
+plot(est_rel_se3s, gt_rel_se3s, gt_rel_se3s_no_est)
 
 print("Done")
