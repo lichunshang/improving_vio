@@ -6,9 +6,11 @@ import matplotlib.pyplot as plt
 
 np.set_printoptions(linewidth=1024)
 
-rel_pose_est_path = "/home/cs4li/Dev/dump/feature_tracker_rel_pose.txt"
+name = "outdoors2_fail_dense_1000feat_tol1000featnodeonly_mindist10"
+
+rel_pose_est_path = "/home/cs4li/Dev/dump/vo_rel_pose_trials/%s/feature_tracker_rel_pose.txt" % name
 gt_tum_path = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/mocap0/data_tum.csv"
-output_dir = "/home/cs4li/Dev/dump"
+output_dir = os.path.dirname(rel_pose_est_path)
 
 start_time = 1520430766.554749
 
@@ -22,7 +24,7 @@ def plot(rel_est_data, rel_gt_data, gt_rel_se3s_no_est):
         # rel estimates
         plt.figure(j)
         plt.clf()
-        w = 0.5
+        w = 1
         plt.plot(rel_est_data[:, 0] - start_time, rel_est_data[:, j], color="r", linewidth=w)
         plt.plot(rel_gt_data[:, 0] - start_time, rel_gt_data[:, j], color="b", linewidth=w)
         plt.plot(gt_rel_se3s_no_est[:, 0] - start_time, gt_rel_se3s_no_est[:, j], color="g", linewidth=w)
@@ -32,7 +34,7 @@ def plot(rel_est_data, rel_gt_data, gt_rel_se3s_no_est):
         plt.grid(which='both')
         plt.minorticks_on()
         plt.savefig(
-                os.path.join(output_dir, "%s_%s_plt.svg" % ("rel", "_".join(labels[j - 1].lower().split()))),  format='svg', dpi=2000)
+                os.path.join(output_dir, "%s_%s_plt.svg" % ("rel", "_".join(labels[j - 1].lower().split()))),  format='svg', dpi=1600)
 
     # plt.show()
 
