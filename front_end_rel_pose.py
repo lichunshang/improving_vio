@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 
 np.set_printoptions(linewidth=1024)
 
-name = "outdoors2_fail_dense_1000feat_tol1000featnodeonly_mindist10"
+name = "outdoors2_fail_dense_1000feat_tol1000featnodeonly_mindist15"
 
-rel_pose_est_path = "/home/cs4li/Dev/dump/vo_rel_pose_trials/%s/feature_tracker_rel_pose.txt" % name
+rel_pose_est_path = "/home/cs4li/Dev/improving_vio/results/vo_rel_pose_trials/%s/feature_tracker_rel_pose.txt" % name
 gt_tum_path = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/mocap0/data_tum.csv"
 output_dir = os.path.dirname(rel_pose_est_path)
 
@@ -34,9 +34,21 @@ def plot(rel_est_data, rel_gt_data, gt_rel_se3s_no_est):
         plt.grid(which='both')
         plt.minorticks_on()
         plt.savefig(
-                os.path.join(output_dir, "%s_%s_plt.svg" % ("rel", "_".join(labels[j - 1].lower().split()))),  format='svg', dpi=1600)
+                os.path.join(output_dir, "%s_%s_plt.svg" % ("rel", "_".join(labels[j - 1].lower().split()))),
+                format='svg', dpi=1600)
 
     # plt.show()
+
+
+def compute_stats(rel_est_data, rel_gt_data):
+    err = (rel_est_data - rel_gt_data)[:, 1:]
+    nans = np.isnan(np.sum(err, axis=1))
+    percent_sol = 1 - float(np.count_nonzero(nans)) / np.shape(nans)[0]
+    err = err[~nans]
+    rmse_err = np.sqrt(np.mean(err ** 2, axis=0))
+
+    return rmse_err, percent_sol
+
 
 def find_bounding_index(gt_timestmaps, ts1, ts2):
     ts1_idx1 = np.nonzero(ts1 >= gt_timestamps)[0]
@@ -106,19 +118,21 @@ gt_rel_se3s = []
 gt_rel_se3s_no_est = []
 est_rel_se3s = []
 for i in range(0, len(rel_poses_est_lines)):
+    assert (len(est_rel_se3s) == len(gt_rel_se3s))
 
     try:
         if len(rel_poses_est_lines[i]) == 1:
             print "No solution"
-            est_rel_se3s.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
-
-            gt_rel_T = find_gt_rel_pose(gt_timestamps, gt_poses, rel_poses_est_lines[i][0] - 0.1, rel_poses_est_lines[i][0])
+            gt_rel_T = find_gt_rel_pose(gt_timestamps, gt_poses, rel_poses_est_lines[i][0] - 0.1,
+                                        rel_poses_est_lines[i][0])
             gt_rel_T = np.linalg.inv(T_vc).dot(gt_rel_T.dot(T_vc))
             gt_rel_se3s_no_est.append(np.array([rel_poses_est_lines[i][0]] + list(se3.log_SE3(gt_rel_T))))
             gt_rel_se3s.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
+            est_rel_se3s.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
             continue
         else:
-            gt_rel_se3s_no_est.append(np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
+            gt_rel_se3s_no_est.append(
+                    np.array([rel_poses_est_lines[i][0], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]))
 
         gt_rel_T = find_gt_rel_pose(gt_timestamps, gt_poses, rel_poses_est_lines[i][1], rel_poses_est_lines[i][0])
         gt_rel_T = np.linalg.inv(T_vc).dot(gt_rel_T.dot(T_vc))
@@ -151,5 +165,10 @@ gt_rel_se3s = np.array(gt_rel_se3s)
 est_rel_se3s = np.array(est_rel_se3s)
 gt_rel_se3s_no_est = np.array(gt_rel_se3s_no_est)
 plot(est_rel_se3s, gt_rel_se3s, gt_rel_se3s_no_est)
+rmse_err, percent = compute_stats(est_rel_se3s, gt_rel_se3s)
 
+print "RMSE Error:"
+print "  x: %.5f\n  y: %.5f\n  z: %.5f\n  rx: %.5f\n  ry: %.5f\n  rz: %.5f\n" % (
+    rmse_err[0], rmse_err[1], rmse_err[2], rmse_err[3], rmse_err[4], rmse_err[5])
+print "Percent success: %.5f" % percent
 print("Done")
