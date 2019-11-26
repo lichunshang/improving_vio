@@ -169,7 +169,7 @@ do
 
     echo "****evo ape evaluation of trans part..."
     evo_ape tum ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum -r trans_part --align \
-        --no_warnings --logfile ${results_dir}/record.txt --save_results  ${seq_results_dir}/results.zip \
+        --no_warnings --logfile ${results_dir}/evo_record.txt --save_results  ${seq_results_dir}/results.zip \
         --plot_mode xyz --save_plot ${seq_results_dir}/plot.pdf \
 
     unzip -o ${seq_results_dir}/results.zip -d ${seq_results_dir}
@@ -181,10 +181,10 @@ do
     fi
 
     echo "***save some stats"
-    python ${this_script_dir}/evo_traj_full_eval.py ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum ${seq_results_dir}/stats.json ${results_dir}/record.txt
+    python ${this_script_dir}/evo_traj_full_eval.py ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum ${seq_results_dir} ${results_dir}/my_record.txt
 done
 
 # collect the rpe stats over the entire run
 if [[ ${seqs} == "all" ]]; then
-    python ${this_script_dir}/collect_errors.py ${dataset} "single_run" ${results_dir}
+    python ${this_script_dir}/collect_errors.py ${dataset} "single_run" ${results_dir} ${results_dir}/my_record.txt
 fi

@@ -3,6 +3,7 @@ import evo.tools.file_interface as file_interface
 import evo.core.sync as sync
 import evo.core.trajectory as trajectory
 import evo.core.metrics as metrics
+import evo.core.filters as filters
 import os
 import sys
 import json
@@ -17,17 +18,17 @@ def write(f, s):
 
 gt_path = os.path.abspath(sys.argv[1])
 est_path = os.path.abspath(sys.argv[2])
-dump_path = os.path.abspath(sys.argv[3])
+dump_dir_path = os.path.abspath(sys.argv[3])
 log_path = os.path.abspath(sys.argv[4])
 json_data = OrderedDict()
 
-dump_file = open(dump_path, "w")
+dump_json_file = open(os.path.join(dump_dir_path, "stats.json"), "w")
 log_file = open(log_path, "a")
 
-write(log_file, "========= evo_traj_full_eval")
+write(log_file, "================ evo_traj_full_eval =================")
 write(log_file, "gt_path " + gt_path)
 write(log_file, "est_path " + est_path)
-write(log_file, "dump_path " + dump_path)
+write(log_file, "dump_dir_path " + dump_dir_path)
 write(log_file, "log_path " + log_path)
 
 gt_traj = file_interface.read_tum_trajectory_file(gt_path)
@@ -58,19 +59,29 @@ for length in lengths:
                                delta=length, delta_unit=metrics.Unit.meters, all_pairs=True)
     rot_metric = metrics.RPE(metrics.PoseRelation.rotation_angle_deg,
                              delta=length, delta_unit=metrics.Unit.meters, all_pairs=True)
-    trans_metric.process_data((traj_gt_synced, traj_est_aligned,))
-    rot_metric.process_data((traj_gt_synced, traj_est_aligned,))
-    trans_stat = trans_metric.get_statistic(metrics.StatisticsType.rmse)
-    rot_stat = rot_metric.get_statistic(metrics.StatisticsType.rmse)
+
+    try:
+        trans_metric.process_data((traj_gt_synced, traj_est_aligned,))
+        rot_metric.process_data((traj_gt_synced, traj_est_aligned,))
+        trans_stat = trans_metric.get_statistic(metrics.StatisticsType.rmse)
+        rot_stat = rot_metric.get_statistic(metrics.StatisticsType.rmse)
+
+        trans_metric_errors = trans_metric.error
+        rot_metric_errors = rot_metric.error
+    except filters.FilterException:
+        trans_stat = np.nan
+        rot_stat = np.nan
+        trans_metric_errors = []
+        rot_metric_errors = []
 
     write(log_file, "rpe_%dm_trans: %.5f" % (length, trans_stat))
     write(log_file, "rpe_%dm_rot:   %.5f" % (length, rot_stat))
     json_data["rpe_%dm_trans" % length] = trans_stat
     json_data["rpe_%dm_rot" % length] = rot_stat
 
-    np.save(os.path.join(dump_path, "rpe_%dm_trans.npy" % length), trans_metric.error)
-    np.save(os.path.join(dump_path, "rpe_%dm_rot.npy" % length), rot_metric.error)
+    np.savetxt(os.path.join(dump_dir_path, "rpe_%dm_trans.txt" % length), trans_metric_errors)
+    np.savetxt(os.path.join(dump_dir_path, "rpe_%dm_rot.txt" % length), rot_metric_errors)
 
-json.dump(json_data, dump_file)
-dump_file.close()
+json.dump(json_data, dump_json_file)
+dump_json_file.close()
 log_file.close()
