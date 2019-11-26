@@ -78,7 +78,7 @@ echo "seqs ${seqs}"
 
 this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
 
-stats_dump_file=${results_dir}/ape_stats_dump.txt
+stats_dump_file=${results_dir}/stats_dump.txt
 tumvio_mocap2tum_script="${this_script_dir}/tumvio_mocap2tum.py"
 uzh_fpv_gt2tum_script="${this_script_dir}/uzh_fpv_gt2tum.py"
 euroc_dataset_dir="/home/cs4li/Dev/EUROC"
@@ -174,9 +174,17 @@ do
 
     unzip -o ${seq_results_dir}/results.zip -d ${seq_results_dir}
     rm -rf ${seq_results_dir}/results.zip
-    rmse=$(jq ".rmse" ${seq_results_dir}/stats.json)
-    echo -n "${rmse} " >> ${stats_dump_file}
+
+    if [[ ${seqs} == "all" ]]; then
+        rmse=$(jq ".rmse" ${seq_results_dir}/stats.json)
+        echo -n "${rmse} " >> ${stats_dump_file}
+    fi
 
     echo "***save some stats"
     python ${this_script_dir}/evo_traj_full_eval.py ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum ${seq_results_dir}/stats.json ${results_dir}/record.txt
 done
+
+# collect the rpe stats over the entire run
+if [[ ${seqs} == "all" ]]; then
+    python ${this_script_dir}/collect_errors.py ${dataset} "single_run" ${results_dir}
+fi

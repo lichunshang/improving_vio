@@ -1,3 +1,4 @@
+from __future__ import print_function
 import evo.tools.file_interface as file_interface
 import evo.core.sync as sync
 import evo.core.trajectory as trajectory
@@ -6,10 +7,11 @@ import os
 import sys
 import json
 from collections import OrderedDict
+import numpy as np
 
 
 def write(f, s):
-    print s
+    print(s)
     f.write(s + "\n")
 
 
@@ -65,6 +67,9 @@ for length in lengths:
     write(log_file, "rpe_%dm_rot:   %.5f" % (length, rot_stat))
     json_data["rpe_%dm_trans" % length] = trans_stat
     json_data["rpe_%dm_rot" % length] = rot_stat
+
+    np.save(os.path.join(dump_path, "rpe_%dm_trans.npy" % length), trans_metric.error)
+    np.save(os.path.join(dump_path, "rpe_%dm_rot.npy" % length), rot_metric.error)
 
 json.dump(json_data, dump_file)
 dump_file.close()

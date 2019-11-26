@@ -229,7 +229,7 @@ if [[ ${estimator} == "vins_mono" ]]; then
         run_vins_mono_ros ${launch_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${dense_opt} config_path:=${config_opt}
         mv ${dump_dir}/vins_result_no_loop.csv ${results_dir}/${seq}_vins_result_no_loop.csv
         python ${vinsmono2tum_script} ${results_dir}/${seq}_vins_result_no_loop.csv
-        mv ${results_dir}/okvis_estimator_output.tum ${results_dir}/${seq}_okvis_estimator_output.tum
+        mv ${results_dir}/vinsmono_output.tum ${results_dir}/${seq}_okvis_estimator_output.tum
     done
 elif [[ ${estimator} == "okvis" ]]; then
     for i in "${!seqs_to_run[@]}"
@@ -253,10 +253,11 @@ elif [[ ${estimator} == "okvis" ]]; then
         else
             if [[ ${dataset} == "euroc" ]]; then
                 config_yaml="${okvis_uzh_fpv_configs_dir}/config_fpga_p2_euroc.yaml"
+                rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/$(fullseqname ${dataset} ${seq})/mav0
             elif [[ ${dataset} == "tumvio" ]]; then
                 config_yaml="${okvis_uzh_fpv_configs_dir}/config_okvis_50_20.yaml"
+                rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/$(fullseqname ${dataset} ${seq})/mav0
             fi
-            rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/${seq}/mav0
         fi
         mv ${dump_dir}/okvis_estimator_output.csv ${results_dir}/${seq}_okvis_estimator_output.csv
         python ${okvis2tum_script} ${results_dir}/${seq}_okvis_estimator_output.csv
