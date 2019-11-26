@@ -71,16 +71,21 @@ uzh_fpv_seqs_w_gt[15]="outdoor_forward_5"
 dataset=$1
 results_dir=$2
 seqs=$3
+
+echo "dataset ${dataset}"
+echo "results_dir ${results_dir}"
+echo "seqs ${seqs}"
+
 this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
 
-stats_dump_file=${results_dir}/stats_dump.txt
+stats_dump_file=${results_dir}/ape_stats_dump.txt
 tumvio_mocap2tum_script="${this_script_dir}/tumvio_mocap2tum.py"
 uzh_fpv_gt2tum_script="${this_script_dir}/uzh_fpv_gt2tum.py"
 euroc_dataset_dir="/home/cs4li/Dev/EUROC"
 tumvio_dataset_dir="/home/cs4li/Dev/TUMVIO"
 uzh_fpv_dataset_dir="/home/cs4li/Dev/UZH_FPV"
 
-rm -rf ${stats_dump_file}
+rm -rf ${stats_dump_file}*
 
 function fullseqname() {
     seq=$2
@@ -152,13 +157,7 @@ do
         mv ${seq_dir}/groundtruth_tum.txt ${seq_results_dir}/gt.tum
     fi
 
-    echo "****evo evaluation..."
-    evo_ape tum ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum \
-        --align --logfile ${results_dir}/record.txt \
-        --save_results  ${seq_results_dir}/results.zip \
-        --plot_mode xyz --save_plot ${seq_results_dir}/plot.pdf \
-        --no_warnings
-
+    echo "*** make some plots..."
     evo_traj tum ${seq_results_dir}/gt.tum --save_plot ${seq_results_dir}/plot_gt.pdf --plot_mode xyz --no_warnings
     evo_traj tum ${seq_results_dir}/est.tum --save_plot ${seq_results_dir}/plot_est.pdf --plot_mode xyz --no_warnings
     evo_traj tum ${seq_results_dir}/est.tum --ref ${seq_results_dir}/gt.tum --save_plot ${seq_results_dir}/plot_overlay.pdf --plot_mode xyz --align --no_warnings
@@ -168,7 +167,16 @@ do
     echo 'evo_traj tum ${DIR}/est.tum --ref ${DIR}/gt.tum --save_plot ${seq_results_dir}/plot_overlay.pdf --plot --align' >> ${seq_results_dir}/view_overlay.sh
     chmod +x ${seq_results_dir}/view_overlay.sh
 
-    unzip -o ${seq_results_dir}/results.zip -d ${seq_results_dir}/
+    echo "****evo ape evaluation of trans part..."
+    evo_ape tum ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum -r trans_part --align \
+        --no_warnings --logfile ${results_dir}/record.txt --save_results  ${seq_results_dir}/results.zip \
+        --plot_mode xyz --save_plot ${seq_results_dir}/plot.pdf \
+
+    unzip -o ${seq_results_dir}/results.zip -d ${seq_results_dir}
     rm -rf ${seq_results_dir}/results.zip
-    jq ".rmse" ${seq_results_dir}/stats.json >> ${stats_dump_file}
+    rmse=$(jq ".rmse" ${seq_results_dir}/stats.json)
+    echo -n "${rmse} " >> ${stats_dump_file}
+
+    echo "***save some stats"
+    python ${this_script_dir}/evo_traj_full_eval.py ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum ${seq_results_dir}/stats.json ${results_dir}/record.txt
 done

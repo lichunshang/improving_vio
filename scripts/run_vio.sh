@@ -85,6 +85,7 @@ estimator=$1
 dataset=$2
 seqs=$3
 this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
+results_dir=$4
 
 dump_dir="/home/cs4li/Dev/dump"
 vins_mono_uzh_fpv_configs_dir="/home/cs4li/Dev/catkin_ws/src/VINS-Mono/config/uzh_fpv"
@@ -135,8 +136,6 @@ function run_okvis_ros() {
     sleep 2
 }
 
-function run_
-
 array_contains() {
     local array="$1[@]"
     local seeking=$2
@@ -171,7 +170,7 @@ function fullseqname() {
 
 cd ${dump_dir}
 
-if [[ $4 == "--dense" ]]; then
+if [[ $5 == "--dense" ]]; then
     dense_opt="dense:=true"
 else
     dense_opt="dense:=false"
@@ -228,9 +227,9 @@ if [[ ${estimator} == "vins_mono" ]]; then
         fi
 
         run_vins_mono_ros ${launch_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${dense_opt} config_path:=${config_opt}
-        mv ${dump_dir}/vins_result_no_loop.csv ${dump_dir}/${seq}_vins_result_no_loop.csv
-        python ${vinsmono2tum_script} ${dump_dir}/${seq}_vins_result_no_loop.csv
-        mv ${dump_dir}/okvis_estimator_output.tum ${dump_dir}/${seq}_okvis_estimator_output.tum
+        mv ${dump_dir}/vins_result_no_loop.csv ${results_dir}/${seq}_vins_result_no_loop.csv
+        python ${vinsmono2tum_script} ${results_dir}/${seq}_vins_result_no_loop.csv
+        mv ${results_dir}/okvis_estimator_output.tum ${results_dir}/${seq}_okvis_estimator_output.tum
     done
 elif [[ ${estimator} == "okvis" ]]; then
     for i in "${!seqs_to_run[@]}"
@@ -259,19 +258,18 @@ elif [[ ${estimator} == "okvis" ]]; then
             fi
             rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/${seq}/mav0
         fi
-        mv ${dump_dir}/okvis_estimator_output.csv ${dump_dir}/${seq}_okvis_estimator_output.csv
-        python ${okvis2tum_script} ${dump_dir}/${seq}_okvis_estimator_output.csv
-        mv ${dump_dir}/okvis_estimator_output.tum ${dump_dir}/${seq}_okvis_estimator_output.tum
+        mv ${dump_dir}/okvis_estimator_output.csv ${results_dir}/${seq}_okvis_estimator_output.csv
+        python ${okvis2tum_script} ${results_dir}/${seq}_okvis_estimator_output.csv
+        mv ${results_dir}/okvis_estimator_output.tum ${results_dir}/${seq}_okvis_estimator_output.tum
     done
 elif [[ ${estimator} == "open_vins" ]]; then
-        if [[ ${dataset} == "euroc" ]]; then
+    if [[ ${dataset} == "euroc" ]]; then
         launch_file="pgeneva_eth.launch"
     elif [[ ${dataset} == "tumvio" ]]; then
         launch_file="pgeneva_tum.launch"
     elif [[ ${dataset} == "uzh_fpv" ]]; then
         launch_file="uzh_fpv.launch"
     fi
-
 else
     echo "Bad estimator"
     exit 1
