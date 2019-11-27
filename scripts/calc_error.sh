@@ -182,7 +182,7 @@ do
 
     if [[ ${seqs} == "all" ]]; then
         trans_rmse=$(jq ".ape_trans" ${seq_results_dir}/stats.json)
-        rot_rmse=$(jq ".ape_trans" ${seq_results_dir}/stats.json)
+        rot_rmse=$(jq ".ape_rot_deg" ${seq_results_dir}/stats.json)
         echo -n "${trans_rmse} ${rot_rmse} " >> ${stats_dump_file}
     fi
 done
