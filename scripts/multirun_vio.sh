@@ -37,3 +37,7 @@ if [[ ${mode} == "eval_only" ]] || [[ ${mode} == "both" ]]; then
     done
     python ${this_script_dir}/collect_errors.py ${dataset} "multi_run" ${save_dir} ${save_dir}/record.txt
 fi
+
+if [[ ${mode} == "summary_only" ]]; then
+    python ${this_script_dir}/collect_errors.py ${dataset} "multi_run" ${save_dir} ${save_dir}/record.txt
+fi

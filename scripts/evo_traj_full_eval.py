@@ -79,8 +79,8 @@ for length in lengths:
     json_data["rpe_%dm_trans" % length] = trans_stat
     json_data["rpe_%dm_rot" % length] = rot_stat
 
-    np.savetxt(os.path.join(dump_dir_path, "rpe_%dm_trans.txt" % length), trans_metric_errors)
-    np.savetxt(os.path.join(dump_dir_path, "rpe_%dm_rot.txt" % length), rot_metric_errors)
+    np.savetxt(os.path.join(dump_dir_path, "rpe_%dm_trans.txt" % length), trans_metric_errors, fmt='%.10f', )
+    np.savetxt(os.path.join(dump_dir_path, "rpe_%dm_rot.txt" % length), rot_metric_errors, fmt='%.10f', )
 
 json.dump(json_data, dump_json_file)
 dump_json_file.close()

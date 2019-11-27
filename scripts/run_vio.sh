@@ -253,10 +253,10 @@ elif [[ ${estimator} == "okvis" ]]; then
         else
             if [[ ${dataset} == "euroc" ]]; then
                 config_yaml="${okvis_uzh_fpv_configs_dir}/config_fpga_p2_euroc.yaml"
-                rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/$(fullseqname ${dataset} ${seq})/mav0
+                rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/$(fullseqname ${dataset} ${seq})/mav0 || true
             elif [[ ${dataset} == "tumvio" ]]; then
                 config_yaml="${okvis_uzh_fpv_configs_dir}/config_okvis_50_20.yaml"
-                rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/$(fullseqname ${dataset} ${seq})/mav0
+                rosrun okvis_ros okvis_node_synchronous_from_file ${config_yaml} ${dataset_dir}/$(fullseqname ${dataset} ${seq})/mav0 || true
             fi
         fi
         mv ${dump_dir}/okvis_estimator_output.csv ${results_dir}/${seq}_okvis_estimator_output.csv

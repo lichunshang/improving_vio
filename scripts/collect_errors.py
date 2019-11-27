@@ -88,3 +88,5 @@ elif mode == "multi_run":
     ave_stats_dump_file.write(" ".join(["%.10f" % i for i in ave_stats]))
     ave_stats_dump_file.write(" ")
     ave_stats_dump_file.close()
+
+    np.savetxt(os.path.join(results_path, "stats_collected_mat.txt"), stats, fmt='%.10f',)
