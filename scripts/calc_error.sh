@@ -85,7 +85,9 @@ euroc_dataset_dir="/home/cs4li/Dev/EUROC"
 tumvio_dataset_dir="/home/cs4li/Dev/TUMVIO"
 uzh_fpv_dataset_dir="/home/cs4li/Dev/UZH_FPV"
 
-rm -rf ${stats_dump_file}*
+if [[ ${seqs} == "all" ]]; then
+    rm -rf ${stats_dump_file}*
+fi
 
 function fullseqname() {
     seq=$2
@@ -172,16 +174,17 @@ do
         --no_warnings --logfile ${results_dir}/evo_record.txt --save_results  ${seq_results_dir}/results.zip \
         --plot_mode xyz --save_plot ${seq_results_dir}/plot.pdf \
 
-    unzip -o ${seq_results_dir}/results.zip -d ${seq_results_dir}
+    unzip -o ${seq_results_dir}/results.zip -d ${seq_results_dir}/evo_results
     rm -rf ${seq_results_dir}/results.zip
-
-    if [[ ${seqs} == "all" ]]; then
-        rmse=$(jq ".rmse" ${seq_results_dir}/stats.json)
-        echo -n "${rmse} " >> ${stats_dump_file}
-    fi
 
     echo "***save some stats"
     python ${this_script_dir}/evo_traj_full_eval.py ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum ${seq_results_dir} ${results_dir}/my_record.txt
+
+    if [[ ${seqs} == "all" ]]; then
+        trans_rmse=$(jq ".ape_trans" ${seq_results_dir}/stats.json)
+        rot_rmse=$(jq ".ape_trans" ${seq_results_dir}/stats.json)
+        echo -n "${trans_rmse} ${rot_rmse} " >> ${stats_dump_file}
+    fi
 done
 
 # collect the rpe stats over the entire run
