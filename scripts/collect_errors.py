@@ -19,9 +19,9 @@ log_file = open(log_path, "a")
 
 tumvio_seqs = ["room1", "room2", "room3", "room4", "room5", "room6"]
 failure_trans_tolerance = {
-    "euroc": 10.0,
-    "tumvio": 10.0,
-    "uzh_fpv": 10.0
+    "euroc": 1.0,
+    "tumvio": 1.0,
+    # "uzh_fpv": 10.0
 }
 lengths = [8, 16, 24, 32, 40, 48]
 
