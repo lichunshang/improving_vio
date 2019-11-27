@@ -35,4 +35,5 @@ if [[ ${mode} == "eval_only" ]] || [[ ${mode} == "both" ]]; then
     for i in $(seq 1 ${run_x_times}); do
         ${this_script_dir}/calc_error.sh ${dataset} ${save_dir}/run_${i} all
     done
+    python ${this_script_dir}/collect_errors.py ${dataset} "multi_run" ${save_dir} ${save_dir}/record.txt
 fi

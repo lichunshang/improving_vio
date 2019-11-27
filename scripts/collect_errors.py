@@ -86,4 +86,5 @@ elif mode == "multi_run":
 
     ave_stats_dump_file = open(os.path.join(results_path, "stats_dump.txt"), "w")
     ave_stats_dump_file.write(" ".join(["%.10f" % i for i in ave_stats]))
+    ave_stats_dump_file.write(" ")
     ave_stats_dump_file.close()
