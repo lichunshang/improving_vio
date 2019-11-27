@@ -1,0 +1,616 @@
+[DEBUG][2019-11-27 00:53:53,465][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:53:53,813][file_interface.read_tum_trajectory_file():112]
+Loaded 36382 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_01_easy/gt.tum
+[DEBUG][2019-11-27 00:53:53,846][file_interface.read_tum_trajectory_file():112]
+Loaded 3676 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_01_easy/est.tum
+[DEBUG][2019-11-27 00:53:53,847][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:53:54,134][sync.associate_trajectories():106]
+Found 3638 of max. 36382 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_01_easy/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:53:54,135][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:53:54,135][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:53:54,153][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.96688658  0.25256367  0.03663252]
+ [-0.25366412  0.96684819  0.02931026]
+ [-0.02801538 -0.03763206  0.99889888]]
+Translation of alignment:
+[ 4.35318566 -1.6597886   0.67063291]
+[DEBUG][2019-11-27 00:53:54,153][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:53:54,382][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:53:54,383][metrics.process_data():374]
+Compared 3638 absolute pose pairs.
+[DEBUG][2019-11-27 00:53:54,383][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:53:54,403][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:53:54,404][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.552825
+      mean	0.318190
+    median	0.330072
+       min	0.127623
+      rmse	0.330711
+       sse	397.887513
+       std	0.090140
+
+[DEBUG][2019-11-27 00:53:54,946][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:53:54,946][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:53:57,089][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_01_easy/plot.pdf
+[DEBUG][2019-11-27 00:53:57,089][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:53:57,090][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_01_easy/results.zip...
+[DEBUG][2019-11-27 00:54:10,878][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:11,185][file_interface.read_tum_trajectory_file():112]
+Loaded 29993 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_02_easy/gt.tum
+[DEBUG][2019-11-27 00:54:11,214][file_interface.read_tum_trajectory_file():112]
+Loaded 3034 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_02_easy/est.tum
+[DEBUG][2019-11-27 00:54:11,215][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:54:11,436][sync.associate_trajectories():106]
+Found 3000 of max. 29993 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_02_easy/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_02_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:54:11,438][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:11,438][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:54:11,466][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.98759197  0.1513742   0.04180839]
+ [-0.15300502  0.98745478  0.03901957]
+ [-0.03537734 -0.04493231  0.99836343]]
+Translation of alignment:
+[ 4.67654385 -2.2413591   0.59164075]
+[DEBUG][2019-11-27 00:54:11,466][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:54:11,632][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:11,632][metrics.process_data():374]
+Compared 3000 absolute pose pairs.
+[DEBUG][2019-11-27 00:54:11,632][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:54:11,649][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:54:11,650][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.664622
+      mean	0.281808
+    median	0.325685
+       min	0.028551
+      rmse	0.302346
+       sse	274.238830
+       std	0.109532
+
+[DEBUG][2019-11-27 00:54:12,214][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:12,214][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:54:13,791][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_02_easy/plot.pdf
+[DEBUG][2019-11-27 00:54:13,791][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:13,791][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_02_easy/results.zip...
+[DEBUG][2019-11-27 00:54:26,156][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:26,397][file_interface.read_tum_trajectory_file():112]
+Loaded 26302 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_03_medium/gt.tum
+[DEBUG][2019-11-27 00:54:26,429][file_interface.read_tum_trajectory_file():112]
+Loaded 2694 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_03_medium/est.tum
+[DEBUG][2019-11-27 00:54:26,429][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:54:26,582][sync.associate_trajectories():106]
+Found 2631 of max. 26302 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_03_medium/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_03_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:54:26,583][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:26,583][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:54:26,601][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 9.82660521e-01  1.85345162e-01  5.04699694e-03]
+ [-1.85352320e-01  9.82671637e-01  9.85457329e-04]
+ [-4.77689100e-03 -1.90384260e-03  9.99986778e-01]]
+Translation of alignment:
+[ 4.73680215 -2.16157453  0.61385045]
+[DEBUG][2019-11-27 00:54:26,601][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:54:26,741][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:26,741][metrics.process_data():374]
+Compared 2631 absolute pose pairs.
+[DEBUG][2019-11-27 00:54:26,741][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:54:26,750][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:54:26,750][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.407664
+      mean	0.263751
+    median	0.290071
+       min	0.014290
+      rmse	0.282669
+       sse	210.221567
+       std	0.101672
+
+[DEBUG][2019-11-27 00:54:27,327][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:27,328][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:54:28,924][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_03_medium/plot.pdf
+[DEBUG][2019-11-27 00:54:28,925][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:28,925][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_03_medium/results.zip...
+[DEBUG][2019-11-27 00:54:40,616][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:40,805][file_interface.read_tum_trajectory_file():112]
+Loaded 19753 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_04_difficult/gt.tum
+[DEBUG][2019-11-27 00:54:40,824][file_interface.read_tum_trajectory_file():112]
+Loaded 2027 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_04_difficult/est.tum
+[DEBUG][2019-11-27 00:54:40,824][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:54:40,918][sync.associate_trajectories():106]
+Found 1976 of max. 19753 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_04_difficult/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_04_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:54:40,919][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:40,919][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:54:40,929][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.61695999  0.78686579 -0.01423367]
+ [-0.78685598 -0.61708983 -0.00760306]
+ [-0.01476605  0.00650906  0.99986979]]
+Translation of alignment:
+[ 4.29148581 -1.67631372  0.68497912]
+[DEBUG][2019-11-27 00:54:40,929][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:54:41,061][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:41,061][metrics.process_data():374]
+Compared 1976 absolute pose pairs.
+[DEBUG][2019-11-27 00:54:41,061][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:54:41,069][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:54:41,070][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.628798
+      mean	0.372352
+    median	0.386923
+       min	0.150162
+      rmse	0.391301
+       sse	302.558531
+       std	0.120293
+
+[DEBUG][2019-11-27 00:54:41,597][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:41,597][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:54:42,951][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_04_difficult/plot.pdf
+[DEBUG][2019-11-27 00:54:42,951][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:42,952][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_04_difficult/results.zip...
+[DEBUG][2019-11-27 00:54:53,911][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:54,131][file_interface.read_tum_trajectory_file():112]
+Loaded 22212 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_05_difficult/gt.tum
+[DEBUG][2019-11-27 00:54:54,163][file_interface.read_tum_trajectory_file():112]
+Loaded 2267 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_05_difficult/est.tum
+[DEBUG][2019-11-27 00:54:54,164][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:54:54,335][sync.associate_trajectories():106]
+Found 2221 of max. 22212 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_05_difficult/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_05_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:54:54,336][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:54,336][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:54:54,348][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.65122723  0.75883124  0.0088451 ]
+ [-0.75872349 -0.65128511  0.01289834]
+ [ 0.01554834  0.00168877  0.99987769]]
+Translation of alignment:
+[ 4.19791133 -1.84314172  0.40728701]
+[DEBUG][2019-11-27 00:54:54,348][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:54:54,471][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:54,472][metrics.process_data():374]
+Compared 2221 absolute pose pairs.
+[DEBUG][2019-11-27 00:54:54,472][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:54:54,481][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:54:54,481][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.790876
+      mean	0.395057
+    median	0.354752
+       min	0.187344
+      rmse	0.417028
+       sse	386.259433
+       std	0.133575
+
+[DEBUG][2019-11-27 00:54:55,027][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:55,027][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:54:56,475][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_05_difficult/plot.pdf
+[DEBUG][2019-11-27 00:54:56,475][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:54:56,475][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/MH_05_difficult/results.zip...
+[DEBUG][2019-11-27 00:55:08,383][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:08,714][file_interface.read_tum_trajectory_file():112]
+Loaded 28712 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_01_easy/gt.tum
+[DEBUG][2019-11-27 00:55:08,750][file_interface.read_tum_trajectory_file():112]
+Loaded 2906 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_01_easy/est.tum
+[DEBUG][2019-11-27 00:55:08,751][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:55:08,977][sync.associate_trajectories():106]
+Found 2872 of max. 28712 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_01_easy/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:55:08,979][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:08,979][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:55:09,010][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.9675655   0.25202087 -0.01739179]
+ [-0.25211207 -0.96769265  0.00323107]
+ [-0.01601561  0.00751095  0.99984353]]
+Translation of alignment:
+[0.81663389 2.20219175 0.83954719]
+[DEBUG][2019-11-27 00:55:09,010][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:55:09,179][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:09,180][metrics.process_data():374]
+Compared 2872 absolute pose pairs.
+[DEBUG][2019-11-27 00:55:09,180][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:55:09,189][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:55:09,189][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.314877
+      mean	0.070145
+    median	0.065007
+       min	0.006701
+      rmse	0.079455
+       sse	18.131362
+       std	0.037321
+
+[DEBUG][2019-11-27 00:55:09,770][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:09,770][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:55:11,221][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_01_easy/plot.pdf
+[DEBUG][2019-11-27 00:55:11,221][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:11,222][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_01_easy/results.zip...
+[DEBUG][2019-11-27 00:55:21,948][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:22,124][file_interface.read_tum_trajectory_file():112]
+Loaded 16702 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_02_medium/gt.tum
+[DEBUG][2019-11-27 00:55:22,141][file_interface.read_tum_trajectory_file():112]
+Loaded 1704 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_02_medium/est.tum
+[DEBUG][2019-11-27 00:55:22,142][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:55:22,228][sync.associate_trajectories():106]
+Found 1671 of max. 16702 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_02_medium/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_02_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:55:22,229][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:22,229][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:55:22,241][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.82734041 -0.56168681  0.00397193]
+ [ 0.56165341 -0.82734175 -0.00714678]
+ [ 0.0073004  -0.00368197  0.99996657]]
+Translation of alignment:
+[0.62692955 2.16848627 0.99882138]
+[DEBUG][2019-11-27 00:55:22,241][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:55:22,374][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:22,374][metrics.process_data():374]
+Compared 1671 absolute pose pairs.
+[DEBUG][2019-11-27 00:55:22,374][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:55:22,382][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:55:22,382][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.230658
+      mean	0.123884
+    median	0.126323
+       min	0.013665
+      rmse	0.136730
+       sse	31.239410
+       std	0.057860
+
+[DEBUG][2019-11-27 00:55:23,042][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:23,042][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:55:24,156][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_02_medium/plot.pdf
+[DEBUG][2019-11-27 00:55:24,156][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:24,156][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_02_medium/results.zip...
+[DEBUG][2019-11-27 00:55:34,408][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:34,607][file_interface.read_tum_trajectory_file():112]
+Loaded 20932 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_03_difficult/gt.tum
+[DEBUG][2019-11-27 00:55:34,627][file_interface.read_tum_trajectory_file():112]
+Loaded 2143 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_03_difficult/est.tum
+[DEBUG][2019-11-27 00:55:34,628][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:55:34,729][sync.associate_trajectories():106]
+Found 2094 of max. 20932 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_03_difficult/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:55:34,730][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:34,730][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:55:34,739][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99691703 -0.07217132 -0.03078528]
+ [ 0.07242534 -0.99734773 -0.00721617]
+ [-0.03018283 -0.00942356  0.99949997]]
+Translation of alignment:
+[1.00191072 2.2341987  1.10497884]
+[DEBUG][2019-11-27 00:55:34,739][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:55:34,879][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:34,880][metrics.process_data():374]
+Compared 2094 absolute pose pairs.
+[DEBUG][2019-11-27 00:55:34,880][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:55:34,892][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:55:34,893][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.512327
+      mean	0.222289
+    median	0.190383
+       min	0.040747
+      rmse	0.250574
+       sse	131.476739
+       std	0.115650
+
+[DEBUG][2019-11-27 00:55:35,461][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:35,461][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:55:36,758][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_03_difficult/plot.pdf
+[DEBUG][2019-11-27 00:55:36,758][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:36,758][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V1_03_difficult/results.zip...
+[DEBUG][2019-11-27 00:55:47,598][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:48,435][file_interface.read_tum_trajectory_file():112]
+Loaded 22401 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_01_easy/gt.tum
+[DEBUG][2019-11-27 00:55:48,454][file_interface.read_tum_trajectory_file():112]
+Loaded 2274 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_01_easy/est.tum
+[DEBUG][2019-11-27 00:55:48,456][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:55:48,567][sync.associate_trajectories():106]
+Found 2240 of max. 22401 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_01_easy/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:55:48,568][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:48,568][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:55:48,580][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99926011 -0.03528674  0.01529937]
+ [ 0.03519229  0.99936007  0.00639945]
+ [-0.01551539 -0.0058563   0.99986248]]
+Translation of alignment:
+[-0.82156201  0.62106789  1.21940626]
+[DEBUG][2019-11-27 00:55:48,580][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:55:48,698][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:48,698][metrics.process_data():374]
+Compared 2240 absolute pose pairs.
+[DEBUG][2019-11-27 00:55:48,698][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:55:48,706][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:55:48,706][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.386772
+      mean	0.130117
+    median	0.104001
+       min	0.019005
+      rmse	0.149443
+       sse	50.026585
+       std	0.073504
+
+[DEBUG][2019-11-27 00:55:49,295][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:49,296][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:55:50,663][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_01_easy/plot.pdf
+[DEBUG][2019-11-27 00:55:50,664][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:55:50,664][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_01_easy/results.zip...
+[DEBUG][2019-11-27 00:56:01,043][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:01,266][file_interface.read_tum_trajectory_file():112]
+Loaded 23091 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_02_medium/gt.tum
+[DEBUG][2019-11-27 00:56:01,289][file_interface.read_tum_trajectory_file():112]
+Loaded 2342 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_02_medium/est.tum
+[DEBUG][2019-11-27 00:56:01,290][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:56:01,409][sync.associate_trajectories():106]
+Found 2309 of max. 23091 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_02_medium/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_02_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:56:01,411][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:01,411][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:56:01,423][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99646939 -0.07663711  0.03428553]
+ [ 0.07521161  0.99632034  0.04109737]
+ [-0.03730896 -0.0383736   0.99856673]]
+Translation of alignment:
+[-0.81172493  0.6327298   1.29295651]
+[DEBUG][2019-11-27 00:56:01,423][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:56:01,574][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:01,574][metrics.process_data():374]
+Compared 2309 absolute pose pairs.
+[DEBUG][2019-11-27 00:56:01,574][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:56:01,582][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:56:01,582][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.375350
+      mean	0.167736
+    median	0.159272
+       min	0.015779
+      rmse	0.183608
+       sse	77.840868
+       std	0.074675
+
+[DEBUG][2019-11-27 00:56:02,122][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:02,122][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:56:03,489][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_02_medium/plot.pdf
+[DEBUG][2019-11-27 00:56:03,489][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:03,489][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_02_medium/results.zip...
+[DEBUG][2019-11-27 00:56:14,302][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:14,514][file_interface.read_tum_trajectory_file():112]
+Loaded 22970 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_03_difficult/gt.tum
+[DEBUG][2019-11-27 00:56:14,532][file_interface.read_tum_trajectory_file():112]
+Loaded 1916 stamps and poses from: /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_03_difficult/est.tum
+[DEBUG][2019-11-27 00:56:14,533][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-27 00:56:14,627][sync.associate_trajectories():106]
+Found 1890 of max. 22970 possible matching timestamps between...
+	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_03_difficult/gt.tum
+and:	/home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-27 00:56:14,628][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:14,629][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-27 00:56:14,639][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99709319  0.07588514 -0.00682695]
+ [-0.07558293  0.99645227  0.03701479]
+ [ 0.0096116  -0.03639119  0.9992914 ]]
+Translation of alignment:
+[-0.6957028   0.36670543  1.32801234]
+[DEBUG][2019-11-27 00:56:14,639][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-27 00:56:14,736][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:14,737][metrics.process_data():374]
+Compared 1890 absolute pose pairs.
+[DEBUG][2019-11-27 00:56:14,737][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-27 00:56:14,743][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-27 00:56:14,743][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.667193
+      mean	0.245810
+    median	0.221435
+       min	0.011628
+      rmse	0.286405
+       sse	155.032411
+       std	0.146987
+
+[DEBUG][2019-11-27 00:56:15,308][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:15,308][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-27 00:56:16,440][plot.export():218]
+Plots saved to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_03_difficult/plot.pdf
+[DEBUG][2019-11-27 00:56:16,440][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-27 00:56:16,440][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/improving_vio/results/Vanilla_dataset_multiruns/EUROC_OKVIS/run_3/V2_03_difficult/results.zip...
