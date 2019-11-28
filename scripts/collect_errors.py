@@ -39,7 +39,7 @@ if mode == "single_run":
         trans_errors = []
         rot_errors = []
         for d in seq_results_dirs:
-            if dataset == "tumvio" and any(s in d for s in tumvio_seqs):
+            if dataset == "tumvio" and not any(s in d for s in tumvio_seqs):
                 write(log_file, "Skipping directory \"%s\" tumvio room only" % d)
                 continue
             seq_stats = json.load(open(os.path.join(results_path, d, "stats.json"), "r"))

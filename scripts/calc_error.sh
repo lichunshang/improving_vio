@@ -153,7 +153,7 @@ do
         mv data.tum ${seq_results_dir}/gt.tum
     elif [[ ${dataset} == "tumvio" ]]; then
         python ${tumvio_mocap2tum_script} ${seq_dir}/mav0/mocap0/data.csv
-        mv ${seq_dir}/mocap0/data_tum.csv ${seq_results_dir}/gt.tum
+        mv ${seq_dir}/mav0/mocap0/data_tum.csv ${seq_results_dir}/gt.tum
     elif [[ ${dataset} == "uzh_fpv" ]]; then
         python ${uzh_fpv_gt2tum_script} ${seq_dir}/groundtruth.txt
         mv ${seq_dir}/groundtruth_tum.txt ${seq_results_dir}/gt.tum
