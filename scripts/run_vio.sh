@@ -22,32 +22,46 @@ tumvio_seqs[2]="corridor3"
 tumvio_seqs[3]="corridor4"
 tumvio_seqs[4]="corridor5"
 
-tumvio_seqs[5]="magistrale1"
-tumvio_seqs[6]="magistrale2"
-tumvio_seqs[7]="magistrale3"
-tumvio_seqs[8]="magistrale4"
-tumvio_seqs[9]="magistrale5"
-tumvio_seqs[10]="magistrale6"
+tumvio_seqs[5]="room1"
+tumvio_seqs[6]="room2"
+tumvio_seqs[7]="room3"
+tumvio_seqs[8]="room4"
+tumvio_seqs[9]="room5"
+tumvio_seqs[10]="room6"
 
-tumvio_seqs[11]="outdoors1"
-tumvio_seqs[12]="outdoors2"
-tumvio_seqs[13]="outdoors3"
-tumvio_seqs[14]="outdoors4"
-tumvio_seqs[15]="outdoors5"
-tumvio_seqs[16]="outdoors6"
-tumvio_seqs[17]="outdoors7"
-tumvio_seqs[18]="outdoors8"
-
-tumvio_seqs[19]="room1"
-tumvio_seqs[20]="room2"
-tumvio_seqs[21]="room3"
-tumvio_seqs[22]="room4"
-tumvio_seqs[23]="room5"
-tumvio_seqs[24]="room6"
-
-tumvio_seqs[25]="slides1"
-tumvio_seqs[26]="slides2"
-tumvio_seqs[27]="slides3"
+#declare -a tumvio_seqs
+#tumvio_seqs[0]="corridor1"
+#tumvio_seqs[1]="corridor2"
+#tumvio_seqs[2]="corridor3"
+#tumvio_seqs[3]="corridor4"
+#tumvio_seqs[4]="corridor5"
+#
+#tumvio_seqs[5]="magistrale1"
+#tumvio_seqs[6]="magistrale2"
+#tumvio_seqs[7]="magistrale3"
+#tumvio_seqs[8]="magistrale4"
+#tumvio_seqs[9]="magistrale5"
+#tumvio_seqs[10]="magistrale6"
+#
+#tumvio_seqs[11]="outdoors1"
+#tumvio_seqs[12]="outdoors2"
+#tumvio_seqs[13]="outdoors3"
+#tumvio_seqs[14]="outdoors4"
+#tumvio_seqs[15]="outdoors5"
+#tumvio_seqs[16]="outdoors6"
+#tumvio_seqs[17]="outdoors7"
+#tumvio_seqs[18]="outdoors8"
+#
+#tumvio_seqs[19]="room1"
+#tumvio_seqs[20]="room2"
+#tumvio_seqs[21]="room3"
+#tumvio_seqs[22]="room4"
+#tumvio_seqs[23]="room5"
+#tumvio_seqs[24]="room6"
+#
+#tumvio_seqs[25]="slides1"
+#tumvio_seqs[26]="slides2"
+#tumvio_seqs[27]="slides3"
 
 declare -a uzh_fpv_seqs_w_gt
 uzh_fpv_seqs_w_gt[0]="indoor_45_2"
@@ -102,13 +116,14 @@ function run_vins_mono_ros() {
     launch_file=$1
     dense_opt=$3
     config_opt=$4
+    rate=$5
     echo "*** Launch vins estimator"
     roslaunch vins_estimator ${launch_file} ${dense_opt} ${config_opt} &
     pid=$!
     echo "PID is ${pid}"
     sleep 2
     echo "*** playing bag"
-    rosbag play ${bag}
+    rosbag play ${bag} -r ${rate}
     echo "*** Killing everything"
     kill -INT ${pid}
     rosnode kill vins_estimator || true
@@ -209,8 +224,10 @@ if [[ ${estimator} == "vins_mono" ]]; then
         seq=${seqs_to_run[$i]}
         if [[ ${dataset} == "euroc" ]]; then
             launch_file="euroc.launch"
+            rate=0.333
         elif [[ ${dataset} == "tumvio" ]]; then
             launch_file="tum.launch"
+            rate=0.5
         elif [[ ${dataset} == "uzh_fpv" ]]; then
             launch_file="uzh_fpv.launch"
             if [[ ${seq} =~ "indoor_45" ]]; then
@@ -224,9 +241,10 @@ if [[ ${estimator} == "vins_mono" ]]; then
             else
                 exit 1
             fi
+            rate=1
         fi
 
-        run_vins_mono_ros ${launch_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${dense_opt} config_path:=${config_opt}
+        run_vins_mono_ros ${launch_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${dense_opt} config_path:=${config_opt} ${rate}
         mv ${dump_dir}/vins_result_no_loop.csv ${results_dir}/${seq}_vins_result_no_loop.csv
         python ${vinsmono2tum_script} ${results_dir}/${seq}_vins_result_no_loop.csv
         mv ${results_dir}/vinsmono_output.tum ${results_dir}/${seq}_okvis_estimator_output.tum

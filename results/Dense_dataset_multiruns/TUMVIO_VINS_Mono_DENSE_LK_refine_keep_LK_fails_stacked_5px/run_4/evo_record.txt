@@ -1,0 +1,448 @@
+[DEBUG][2019-12-02 14:42:16,887][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:16,944][file_interface.read_tum_trajectory_file():112]
+Loaded 6229 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor1/gt.tum
+[DEBUG][2019-12-02 14:42:16,967][file_interface.read_tum_trajectory_file():112]
+Loaded 2981 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor1/est.tum
+[DEBUG][2019-12-02 14:42:16,968][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:42:17,010][sync.associate_trajectories():106]
+Found 505 of max. 6229 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor1/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor1/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:42:17,011][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:17,011][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:42:17,014][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.94832602  0.30924852  0.07101492]
+ [-0.0081682   0.24753103 -0.96884553]
+ [-0.31719245  0.91820136  0.23726612]]
+Translation of alignment:
+[ 1.12219852 -1.06835927  1.59973072]
+[DEBUG][2019-12-02 14:42:17,014][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:42:17,038][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:17,038][metrics.process_data():374]
+Compared 505 absolute pose pairs.
+[DEBUG][2019-12-02 14:42:17,038][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:42:17,040][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:42:17,040][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	2.520004
+      mean	0.937548
+    median	0.910819
+       min	0.290368
+      rmse	0.964451
+       sse	469.733991
+       std	0.226209
+
+[DEBUG][2019-12-02 14:42:17,520][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:17,520][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:42:18,104][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor1/plot.pdf
+[DEBUG][2019-12-02 14:42:18,104][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:18,104][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor1/results.zip...
+[DEBUG][2019-12-02 14:42:24,412][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:24,472][file_interface.read_tum_trajectory_file():112]
+Loaded 7186 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor3/gt.tum
+[DEBUG][2019-12-02 14:42:24,490][file_interface.read_tum_trajectory_file():112]
+Loaded 2858 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor3/est.tum
+[DEBUG][2019-12-02 14:42:24,491][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:42:24,535][sync.associate_trajectories():106]
+Found 556 of max. 7186 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor3/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor3/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:42:24,536][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:24,536][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:42:24,539][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.97844312  0.20582036 -0.01694215]
+ [-0.19249736  0.93865921  0.28611826]
+ [ 0.07479187 -0.27668913  0.95804452]]
+Translation of alignment:
+[ 0.99034922 -2.47554468  1.21981935]
+[DEBUG][2019-12-02 14:42:24,539][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:42:24,564][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:24,564][metrics.process_data():374]
+Compared 556 absolute pose pairs.
+[DEBUG][2019-12-02 14:42:24,564][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:42:24,566][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:42:24,566][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	2.254315
+      mean	1.539429
+    median	1.323148
+       min	1.087876
+      rmse	1.584638
+       sse	1396.158667
+       std	0.375813
+
+[DEBUG][2019-12-02 14:42:25,067][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:25,067][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:42:25,742][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor3/plot.pdf
+[DEBUG][2019-12-02 14:42:25,742][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:25,742][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/corridor3/results.zip...
+[DEBUG][2019-12-02 14:42:32,584][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:32,688][file_interface.read_tum_trajectory_file():112]
+Loaded 16541 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room1/gt.tum
+[DEBUG][2019-12-02 14:42:32,699][file_interface.read_tum_trajectory_file():112]
+Loaded 1393 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room1/est.tum
+[DEBUG][2019-12-02 14:42:32,699][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:42:32,790][sync.associate_trajectories():106]
+Found 1366 of max. 16541 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room1/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room1/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:42:32,791][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:32,791][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:42:32,797][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99562011  0.09315517  0.00791949]
+ [-0.09309386  0.99562689 -0.00778704]
+ [-0.00861026  0.00701568  0.99993832]]
+Translation of alignment:
+[ 0.80907965 -0.26182024  1.28936262]
+[DEBUG][2019-12-02 14:42:32,797][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:42:32,859][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:32,859][metrics.process_data():374]
+Compared 1366 absolute pose pairs.
+[DEBUG][2019-12-02 14:42:32,859][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:42:32,863][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:42:32,863][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.100238
+      mean	0.049921
+    median	0.053234
+       min	0.005851
+      rmse	0.052445
+       sse	3.757170
+       std	0.016076
+
+[DEBUG][2019-12-02 14:42:33,298][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:33,298][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:42:34,303][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room1/plot.pdf
+[DEBUG][2019-12-02 14:42:34,304][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:34,304][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room1/results.zip...
+[DEBUG][2019-12-02 14:42:42,312][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:42,408][file_interface.read_tum_trajectory_file():112]
+Loaded 15477 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room2/gt.tum
+[DEBUG][2019-12-02 14:42:42,420][file_interface.read_tum_trajectory_file():112]
+Loaded 1427 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room2/est.tum
+[DEBUG][2019-12-02 14:42:42,420][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:42:42,466][sync.associate_trajectories():106]
+Found 1280 of max. 15477 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room2/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room2/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:42:42,467][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:42,467][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:42:42,473][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99920766  0.03978058 -0.00124912]
+ [-0.03978493  0.9992015  -0.00367668]
+ [ 0.00110187  0.00372346  0.99999246]]
+Translation of alignment:
+[ 0.70223093 -0.32623355  1.28686795]
+[DEBUG][2019-12-02 14:42:42,473][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:42:42,534][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:42,534][metrics.process_data():374]
+Compared 1280 absolute pose pairs.
+[DEBUG][2019-12-02 14:42:42,534][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:42:42,538][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:42:42,538][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.280054
+      mean	0.073919
+    median	0.060314
+       min	0.002239
+      rmse	0.088596
+       sse	10.047142
+       std	0.048840
+
+[DEBUG][2019-12-02 14:42:42,994][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:42,994][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:42:43,921][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room2/plot.pdf
+[DEBUG][2019-12-02 14:42:43,921][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:43,921][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room2/results.zip...
+[DEBUG][2019-12-02 14:42:51,847][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:51,944][file_interface.read_tum_trajectory_file():112]
+Loaded 15200 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room3/gt.tum
+[DEBUG][2019-12-02 14:42:51,955][file_interface.read_tum_trajectory_file():112]
+Loaded 1396 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room3/est.tum
+[DEBUG][2019-12-02 14:42:51,956][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:42:52,002][sync.associate_trajectories():106]
+Found 1267 of max. 15200 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room3/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room3/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:42:52,003][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:52,004][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:42:52,010][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 9.99825812e-01 -1.86522675e-02  6.61844039e-04]
+ [ 1.86571524e-02  9.99790980e-01 -8.36104712e-03]
+ [-5.05753213e-04  8.37193885e-03  9.99964827e-01]]
+Translation of alignment:
+[ 1.2535805  -0.41633969  1.26255007]
+[DEBUG][2019-12-02 14:42:52,010][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:42:52,108][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:52,109][metrics.process_data():374]
+Compared 1267 absolute pose pairs.
+[DEBUG][2019-12-02 14:42:52,109][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:42:52,115][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:42:52,115][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.181131
+      mean	0.078258
+    median	0.068868
+       min	0.018823
+      rmse	0.088495
+       sse	9.922282
+       std	0.041317
+
+[DEBUG][2019-12-02 14:42:52,614][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:52,615][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:42:53,544][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room3/plot.pdf
+[DEBUG][2019-12-02 14:42:53,544][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:42:53,544][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room3/results.zip...
+[DEBUG][2019-12-02 14:43:01,132][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:01,225][file_interface.read_tum_trajectory_file():112]
+Loaded 13075 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room4/gt.tum
+[DEBUG][2019-12-02 14:43:01,236][file_interface.read_tum_trajectory_file():112]
+Loaded 1080 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room4/est.tum
+[DEBUG][2019-12-02 14:43:01,236][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:43:01,270][sync.associate_trajectories():106]
+Found 1059 of max. 13075 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room4/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room4/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:43:01,270][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:01,271][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:43:01,275][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99976095  0.02175712 -0.00215893]
+ [-0.0217883   0.99964    -0.01565676]
+ [ 0.0018175   0.01570006  0.99987509]]
+Translation of alignment:
+[ 0.84936937 -0.32069285  1.31407387]
+[DEBUG][2019-12-02 14:43:01,275][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:43:01,330][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:01,330][metrics.process_data():374]
+Compared 1059 absolute pose pairs.
+[DEBUG][2019-12-02 14:43:01,330][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:43:01,333][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:43:01,334][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.088753
+      mean	0.038356
+    median	0.032986
+       min	0.001402
+      rmse	0.043638
+       sse	2.016648
+       std	0.020812
+
+[DEBUG][2019-12-02 14:43:01,805][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:01,805][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:43:02,703][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room4/plot.pdf
+[DEBUG][2019-12-02 14:43:02,703][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:02,703][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room4/results.zip...
+[DEBUG][2019-12-02 14:43:10,250][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:10,354][file_interface.read_tum_trajectory_file():112]
+Loaded 16999 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room5/gt.tum
+[DEBUG][2019-12-02 14:43:10,367][file_interface.read_tum_trajectory_file():112]
+Loaded 1390 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room5/est.tum
+[DEBUG][2019-12-02 14:43:10,368][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:43:10,420][sync.associate_trajectories():106]
+Found 1386 of max. 16999 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room5/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room5/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:43:10,421][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:10,421][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:43:10,428][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.9996179   0.02616886  0.0089025 ]
+ [-0.02493183  0.9926506  -0.11841958]
+ [-0.01193598  0.11815238  0.99292374]]
+Translation of alignment:
+[ 0.69511438 -0.36460343  1.53606887]
+[DEBUG][2019-12-02 14:43:10,428][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:43:10,495][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:10,495][metrics.process_data():374]
+Compared 1386 absolute pose pairs.
+[DEBUG][2019-12-02 14:43:10,495][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:43:10,500][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:43:10,500][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.334994
+      mean	0.175004
+    median	0.165317
+       min	0.010938
+      rmse	0.185702
+       sse	47.796292
+       std	0.062118
+
+[DEBUG][2019-12-02 14:43:11,025][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:11,025][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:43:11,892][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room5/plot.pdf
+[DEBUG][2019-12-02 14:43:11,893][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:11,893][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room5/results.zip...
+[DEBUG][2019-12-02 14:43:19,590][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:19,686][file_interface.read_tum_trajectory_file():112]
+Loaded 15244 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room6/gt.tum
+[DEBUG][2019-12-02 14:43:19,698][file_interface.read_tum_trajectory_file():112]
+Loaded 1299 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room6/est.tum
+[DEBUG][2019-12-02 14:43:19,698][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-02 14:43:19,740][sync.associate_trajectories():106]
+Found 1263 of max. 15244 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room6/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room6/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-02 14:43:19,741][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:19,741][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-02 14:43:19,748][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99983815  0.01789093  0.00189618]
+ [-0.01788893  0.99983941 -0.00106684]
+ [-0.00191496  0.00103275  0.99999763]]
+Translation of alignment:
+[ 0.52681833 -0.3269272   1.31637133]
+[DEBUG][2019-12-02 14:43:19,748][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-02 14:43:19,812][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:19,812][metrics.process_data():374]
+Compared 1263 absolute pose pairs.
+[DEBUG][2019-12-02 14:43:19,812][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-02 14:43:19,818][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-02 14:43:19,818][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.105113
+      mean	0.054206
+    median	0.055306
+       min	0.008987
+      rmse	0.058445
+       sse	4.314224
+       std	0.021853
+
+[DEBUG][2019-12-02 14:43:20,337][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:20,337][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-02 14:43:21,238][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room6/plot.pdf
+[DEBUG][2019-12-02 14:43:21,238][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-02 14:43:21,239][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px/run_4/room6/results.zip...

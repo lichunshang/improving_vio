@@ -85,9 +85,8 @@ euroc_dataset_dir="/home/cs4li/Dev/EUROC"
 tumvio_dataset_dir="/home/cs4li/Dev/TUMVIO"
 uzh_fpv_dataset_dir="/home/cs4li/Dev/UZH_FPV"
 
-if [[ ${seqs} == "all" ]]; then
-    rm -rf ${stats_dump_file}*
-fi
+rm -rf ${stats_dump_file}*
+
 
 function fullseqname() {
     seq=$2
@@ -180,14 +179,10 @@ do
     echo "***save some stats"
     python ${this_script_dir}/evo_traj_full_eval.py ${seq_results_dir}/gt.tum ${seq_results_dir}/est.tum ${seq_results_dir} ${results_dir}/my_record.txt
 
-    if [[ ${seqs} == "all" ]]; then
-        trans_rmse=$(jq ".ape_trans" ${seq_results_dir}/stats.json)
-        rot_rmse=$(jq ".ape_rot_deg" ${seq_results_dir}/stats.json)
-        echo -n "${trans_rmse} ${rot_rmse} " >> ${stats_dump_file}
-    fi
+    trans_rmse=$(jq ".ape_trans" ${seq_results_dir}/stats.json)
+    rot_rmse=$(jq ".ape_rot_deg" ${seq_results_dir}/stats.json)
+    echo -n "${trans_rmse} ${rot_rmse} " >> ${stats_dump_file}
 done
 
 # collect the rpe stats over the entire run
-if [[ ${seqs} == "all" ]]; then
-    python ${this_script_dir}/collect_errors.py ${dataset} "single_run" ${results_dir} ${results_dir}/my_record.txt
-fi
+python ${this_script_dir}/collect_errors.py ${dataset} "single_run" ${results_dir} ${results_dir}/my_record.txt

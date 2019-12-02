@@ -1,0 +1,896 @@
+[DEBUG][2019-11-28 19:32:47,605][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:32:47,777][file_interface.read_tum_trajectory_file():112]
+Loaded 20932 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/gt.tum
+[DEBUG][2019-11-28 19:32:47,787][file_interface.read_tum_trajectory_file():112]
+Loaded 1001 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/est.tum
+[DEBUG][2019-11-28 19:32:47,787][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-28 19:32:47,829][sync.associate_trajectories():106]
+Found 992 of max. 20932 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-28 19:32:47,830][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:32:47,830][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-28 19:32:47,834][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99958639  0.027582   -0.00814133]
+ [-0.02767486  0.99955057 -0.01152246]
+ [ 0.00781986  0.011743    0.99990047]]
+Translation of alignment:
+[0.90303539 2.11309974 1.16311837]
+[DEBUG][2019-11-28 19:32:47,834][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-28 19:32:47,887][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:32:47,887][metrics.process_data():374]
+Compared 992 absolute pose pairs.
+[DEBUG][2019-11-28 19:32:47,887][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-28 19:32:47,890][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-28 19:32:47,890][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.245745
+      mean	0.123974
+    median	0.118669
+       min	0.030229
+      rmse	0.134867
+       sse	18.043594
+       std	0.053101
+
+[DEBUG][2019-11-28 19:32:48,380][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:32:48,381][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-28 19:32:49,168][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/plot.pdf
+[DEBUG][2019-11-28 19:32:49,168][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:32:49,169][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/results.zip...
+[DEBUG][2019-11-28 19:54:09,087][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:54:09,399][file_interface.read_tum_trajectory_file():112]
+Loaded 36382 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/gt.tum
+[DEBUG][2019-11-28 19:54:09,419][file_interface.read_tum_trajectory_file():112]
+Loaded 1827 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/est.tum
+[DEBUG][2019-11-28 19:54:09,419][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-28 19:54:09,542][sync.associate_trajectories():106]
+Found 1816 of max. 36382 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-28 19:54:09,543][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:54:09,543][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-28 19:54:09,552][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.88752167 -0.46067217  0.00929713]
+ [ 0.46068156 -0.88756464 -0.00123294]
+ [ 0.00881978  0.00318876  0.99995602]]
+Translation of alignment:
+[ 4.60492699 -1.60835359  0.74552227]
+[DEBUG][2019-11-28 19:54:09,552][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-28 19:54:09,640][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:54:09,640][metrics.process_data():374]
+Compared 1816 absolute pose pairs.
+[DEBUG][2019-11-28 19:54:09,641][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-28 19:54:09,647][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-28 19:54:09,647][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.344926
+      mean	0.153247
+    median	0.141848
+       min	0.023702
+      rmse	0.166092
+       sse	50.097041
+       std	0.064046
+
+[DEBUG][2019-11-28 19:54:10,115][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:54:10,115][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-28 19:54:11,118][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/plot.pdf
+[DEBUG][2019-11-28 19:54:11,118][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 19:54:11,118][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/results.zip...
+[DEBUG][2019-11-28 20:15:46,536][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:15:46,831][file_interface.read_tum_trajectory_file():112]
+Loaded 36382 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/gt.tum
+[DEBUG][2019-11-28 20:15:46,850][file_interface.read_tum_trajectory_file():112]
+Loaded 1827 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/est.tum
+[DEBUG][2019-11-28 20:15:46,851][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-28 20:15:46,982][sync.associate_trajectories():106]
+Found 1816 of max. 36382 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-28 20:15:46,983][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:15:46,983][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-28 20:15:46,990][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.88209801 -0.4706626   0.01948875]
+ [ 0.47086878 -0.88217074  0.0075754 ]
+ [ 0.01362695  0.01585889  0.99978138]]
+Translation of alignment:
+[ 4.56993087 -1.63384267  0.75708077]
+[DEBUG][2019-11-28 20:15:46,990][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-28 20:15:47,075][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:15:47,075][metrics.process_data():374]
+Compared 1816 absolute pose pairs.
+[DEBUG][2019-11-28 20:15:47,076][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-28 20:15:47,081][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-28 20:15:47,081][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.330965
+      mean	0.148031
+    median	0.137502
+       min	0.034397
+      rmse	0.157965
+       sse	45.314517
+       std	0.055134
+
+[DEBUG][2019-11-28 20:15:47,552][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:15:47,552][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-28 20:15:48,564][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/plot.pdf
+[DEBUG][2019-11-28 20:15:48,564][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:15:48,565][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/results.zip...
+[DEBUG][2019-11-28 20:45:35,395][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:35,674][file_interface.read_tum_trajectory_file():112]
+Loaded 36382 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/MH_01_easy/gt.tum
+[DEBUG][2019-11-28 20:45:35,693][file_interface.read_tum_trajectory_file():112]
+Loaded 1827 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/MH_01_easy/est.tum
+[DEBUG][2019-11-28 20:45:35,693][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-28 20:45:35,809][sync.associate_trajectories():106]
+Found 1816 of max. 36382 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/MH_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/MH_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-28 20:45:35,810][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:35,810][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-28 20:45:35,818][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.88209801 -0.4706626   0.01948875]
+ [ 0.47086878 -0.88217074  0.0075754 ]
+ [ 0.01362695  0.01585889  0.99978138]]
+Translation of alignment:
+[ 4.56993087 -1.63384267  0.75708077]
+[DEBUG][2019-11-28 20:45:35,818][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-28 20:45:35,904][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:35,904][metrics.process_data():374]
+Compared 1816 absolute pose pairs.
+[DEBUG][2019-11-28 20:45:35,904][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-28 20:45:35,909][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-28 20:45:35,909][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.330965
+      mean	0.148031
+    median	0.137502
+       min	0.034397
+      rmse	0.157965
+       sse	45.314517
+       std	0.055134
+
+[DEBUG][2019-11-28 20:45:36,329][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:36,329][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-28 20:45:37,287][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/MH_01_easy/plot.pdf
+[DEBUG][2019-11-28 20:45:37,287][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:37,288][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/MH_01_easy/results.zip...
+[DEBUG][2019-11-28 20:45:45,420][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:45,582][file_interface.read_tum_trajectory_file():112]
+Loaded 20932 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/V1_03_difficult/gt.tum
+[DEBUG][2019-11-28 20:45:45,592][file_interface.read_tum_trajectory_file():112]
+Loaded 1001 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/V1_03_difficult/est.tum
+[DEBUG][2019-11-28 20:45:45,592][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-28 20:45:45,633][sync.associate_trajectories():106]
+Found 992 of max. 20932 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/V1_03_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/V1_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-28 20:45:45,634][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:45,634][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-28 20:45:45,638][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99958639  0.027582   -0.00814133]
+ [-0.02767486  0.99955057 -0.01152246]
+ [ 0.00781986  0.011743    0.99990047]]
+Translation of alignment:
+[0.90303539 2.11309974 1.16311837]
+[DEBUG][2019-11-28 20:45:45,638][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-28 20:45:45,683][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:45,683][metrics.process_data():374]
+Compared 992 absolute pose pairs.
+[DEBUG][2019-11-28 20:45:45,683][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-28 20:45:45,686][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-28 20:45:45,686][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.245745
+      mean	0.123974
+    median	0.118669
+       min	0.030229
+      rmse	0.134867
+       sse	18.043594
+       std	0.053101
+
+[DEBUG][2019-11-28 20:45:46,113][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:46,113][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-28 20:45:46,847][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/V1_03_difficult/plot.pdf
+[DEBUG][2019-11-28 20:45:46,848][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-28 20:45:46,848][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails//run_1/V1_03_difficult/results.zip...
+[DEBUG][2019-11-29 15:05:30,267][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:30,532][file_interface.read_tum_trajectory_file():112]
+Loaded 36382 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/gt.tum
+[DEBUG][2019-11-29 15:05:30,549][file_interface.read_tum_trajectory_file():112]
+Loaded 1827 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/est.tum
+[DEBUG][2019-11-29 15:05:30,549][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:05:30,659][sync.associate_trajectories():106]
+Found 1816 of max. 36382 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:05:30,660][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:30,660][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:05:30,667][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.88235304 -0.47045336  0.01125837]
+ [ 0.47045091 -0.88242096 -0.00303023]
+ [ 0.0113602   0.00262278  0.99993203]]
+Translation of alignment:
+[ 4.55253295 -1.57663749  0.75108197]
+[DEBUG][2019-11-29 15:05:30,667][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:05:30,742][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:30,743][metrics.process_data():374]
+Compared 1816 absolute pose pairs.
+[DEBUG][2019-11-29 15:05:30,743][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:05:30,750][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:05:30,750][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.390211
+      mean	0.177847
+    median	0.155088
+       min	0.049506
+      rmse	0.193268
+       sse	67.831931
+       std	0.075651
+
+[DEBUG][2019-11-29 15:05:31,158][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:31,158][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:05:32,101][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/plot.pdf
+[DEBUG][2019-11-29 15:05:32,101][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:32,101][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_01_easy/results.zip...
+[DEBUG][2019-11-29 15:05:41,578][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:41,912][file_interface.read_tum_trajectory_file():112]
+Loaded 29993 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_02_easy/gt.tum
+[DEBUG][2019-11-29 15:05:41,927][file_interface.read_tum_trajectory_file():112]
+Loaded 1423 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_02_easy/est.tum
+[DEBUG][2019-11-29 15:05:41,927][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:05:42,007][sync.associate_trajectories():106]
+Found 1423 of max. 29993 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_02_easy/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_02_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:05:42,008][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:42,008][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:05:42,014][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.92105466 -0.38824328  0.03042144]
+ [ 0.38897425 -0.92094955  0.02347258]
+ [ 0.01890354  0.03345269  0.99926151]]
+Translation of alignment:
+[ 4.57297977 -1.92419339  0.60888095]
+[DEBUG][2019-11-29 15:05:42,014][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:05:42,084][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:42,084][metrics.process_data():374]
+Compared 1423 absolute pose pairs.
+[DEBUG][2019-11-29 15:05:42,084][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:05:42,089][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:05:42,089][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.403114
+      mean	0.092509
+    median	0.067144
+       min	0.027468
+      rmse	0.119364
+       sse	20.274525
+       std	0.075431
+
+[DEBUG][2019-11-29 15:05:42,618][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:42,618][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:05:43,552][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_02_easy/plot.pdf
+[DEBUG][2019-11-29 15:05:43,552][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:43,553][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_02_easy/results.zip...
+[DEBUG][2019-11-29 15:05:53,011][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:53,229][file_interface.read_tum_trajectory_file():112]
+Loaded 26302 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_03_medium/gt.tum
+[DEBUG][2019-11-29 15:05:53,243][file_interface.read_tum_trajectory_file():112]
+Loaded 1319 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_03_medium/est.tum
+[DEBUG][2019-11-29 15:05:53,243][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:05:53,309][sync.associate_trajectories():106]
+Found 1308 of max. 26302 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_03_medium/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_03_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:05:53,310][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:53,310][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:05:53,316][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.83504289 -0.55015276  0.00594261]
+ [ 0.55014883 -0.8350631  -0.00242434]
+ [ 0.00629621  0.00124489  0.9999794 ]]
+Translation of alignment:
+[ 4.620683   -2.01106242  0.59394935]
+[DEBUG][2019-11-29 15:05:53,316][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:05:53,417][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:53,417][metrics.process_data():374]
+Compared 1308 absolute pose pairs.
+[DEBUG][2019-11-29 15:05:53,417][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:05:53,421][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:05:53,421][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.570447
+      mean	0.231091
+    median	0.226351
+       min	0.043362
+      rmse	0.260125
+       sse	88.506101
+       std	0.119425
+
+[DEBUG][2019-11-29 15:05:53,866][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:53,866][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:05:54,805][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_03_medium/plot.pdf
+[DEBUG][2019-11-29 15:05:54,805][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:05:54,805][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_03_medium/results.zip...
+[DEBUG][2019-11-29 15:06:03,434][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:03,596][file_interface.read_tum_trajectory_file():112]
+Loaded 19753 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_04_difficult/gt.tum
+[DEBUG][2019-11-29 15:06:03,608][file_interface.read_tum_trajectory_file():112]
+Loaded 987 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_04_difficult/est.tum
+[DEBUG][2019-11-29 15:06:03,608][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:06:03,649][sync.associate_trajectories():106]
+Found 976 of max. 19753 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_04_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_04_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:06:03,650][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:03,651][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:06:03,656][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 6.79505906e-01 -7.33665822e-01  2.48702249e-03]
+ [ 7.33669924e-01  6.79500010e-01 -2.85985519e-03]
+ [ 4.08246204e-04  3.76794209e-03  9.99992818e-01]]
+Translation of alignment:
+[ 4.67291473 -2.04292536  0.53815731]
+[DEBUG][2019-11-29 15:06:03,656][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:06:03,721][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:03,721][metrics.process_data():374]
+Compared 976 absolute pose pairs.
+[DEBUG][2019-11-29 15:06:03,721][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:06:03,727][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:06:03,727][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.379626
+      mean	0.244043
+    median	0.282112
+       min	0.079988
+      rmse	0.255695
+       sse	63.810925
+       std	0.076309
+
+[DEBUG][2019-11-29 15:06:04,265][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:04,265][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:06:05,097][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_04_difficult/plot.pdf
+[DEBUG][2019-11-29 15:06:05,097][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:05,097][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_04_difficult/results.zip...
+[DEBUG][2019-11-29 15:06:13,200][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:13,387][file_interface.read_tum_trajectory_file():112]
+Loaded 22212 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_05_difficult/gt.tum
+[DEBUG][2019-11-29 15:06:13,397][file_interface.read_tum_trajectory_file():112]
+Loaded 1018 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_05_difficult/est.tum
+[DEBUG][2019-11-29 15:06:13,398][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:06:13,439][sync.associate_trajectories():106]
+Found 1018 of max. 22212 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_05_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_05_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:06:13,439][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:13,440][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:06:13,444][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.66327325 -0.74837425  0.00213991]
+ [ 0.748376    0.66326402 -0.00376832]
+ [ 0.00140079  0.00410089  0.99999061]]
+Translation of alignment:
+[ 4.19531654 -1.78861694  0.55454705]
+[DEBUG][2019-11-29 15:06:13,444][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:06:13,493][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:13,493][metrics.process_data():374]
+Compared 1018 absolute pose pairs.
+[DEBUG][2019-11-29 15:06:13,493][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:06:13,497][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:06:13,497][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.546924
+      mean	0.343860
+    median	0.334887
+       min	0.218548
+      rmse	0.349329
+       sse	124.227541
+       std	0.061574
+
+[DEBUG][2019-11-29 15:06:13,965][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:13,966][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:06:14,726][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_05_difficult/plot.pdf
+[DEBUG][2019-11-29 15:06:14,726][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:14,726][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/MH_05_difficult/results.zip...
+[DEBUG][2019-11-29 15:06:23,461][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:23,695][file_interface.read_tum_trajectory_file():112]
+Loaded 28712 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_01_easy/gt.tum
+[DEBUG][2019-11-29 15:06:23,709][file_interface.read_tum_trajectory_file():112]
+Loaded 1400 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_01_easy/est.tum
+[DEBUG][2019-11-29 15:06:23,709][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:06:23,781][sync.associate_trajectories():106]
+Found 1390 of max. 28712 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:06:23,782][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:23,782][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:06:23,788][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.96283403 -0.27005955  0.00429794]
+ [ 0.27007155  0.962837   -0.00250346]
+ [-0.00346213  0.00357117  0.99998763]]
+Translation of alignment:
+[0.9005542  2.11995576 0.95958749]
+[DEBUG][2019-11-29 15:06:23,788][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:06:23,849][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:23,850][metrics.process_data():374]
+Compared 1390 absolute pose pairs.
+[DEBUG][2019-11-29 15:06:23,850][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:06:23,854][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:06:23,854][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.195216
+      mean	0.067711
+    median	0.057776
+       min	0.003345
+      rmse	0.079657
+       sse	8.819979
+       std	0.041959
+
+[DEBUG][2019-11-29 15:06:24,354][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:24,354][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:06:25,233][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_01_easy/plot.pdf
+[DEBUG][2019-11-29 15:06:25,233][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:25,233][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_01_easy/results.zip...
+[DEBUG][2019-11-29 15:06:33,018][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:33,183][file_interface.read_tum_trajectory_file():112]
+Loaded 16702 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_02_medium/gt.tum
+[DEBUG][2019-11-29 15:06:33,191][file_interface.read_tum_trajectory_file():112]
+Loaded 800 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_02_medium/est.tum
+[DEBUG][2019-11-29 15:06:33,191][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:06:33,216][sync.associate_trajectories():106]
+Found 790 of max. 16702 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_02_medium/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_02_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:06:33,217][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:33,217][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:06:33,221][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 8.96097786e-01  4.43856507e-01  3.98268150e-04]
+ [-4.43854869e-01  8.96096325e-01 -2.05689023e-03]
+ [-1.26985074e-03  1.66640153e-03  9.99997805e-01]]
+Translation of alignment:
+[0.56476062 2.00510429 1.0501633 ]
+[DEBUG][2019-11-29 15:06:33,221][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:06:33,255][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:33,255][metrics.process_data():374]
+Compared 790 absolute pose pairs.
+[DEBUG][2019-11-29 15:06:33,255][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:06:33,258][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:06:33,258][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.127657
+      mean	0.086382
+    median	0.085840
+       min	0.021856
+      rmse	0.088791
+       sse	6.228260
+       std	0.020542
+
+[DEBUG][2019-11-29 15:06:33,719][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:33,719][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:06:34,369][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_02_medium/plot.pdf
+[DEBUG][2019-11-29 15:06:34,369][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:34,369][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_02_medium/results.zip...
+[DEBUG][2019-11-29 15:06:42,514][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:42,712][file_interface.read_tum_trajectory_file():112]
+Loaded 20932 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/gt.tum
+[DEBUG][2019-11-29 15:06:42,722][file_interface.read_tum_trajectory_file():112]
+Loaded 944 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/est.tum
+[DEBUG][2019-11-29 15:06:42,723][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:06:42,762][sync.associate_trajectories():106]
+Found 944 of max. 20932 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:06:42,763][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:42,763][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:06:42,768][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99973412  0.02122046 -0.00902081]
+ [-0.02130162  0.9997326  -0.00899819]
+ [ 0.00882745  0.00918795  0.99991883]]
+Translation of alignment:
+[0.94621204 2.18979171 1.11337126]
+[DEBUG][2019-11-29 15:06:42,768][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:06:42,813][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:42,813][metrics.process_data():374]
+Compared 944 absolute pose pairs.
+[DEBUG][2019-11-29 15:06:42,813][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:06:42,817][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:06:42,817][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.302228
+      mean	0.125867
+    median	0.114348
+       min	0.013180
+      rmse	0.142126
+       sse	19.068693
+       std	0.066010
+
+[DEBUG][2019-11-29 15:06:43,347][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:43,347][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:06:44,228][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/plot.pdf
+[DEBUG][2019-11-29 15:06:44,228][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:44,229][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V1_03_difficult/results.zip...
+[DEBUG][2019-11-29 15:06:52,656][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:52,855][file_interface.read_tum_trajectory_file():112]
+Loaded 22401 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_01_easy/gt.tum
+[DEBUG][2019-11-29 15:06:52,867][file_interface.read_tum_trajectory_file():112]
+Loaded 1083 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_01_easy/est.tum
+[DEBUG][2019-11-29 15:06:52,868][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:06:52,914][sync.associate_trajectories():106]
+Found 1075 of max. 22401 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:06:52,915][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:52,915][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:06:52,920][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99428144 -0.10659385  0.00649416]
+ [ 0.10664805 -0.99425908  0.00866439]
+ [ 0.00553331  0.00930743  0.99994138]]
+Translation of alignment:
+[-1.13829764  0.3607426   1.37180451]
+[DEBUG][2019-11-29 15:06:52,920][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:06:52,971][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:52,971][metrics.process_data():374]
+Compared 1075 absolute pose pairs.
+[DEBUG][2019-11-29 15:06:52,971][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:06:52,975][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:06:52,975][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.261473
+      mean	0.084864
+    median	0.072195
+       min	0.014134
+      rmse	0.102461
+       sse	11.285680
+       std	0.057415
+
+[DEBUG][2019-11-29 15:06:53,486][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:53,486][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:06:54,280][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_01_easy/plot.pdf
+[DEBUG][2019-11-29 15:06:54,280][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:06:54,280][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_01_easy/results.zip...
+[DEBUG][2019-11-29 15:07:02,178][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:02,344][file_interface.read_tum_trajectory_file():112]
+Loaded 23091 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_02_medium/gt.tum
+[DEBUG][2019-11-29 15:07:02,356][file_interface.read_tum_trajectory_file():112]
+Loaded 1128 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_02_medium/est.tum
+[DEBUG][2019-11-29 15:07:02,356][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:07:02,406][sync.associate_trajectories():106]
+Found 1121 of max. 23091 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_02_medium/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_02_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:07:02,407][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:02,407][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:07:02,412][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-9.99883371e-01 -3.61099882e-04  1.52680754e-02]
+ [ 4.97692275e-04 -9.99959883e-01  8.94342150e-03]
+ [ 1.52642334e-02  8.94997724e-03  9.99843438e-01]]
+Translation of alignment:
+[-0.84760581  0.35944419  1.23293937]
+[DEBUG][2019-11-29 15:07:02,412][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:07:02,485][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:02,485][metrics.process_data():374]
+Compared 1121 absolute pose pairs.
+[DEBUG][2019-11-29 15:07:02,485][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:07:02,492][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:07:02,492][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.314470
+      mean	0.110256
+    median	0.090788
+       min	0.011043
+      rmse	0.124200
+       sse	17.292175
+       std	0.057179
+
+[DEBUG][2019-11-29 15:07:02,973][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:02,973][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:07:03,777][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_02_medium/plot.pdf
+[DEBUG][2019-11-29 15:07:03,777][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:03,777][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_02_medium/results.zip...
+[DEBUG][2019-11-29 15:07:11,959][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:12,138][file_interface.read_tum_trajectory_file():112]
+Loaded 22970 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_03_difficult/gt.tum
+[DEBUG][2019-11-29 15:07:12,149][file_interface.read_tum_trajectory_file():112]
+Loaded 890 stamps and poses from: /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_03_difficult/est.tum
+[DEBUG][2019-11-29 15:07:12,149][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:07:12,187][sync.associate_trajectories():106]
+Found 886 of max. 22970 possible matching timestamps between...
+	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_03_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:07:12,188][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:12,188][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:07:12,192][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99750527 -0.06966673 -0.01139259]
+ [ 0.06945692 -0.99742474  0.01787776]
+ [-0.01260874  0.01704187  0.99977527]]
+Translation of alignment:
+[-0.60414651  0.09157549  1.39159326]
+[DEBUG][2019-11-29 15:07:12,192][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:07:12,231][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:12,231][metrics.process_data():374]
+Compared 886 absolute pose pairs.
+[DEBUG][2019-11-29 15:07:12,232][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:07:12,234][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:07:12,234][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.689991
+      mean	0.303244
+    median	0.286735
+       min	0.050235
+      rmse	0.333950
+       sse	98.809021
+       std	0.139878
+
+[DEBUG][2019-11-29 15:07:12,722][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:12,722][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:07:13,493][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_03_difficult/plot.pdf
+[DEBUG][2019-11-29 15:07:13,494][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:07:13,494][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/EUROC_VINS_DENSE_LK_refine_keep_LK_fails/run_1/V2_03_difficult/results.zip...

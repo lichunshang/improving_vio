@@ -1,0 +1,616 @@
+[DEBUG][2019-11-29 15:17:50,337][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:50,389][file_interface.read_tum_trajectory_file():112]
+Loaded 6229 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor1/gt.tum
+[DEBUG][2019-11-29 15:17:50,405][file_interface.read_tum_trajectory_file():112]
+Loaded 2981 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor1/est.tum
+[DEBUG][2019-11-29 15:17:50,406][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:17:50,446][sync.associate_trajectories():106]
+Found 505 of max. 6229 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor1/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor1/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:17:50,447][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:50,447][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:17:50,449][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.93982732  0.3075456   0.14879622]
+ [ 0.13957597  0.05189446 -0.9888506 ]
+ [-0.31183835  0.95011719  0.00584585]]
+Translation of alignment:
+[ 1.00703006 -1.10816229  1.6503444 ]
+[DEBUG][2019-11-29 15:17:50,449][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:17:50,472][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:50,472][metrics.process_data():374]
+Compared 505 absolute pose pairs.
+[DEBUG][2019-11-29 15:17:50,472][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:17:50,474][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:17:50,474][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	2.627226
+      mean	0.928443
+    median	0.914892
+       min	0.217466
+      rmse	0.966069
+       sse	471.311390
+       std	0.266990
+
+[DEBUG][2019-11-29 15:17:50,959][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:50,959][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:17:51,577][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor1/plot.pdf
+[DEBUG][2019-11-29 15:17:51,577][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:51,577][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor1/results.zip...
+[DEBUG][2019-11-29 15:17:57,659][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:57,720][file_interface.read_tum_trajectory_file():112]
+Loaded 8519 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor2/gt.tum
+[DEBUG][2019-11-29 15:17:57,742][file_interface.read_tum_trajectory_file():112]
+Loaded 3363 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor2/est.tum
+[DEBUG][2019-11-29 15:17:57,742][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:17:57,799][sync.associate_trajectories():106]
+Found 687 of max. 8519 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor2/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor2/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:17:57,800][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:57,800][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:17:57,803][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.98386383  0.17393767 -0.04192428]
+ [-0.14916308  0.92680155  0.34465819]
+ [ 0.09880453 -0.33284317  0.9377916 ]]
+Translation of alignment:
+[ 0.92798171 -1.57633693  1.41941807]
+[DEBUG][2019-11-29 15:17:57,803][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:17:57,835][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:57,835][metrics.process_data():374]
+Compared 687 absolute pose pairs.
+[DEBUG][2019-11-29 15:17:57,848][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:17:57,854][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:17:57,854][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	1.315172
+      mean	0.971749
+    median	0.991533
+       min	0.691333
+      rmse	0.983056
+       sse	663.915779
+       std	0.148666
+
+[DEBUG][2019-11-29 15:17:58,335][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:58,336][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:17:59,012][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor2/plot.pdf
+[DEBUG][2019-11-29 15:17:59,013][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:17:59,013][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor2/results.zip...
+[DEBUG][2019-11-29 15:18:05,234][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:05,287][file_interface.read_tum_trajectory_file():112]
+Loaded 7186 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor3/gt.tum
+[DEBUG][2019-11-29 15:18:05,303][file_interface.read_tum_trajectory_file():112]
+Loaded 2858 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor3/est.tum
+[DEBUG][2019-11-29 15:18:05,303][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:18:05,344][sync.associate_trajectories():106]
+Found 556 of max. 7186 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor3/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor3/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:18:05,345][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:05,345][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:18:05,348][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.98292006  0.18315708 -0.01793423]
+ [-0.17276712  0.95192965  0.25294558]
+ [ 0.0634009  -0.24552684  0.96731427]]
+Translation of alignment:
+[ 0.95937301 -2.63714015  1.22363141]
+[DEBUG][2019-11-29 15:18:05,348][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:18:05,371][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:05,371][metrics.process_data():374]
+Compared 556 absolute pose pairs.
+[DEBUG][2019-11-29 15:18:05,371][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:18:05,373][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:18:05,373][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	2.395496
+      mean	1.667775
+    median	1.420459
+       min	1.215114
+      rmse	1.715486
+       sse	1636.248090
+       std	0.401769
+
+[DEBUG][2019-11-29 15:18:05,863][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:05,863][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:18:06,456][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor3/plot.pdf
+[DEBUG][2019-11-29 15:18:06,456][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:06,456][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor3/results.zip...
+[DEBUG][2019-11-29 15:18:12,257][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:12,305][file_interface.read_tum_trajectory_file():112]
+Loaded 6316 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor4/gt.tum
+[DEBUG][2019-11-29 15:18:12,311][file_interface.read_tum_trajectory_file():112]
+Loaded 949 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor4/est.tum
+[DEBUG][2019-11-29 15:18:12,311][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:18:12,325][sync.associate_trajectories():106]
+Found 527 of max. 6316 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor4/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor4/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:18:12,326][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:12,326][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:18:12,328][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99433449 -0.10169795 -0.03092642]
+ [ 0.10615306  0.96513903  0.23924501]
+ [ 0.00551757 -0.2411725   0.97046658]]
+Translation of alignment:
+[ 0.32625511 -0.31424827  1.16019364]
+[DEBUG][2019-11-29 15:18:12,328][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:18:12,351][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:12,351][metrics.process_data():374]
+Compared 527 absolute pose pairs.
+[DEBUG][2019-11-29 15:18:12,351][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:18:12,353][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:18:12,353][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.519943
+      mean	0.223773
+    median	0.218728
+       min	0.086256
+      rmse	0.230514
+       sse	28.002961
+       std	0.055336
+
+[DEBUG][2019-11-29 15:18:12,813][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:12,813][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:18:13,377][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor4/plot.pdf
+[DEBUG][2019-11-29 15:18:13,377][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:13,377][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor4/results.zip...
+[DEBUG][2019-11-29 15:18:19,218][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:19,257][file_interface.read_tum_trajectory_file():112]
+Loaded 4764 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor5/gt.tum
+[DEBUG][2019-11-29 15:18:19,275][file_interface.read_tum_trajectory_file():112]
+Loaded 2943 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor5/est.tum
+[DEBUG][2019-11-29 15:18:19,275][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:18:19,310][sync.associate_trajectories():106]
+Found 397 of max. 4764 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor5/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor5/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:18:19,311][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:19,311][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:18:19,313][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.97606332 -0.17762403 -0.1254994 ]
+ [ 0.18096768  0.98336417  0.01567186]
+ [ 0.12062791 -0.03800806  0.99196991]]
+Translation of alignment:
+[ 0.50905673 -0.54437727  1.21603066]
+[DEBUG][2019-11-29 15:18:19,313][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:18:19,332][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:19,332][metrics.process_data():374]
+Compared 397 absolute pose pairs.
+[DEBUG][2019-11-29 15:18:19,332][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:18:19,334][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:18:19,334][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	2.630712
+      mean	0.542685
+    median	0.320709
+       min	0.109628
+      rmse	0.846498
+       sse	284.474040
+       std	0.649656
+
+[DEBUG][2019-11-29 15:18:19,757][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:19,757][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:18:20,340][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor5/plot.pdf
+[DEBUG][2019-11-29 15:18:20,340][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:20,340][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/corridor5/results.zip...
+[DEBUG][2019-11-29 15:18:26,757][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:26,855][file_interface.read_tum_trajectory_file():112]
+Loaded 16541 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room1/gt.tum
+[DEBUG][2019-11-29 15:18:26,866][file_interface.read_tum_trajectory_file():112]
+Loaded 1393 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room1/est.tum
+[DEBUG][2019-11-29 15:18:26,867][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:18:26,913][sync.associate_trajectories():106]
+Found 1366 of max. 16541 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room1/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room1/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:18:26,914][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:26,914][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:18:26,920][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99335239  0.11495644  0.00600455]
+ [-0.11491795  0.99335434 -0.00640447]
+ [-0.00670088  0.00567187  0.99996146]]
+Translation of alignment:
+[ 0.89012732 -0.2466607   1.29385201]
+[DEBUG][2019-11-29 15:18:26,920][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:18:26,982][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:26,982][metrics.process_data():374]
+Compared 1366 absolute pose pairs.
+[DEBUG][2019-11-29 15:18:26,982][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:18:26,986][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:18:26,986][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.101208
+      mean	0.054864
+    median	0.054622
+       min	0.005190
+      rmse	0.058811
+       sse	4.724668
+       std	0.021183
+
+[DEBUG][2019-11-29 15:18:27,412][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:27,422][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:18:28,336][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room1/plot.pdf
+[DEBUG][2019-11-29 15:18:28,336][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:28,336][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room1/results.zip...
+[DEBUG][2019-11-29 15:18:35,687][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:35,782][file_interface.read_tum_trajectory_file():112]
+Loaded 15477 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room2/gt.tum
+[DEBUG][2019-11-29 15:18:35,793][file_interface.read_tum_trajectory_file():112]
+Loaded 1427 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room2/est.tum
+[DEBUG][2019-11-29 15:18:35,793][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:18:35,836][sync.associate_trajectories():106]
+Found 1280 of max. 15477 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room2/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room2/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:18:35,837][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:35,837][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:18:35,843][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99877916  0.04922059 -0.00418726]
+ [-0.04923667  0.99877981 -0.00382743]
+ [ 0.00399376  0.00402893  0.99998391]]
+Translation of alignment:
+[ 0.66694852 -0.41158756  1.26035692]
+[DEBUG][2019-11-29 15:18:35,843][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:18:35,898][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:35,898][metrics.process_data():374]
+Compared 1280 absolute pose pairs.
+[DEBUG][2019-11-29 15:18:35,898][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:18:35,902][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:18:35,902][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.175954
+      mean	0.039906
+    median	0.032474
+       min	0.006504
+      rmse	0.047467
+       sse	2.883935
+       std	0.025702
+
+[DEBUG][2019-11-29 15:18:36,363][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:36,363][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:18:37,280][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room2/plot.pdf
+[DEBUG][2019-11-29 15:18:37,280][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:37,280][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room2/results.zip...
+[DEBUG][2019-11-29 15:18:44,475][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:44,585][file_interface.read_tum_trajectory_file():112]
+Loaded 15200 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room3/gt.tum
+[DEBUG][2019-11-29 15:18:44,595][file_interface.read_tum_trajectory_file():112]
+Loaded 1385 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room3/est.tum
+[DEBUG][2019-11-29 15:18:44,595][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:18:44,636][sync.associate_trajectories():106]
+Found 1256 of max. 15200 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room3/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room3/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:18:44,637][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:44,637][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:18:44,643][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 9.99534722e-01 -3.04871763e-02 -9.33875144e-04]
+ [ 3.04764298e-02  9.99486259e-01 -9.91991151e-03]
+ [ 1.23582546e-03  9.88683481e-03  9.99950360e-01]]
+Translation of alignment:
+[ 1.31824054 -0.43530284  1.27521038]
+[DEBUG][2019-11-29 15:18:44,643][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:18:44,697][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:44,697][metrics.process_data():374]
+Compared 1256 absolute pose pairs.
+[DEBUG][2019-11-29 15:18:44,697][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:18:44,701][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:18:44,701][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.208532
+      mean	0.076879
+    median	0.066215
+       min	0.014562
+      rmse	0.090526
+       sse	10.292852
+       std	0.047798
+
+[DEBUG][2019-11-29 15:18:45,115][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:45,115][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:18:45,998][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room3/plot.pdf
+[DEBUG][2019-11-29 15:18:45,998][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:45,998][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room3/results.zip...
+[DEBUG][2019-11-29 15:18:53,152][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:53,241][file_interface.read_tum_trajectory_file():112]
+Loaded 13075 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room4/gt.tum
+[DEBUG][2019-11-29 15:18:53,250][file_interface.read_tum_trajectory_file():112]
+Loaded 1079 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room4/est.tum
+[DEBUG][2019-11-29 15:18:53,250][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:18:53,281][sync.associate_trajectories():106]
+Found 1058 of max. 13075 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room4/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room4/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:18:53,282][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:53,282][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:18:53,287][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.9997773   0.02097842 -0.00229046]
+ [-0.02098723  0.99977216 -0.00389304]
+ [ 0.00220827  0.00394024  0.9999898 ]]
+Translation of alignment:
+[ 0.86547664 -0.33899282  1.2831969 ]
+[DEBUG][2019-11-29 15:18:53,287][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:18:53,335][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:53,335][metrics.process_data():374]
+Compared 1058 absolute pose pairs.
+[DEBUG][2019-11-29 15:18:53,335][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:18:53,338][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:18:53,338][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.107234
+      mean	0.040033
+    median	0.030818
+       min	0.003906
+      rmse	0.047379
+       sse	2.374996
+       std	0.025341
+
+[DEBUG][2019-11-29 15:18:53,769][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:53,769][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:18:54,584][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room4/plot.pdf
+[DEBUG][2019-11-29 15:18:54,584][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:18:54,584][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room4/results.zip...
+[DEBUG][2019-11-29 15:19:02,441][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:02,557][file_interface.read_tum_trajectory_file():112]
+Loaded 16999 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room5/gt.tum
+[DEBUG][2019-11-29 15:19:02,569][file_interface.read_tum_trajectory_file():112]
+Loaded 1391 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room5/est.tum
+[DEBUG][2019-11-29 15:19:02,569][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:19:02,618][sync.associate_trajectories():106]
+Found 1387 of max. 16999 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room5/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room5/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:19:02,619][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:02,619][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:19:02,626][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99974516  0.02062167  0.00918454]
+ [-0.01909163  0.9894697  -0.14347548]
+ [-0.01204653  0.14326357  0.98961125]]
+Translation of alignment:
+[ 0.74293248 -0.408091    1.58613805]
+[DEBUG][2019-11-29 15:19:02,626][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:19:02,691][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:02,691][metrics.process_data():374]
+Compared 1387 absolute pose pairs.
+[DEBUG][2019-11-29 15:19:02,691][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:19:02,696][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:19:02,696][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.401178
+      mean	0.227883
+    median	0.221399
+       min	0.028428
+      rmse	0.239671
+       sse	79.672045
+       std	0.074239
+
+[DEBUG][2019-11-29 15:19:03,137][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:03,137][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:19:04,089][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room5/plot.pdf
+[DEBUG][2019-11-29 15:19:04,089][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:04,089][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room5/results.zip...
+[DEBUG][2019-11-29 15:19:11,760][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:11,889][file_interface.read_tum_trajectory_file():112]
+Loaded 15244 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room6/gt.tum
+[DEBUG][2019-11-29 15:19:11,914][file_interface.read_tum_trajectory_file():112]
+Loaded 1301 stamps and poses from: /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room6/est.tum
+[DEBUG][2019-11-29 15:19:11,915][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-11-29 15:19:12,005][sync.associate_trajectories():106]
+Found 1265 of max. 15244 possible matching timestamps between...
+	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room6/gt.tum
+and:	/home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room6/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-11-29 15:19:12,007][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:12,007][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-11-29 15:19:12,021][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.9999862   0.005121    0.00117494]
+ [-0.00511529  0.99997534 -0.0048121 ]
+ [-0.00119955  0.00480602  0.99998773]]
+Translation of alignment:
+[ 0.50545971 -0.29139633  1.32915116]
+[DEBUG][2019-11-29 15:19:12,021][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-11-29 15:19:12,082][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:12,082][metrics.process_data():374]
+Compared 1265 absolute pose pairs.
+[DEBUG][2019-11-29 15:19:12,082][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-11-29 15:19:12,086][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-11-29 15:19:12,086][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.192901
+      mean	0.085606
+    median	0.083701
+       min	0.015887
+      rmse	0.099115
+       sse	12.427190
+       std	0.049954
+
+[DEBUG][2019-11-29 15:19:12,524][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:12,524][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-11-29 15:19:13,382][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room6/plot.pdf
+[DEBUG][2019-11-29 15:19:13,382][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-11-29 15:19:13,382][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/TUMVIO_VINS_DENSE_LK_refine_keep_LK_fails/run_9/room6/results.zip...

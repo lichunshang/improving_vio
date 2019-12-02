@@ -42,14 +42,15 @@ if mode == "single_run":
             if dataset == "tumvio" and not any(s in d for s in tumvio_seqs):
                 write(log_file, "Skipping directory \"%s\" tumvio room only" % d)
                 continue
+            # print(os.path.join(results_path, d, "stats.json"))
             seq_stats = json.load(open(os.path.join(results_path, d, "stats.json"), "r"))
 
             if seq_stats["ape_trans"] > failure_trans_tolerance[dataset]:
                 write(log_file, "Skipping directory \"%s\" failure detected!!!" % d)
                 continue
 
-            t = np.loadtxt(os.path.join(results_path, d, "rpe_%dm_trans.txt" % length))
-            r = np.loadtxt(os.path.join(results_path, d, "rpe_%dm_rot.txt" % length))
+            t = np.loadtxt(os.path.join(results_path, d, "rpe_%dm_trans.txt" % length)).reshape(-1)
+            r = np.loadtxt(os.path.join(results_path, d, "rpe_%dm_rot.txt" % length)).reshape(-1)
             trans_errors += list(t)
             rot_errors += list(r)
 
