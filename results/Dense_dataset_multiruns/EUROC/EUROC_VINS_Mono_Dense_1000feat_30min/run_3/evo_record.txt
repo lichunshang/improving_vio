@@ -1,0 +1,616 @@
+[DEBUG][2019-12-04 15:16:30,515][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:30,801][file_interface.read_tum_trajectory_file():112]
+Loaded 36382 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_01_easy/gt.tum
+[DEBUG][2019-12-04 15:16:30,821][file_interface.read_tum_trajectory_file():112]
+Loaded 1827 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_01_easy/est.tum
+[DEBUG][2019-12-04 15:16:30,821][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:16:30,942][sync.associate_trajectories():106]
+Found 1816 of max. 36382 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:16:30,943][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:30,943][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:16:30,952][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.91590798 -0.3935408  -0.07898232]
+ [ 0.39963932 -0.91243746 -0.08801308]
+ [-0.03742969 -0.11217632  0.99298313]]
+Translation of alignment:
+[ 4.57675889 -1.39410706  0.85144604]
+[DEBUG][2019-12-04 15:16:30,952][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:16:31,075][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:31,075][metrics.process_data():374]
+Compared 1816 absolute pose pairs.
+[DEBUG][2019-12-04 15:16:31,075][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:16:31,081][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:16:31,081][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.784733
+      mean	0.321094
+    median	0.333428
+       min	0.074864
+      rmse	0.360121
+       sse	235.512024
+       std	0.163051
+
+[DEBUG][2019-12-04 15:16:31,529][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:31,529][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:16:32,552][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_01_easy/plot.pdf
+[DEBUG][2019-12-04 15:16:32,552][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:32,553][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_01_easy/results.zip...
+[DEBUG][2019-12-04 15:16:42,346][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:42,585][file_interface.read_tum_trajectory_file():112]
+Loaded 29993 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_02_easy/gt.tum
+[DEBUG][2019-12-04 15:16:42,601][file_interface.read_tum_trajectory_file():112]
+Loaded 1506 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_02_easy/est.tum
+[DEBUG][2019-12-04 15:16:42,601][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:16:42,684][sync.associate_trajectories():106]
+Found 1495 of max. 29993 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_02_easy/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_02_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:16:42,685][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:42,685][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:16:42,692][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.95633788 -0.27598065 -0.09619011]
+ [ 0.28495911 -0.95360958 -0.09709317]
+ [-0.06493197 -0.12026413  0.99061616]]
+Translation of alignment:
+[ 4.65043463 -1.41249048  0.74351904]
+[DEBUG][2019-12-04 15:16:42,692][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:16:42,761][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:42,761][metrics.process_data():374]
+Compared 1495 absolute pose pairs.
+[DEBUG][2019-12-04 15:16:42,761][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:16:42,765][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:16:42,765][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	1.498795
+      mean	0.401150
+    median	0.315961
+       min	0.018059
+      rmse	0.520101
+       sse	404.405808
+       std	0.331035
+
+[DEBUG][2019-12-04 15:16:43,271][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:43,272][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:16:44,168][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_02_easy/plot.pdf
+[DEBUG][2019-12-04 15:16:44,168][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:44,169][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_02_easy/results.zip...
+[DEBUG][2019-12-04 15:16:53,163][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:53,421][file_interface.read_tum_trajectory_file():112]
+Loaded 26302 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_03_medium/gt.tum
+[DEBUG][2019-12-04 15:16:53,434][file_interface.read_tum_trajectory_file():112]
+Loaded 1314 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_03_medium/est.tum
+[DEBUG][2019-12-04 15:16:53,434][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:16:53,498][sync.associate_trajectories():106]
+Found 1303 of max. 26302 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_03_medium/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_03_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:16:53,499][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:53,499][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:16:53,505][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.84718912 -0.53111964  0.01350971]
+ [ 0.53078439 -0.84721759 -0.02214261]
+ [ 0.02320604 -0.01158824  0.99966354]]
+Translation of alignment:
+[ 4.92210329 -2.24058652  0.94675201]
+[DEBUG][2019-12-04 15:16:53,505][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:16:53,566][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:53,566][metrics.process_data():374]
+Compared 1303 absolute pose pairs.
+[DEBUG][2019-12-04 15:16:53,566][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:16:53,570][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:16:53,570][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	1.081523
+      mean	0.525546
+    median	0.569990
+       min	0.108657
+      rmse	0.560344
+       sse	409.123393
+       std	0.194388
+
+[DEBUG][2019-12-04 15:16:54,003][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:54,004][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:16:54,871][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_03_medium/plot.pdf
+[DEBUG][2019-12-04 15:16:54,871][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:16:54,871][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_03_medium/results.zip...
+[DEBUG][2019-12-04 15:17:03,178][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:03,354][file_interface.read_tum_trajectory_file():112]
+Loaded 19753 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_04_difficult/gt.tum
+[DEBUG][2019-12-04 15:17:03,371][file_interface.read_tum_trajectory_file():112]
+Loaded 975 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_04_difficult/est.tum
+[DEBUG][2019-12-04 15:17:03,371][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:17:03,437][sync.associate_trajectories():106]
+Found 964 of max. 19753 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_04_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_04_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:17:03,438][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:03,439][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:17:03,447][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.75325266 -0.65770785  0.00555075]
+ [ 0.65772718  0.75325092 -0.00283037]
+ [-0.00231955  0.00578286  0.99998059]]
+Translation of alignment:
+[ 4.45864274 -1.75701915  0.84694686]
+[DEBUG][2019-12-04 15:17:03,447][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:17:03,505][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:03,505][metrics.process_data():374]
+Compared 964 absolute pose pairs.
+[DEBUG][2019-12-04 15:17:03,505][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:17:03,508][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:17:03,508][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.573609
+      mean	0.265568
+    median	0.262806
+       min	0.038149
+      rmse	0.295192
+       sse	84.001541
+       std	0.128888
+
+[DEBUG][2019-12-04 15:17:03,962][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:03,962][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:17:04,700][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_04_difficult/plot.pdf
+[DEBUG][2019-12-04 15:17:04,700][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:04,701][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_04_difficult/results.zip...
+[DEBUG][2019-12-04 15:17:12,833][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:13,016][file_interface.read_tum_trajectory_file():112]
+Loaded 22212 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_05_difficult/gt.tum
+[DEBUG][2019-12-04 15:17:13,027][file_interface.read_tum_trajectory_file():112]
+Loaded 1091 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_05_difficult/est.tum
+[DEBUG][2019-12-04 15:17:13,027][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:17:13,076][sync.associate_trajectories():106]
+Found 1080 of max. 22212 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_05_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_05_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:17:13,078][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:13,078][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:17:13,083][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 6.82526732e-01 -7.30860402e-01 -5.77741436e-04]
+ [ 7.30810024e-01  6.82488562e-01 -1.12281755e-02]
+ [ 8.60053075e-03  7.24131067e-03  9.99936795e-01]]
+Translation of alignment:
+[ 3.90800173 -1.40304664  0.69441324]
+[DEBUG][2019-12-04 15:17:13,084][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:17:13,137][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:13,138][metrics.process_data():374]
+Compared 1080 absolute pose pairs.
+[DEBUG][2019-12-04 15:17:13,138][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:17:13,141][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:17:13,141][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.821554
+      mean	0.439922
+    median	0.397400
+       min	0.116518
+      rmse	0.479550
+       sse	248.365796
+       std	0.190884
+
+[DEBUG][2019-12-04 15:17:13,653][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:13,653][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:17:14,462][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_05_difficult/plot.pdf
+[DEBUG][2019-12-04 15:17:14,462][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:14,463][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/MH_05_difficult/results.zip...
+[DEBUG][2019-12-04 15:17:23,154][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:23,390][file_interface.read_tum_trajectory_file():112]
+Loaded 28712 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_01_easy/gt.tum
+[DEBUG][2019-12-04 15:17:23,405][file_interface.read_tum_trajectory_file():112]
+Loaded 1398 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_01_easy/est.tum
+[DEBUG][2019-12-04 15:17:23,405][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:17:23,516][sync.associate_trajectories():106]
+Found 1388 of max. 28712 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:17:23,518][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:23,518][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:17:23,528][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.95766592 -0.28563969  0.03586028]
+ [ 0.28646988  0.95786873 -0.02055512]
+ [-0.02847808  0.02995783  0.9991454 ]]
+Translation of alignment:
+[0.82834983 2.13024548 1.07408208]
+[DEBUG][2019-12-04 15:17:23,528][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:17:23,591][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:23,591][metrics.process_data():374]
+Compared 1388 absolute pose pairs.
+[DEBUG][2019-12-04 15:17:23,591][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:17:23,595][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:17:23,595][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.266835
+      mean	0.117379
+    median	0.114393
+       min	0.006580
+      rmse	0.130626
+       sse	23.683644
+       std	0.057317
+
+[DEBUG][2019-12-04 15:17:24,029][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:24,029][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:17:24,963][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_01_easy/plot.pdf
+[DEBUG][2019-12-04 15:17:24,964][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:24,964][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_01_easy/results.zip...
+[DEBUG][2019-12-04 15:17:32,954][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:33,077][file_interface.read_tum_trajectory_file():112]
+Loaded 16702 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_02_medium/gt.tum
+[DEBUG][2019-12-04 15:17:33,085][file_interface.read_tum_trajectory_file():112]
+Loaded 796 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_02_medium/est.tum
+[DEBUG][2019-12-04 15:17:33,085][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:17:33,112][sync.associate_trajectories():106]
+Found 786 of max. 16702 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_02_medium/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_02_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:17:33,113][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:33,113][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:17:33,117][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 8.92660324e-01  4.50716417e-01  3.50118007e-03]
+ [-4.50720437e-01  8.92665064e-01  4.14723398e-04]
+ [-2.93845849e-03 -1.94826053e-03  9.99993785e-01]]
+Translation of alignment:
+[0.65523294 1.89334973 1.27009264]
+[DEBUG][2019-12-04 15:17:33,117][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:17:33,153][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:33,153][metrics.process_data():374]
+Compared 786 absolute pose pairs.
+[DEBUG][2019-12-04 15:17:33,153][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:17:33,155][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:17:33,155][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.273275
+      mean	0.156211
+    median	0.152790
+       min	0.037909
+      rmse	0.166950
+       sse	21.907692
+       std	0.058910
+
+[DEBUG][2019-12-04 15:17:33,660][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:33,660][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:17:34,366][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_02_medium/plot.pdf
+[DEBUG][2019-12-04 15:17:34,366][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:34,366][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_02_medium/results.zip...
+[DEBUG][2019-12-04 15:17:42,214][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:42,390][file_interface.read_tum_trajectory_file():112]
+Loaded 20932 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_03_difficult/gt.tum
+[DEBUG][2019-12-04 15:17:42,400][file_interface.read_tum_trajectory_file():112]
+Loaded 997 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_03_difficult/est.tum
+[DEBUG][2019-12-04 15:17:42,400][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:17:42,441][sync.associate_trajectories():106]
+Found 988 of max. 20932 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_03_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:17:42,442][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:42,442][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:17:42,446][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[ 0.99944902 -0.00574205 -0.03269083]
+ [ 0.00516864  0.99983179 -0.01759773]
+ [ 0.03278638  0.01741906  0.99931058]]
+Translation of alignment:
+[0.89648284 1.90239207 1.31534745]
+[DEBUG][2019-12-04 15:17:42,446][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:17:42,492][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:42,492][metrics.process_data():374]
+Compared 988 absolute pose pairs.
+[DEBUG][2019-12-04 15:17:42,492][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:17:42,495][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:17:42,495][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.361073
+      mean	0.186729
+    median	0.163275
+       min	0.046578
+      rmse	0.204828
+       sse	41.451165
+       std	0.084183
+
+[DEBUG][2019-12-04 15:17:43,003][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:43,003][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:17:43,745][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_03_difficult/plot.pdf
+[DEBUG][2019-12-04 15:17:43,745][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:43,745][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V1_03_difficult/results.zip...
+[DEBUG][2019-12-04 15:17:51,966][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:52,131][file_interface.read_tum_trajectory_file():112]
+Loaded 22401 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_01_easy/gt.tum
+[DEBUG][2019-12-04 15:17:52,142][file_interface.read_tum_trajectory_file():112]
+Loaded 1074 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_01_easy/est.tum
+[DEBUG][2019-12-04 15:17:52,142][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:17:52,189][sync.associate_trajectories():106]
+Found 1066 of max. 22401 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_01_easy/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_01_easy/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:17:52,191][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:52,191][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:17:52,196][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99459895 -0.10337061  0.0093514 ]
+ [ 0.10358476 -0.99426983  0.02641416]
+ [ 0.00656737  0.02724016  0.99960734]]
+Translation of alignment:
+[-1.13731726  0.40695369  1.37328409]
+[DEBUG][2019-12-04 15:17:52,196][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:17:52,245][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:52,245][metrics.process_data():374]
+Compared 1066 absolute pose pairs.
+[DEBUG][2019-12-04 15:17:52,245][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:17:52,249][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:17:52,249][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.280707
+      mean	0.097455
+    median	0.069940
+       min	0.010415
+      rmse	0.117593
+       sse	14.740730
+       std	0.065807
+
+[DEBUG][2019-12-04 15:17:52,776][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:52,776][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:17:53,560][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_01_easy/plot.pdf
+[DEBUG][2019-12-04 15:17:53,561][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:17:53,561][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_01_easy/results.zip...
+[DEBUG][2019-12-04 15:18:01,664][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:01,838][file_interface.read_tum_trajectory_file():112]
+Loaded 23091 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_02_medium/gt.tum
+[DEBUG][2019-12-04 15:18:01,850][file_interface.read_tum_trajectory_file():112]
+Loaded 1132 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_02_medium/est.tum
+[DEBUG][2019-12-04 15:18:01,850][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:18:01,902][sync.associate_trajectories():106]
+Found 1125 of max. 23091 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_02_medium/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_02_medium/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:18:01,903][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:01,903][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:18:01,908][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99946641 -0.02268282  0.02350302]
+ [ 0.02329538 -0.99938721  0.02612539]
+ [ 0.02289602  0.02665896  0.99938235]]
+Translation of alignment:
+[-0.82004906  0.25201387  1.52759806]
+[DEBUG][2019-12-04 15:18:01,908][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:18:01,963][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:01,963][metrics.process_data():374]
+Compared 1125 absolute pose pairs.
+[DEBUG][2019-12-04 15:18:01,963][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:18:01,966][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:18:01,966][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.414022
+      mean	0.165449
+    median	0.130375
+       min	0.034953
+      rmse	0.189143
+       sse	40.246801
+       std	0.091659
+
+[DEBUG][2019-12-04 15:18:02,485][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:02,485][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:18:03,301][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_02_medium/plot.pdf
+[DEBUG][2019-12-04 15:18:03,301][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:03,301][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_02_medium/results.zip...
+[DEBUG][2019-12-04 15:18:11,633][main_ape.run():214]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:11,831][file_interface.read_tum_trajectory_file():112]
+Loaded 22970 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_03_difficult/gt.tum
+[DEBUG][2019-12-04 15:18:11,842][file_interface.read_tum_trajectory_file():112]
+Loaded 893 stamps and poses from: /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_03_difficult/est.tum
+[DEBUG][2019-12-04 15:18:11,842][main_ape.run():224]
+Synchronizing trajectories...
+[DEBUG][2019-12-04 15:18:11,880][sync.associate_trajectories():106]
+Found 889 of max. 22970 possible matching timestamps between...
+	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_03_difficult/gt.tum
+and:	/home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_03_difficult/est.tum
+..with max. time diff.: 0.01 (s) and time offset: 0.0 (s).
+[DEBUG][2019-12-04 15:18:11,881][main_ape.ape():159]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:11,881][trajectory.align_trajectory():394]
+Aligning using Umeyama's method...
+[DEBUG][2019-12-04 15:18:11,885][trajectory.align_trajectory():404]
+Rotation of alignment:
+[[-0.99157232 -0.12898384  0.01214493]
+ [ 0.12822311 -0.99046594 -0.05035927]
+ [ 0.01852467 -0.0483776   0.99865732]]
+Translation of alignment:
+[-0.62408343  0.23357427  1.86305356]
+[DEBUG][2019-12-04 15:18:11,885][trajectory.align_trajectory():405]
+Scale correction: 1.0
+[DEBUG][2019-12-04 15:18:11,926][main_ape.ape():167]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:11,926][metrics.process_data():374]
+Compared 889 absolute pose pairs.
+[DEBUG][2019-12-04 15:18:11,926][metrics.process_data():376]
+Calculating APE for translation part pose relation...
+[DEBUG][2019-12-04 15:18:11,929][main_ape.ape():187]
+--------------------------------------------------------------------------------
+[INFO][2019-12-04 15:18:11,929][main_ape.ape():188]
+APE w.r.t. translation part (m)
+(with SE(3) Umeyama alignment)
+
+       max	0.679241
+      mean	0.337910
+    median	0.365929
+       min	0.004137
+      rmse	0.364035
+       sse	117.811407
+       std	0.135417
+
+[DEBUG][2019-12-04 15:18:12,404][common_ape_rpe.plot():101]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:12,404][common_ape_rpe.plot():102]
+Plotting results... 
+[INFO][2019-12-04 15:18:13,167][plot.export():218]
+Plots saved to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_03_difficult/plot.pdf
+[DEBUG][2019-12-04 15:18:13,167][main_ape.run():248]
+--------------------------------------------------------------------------------
+[DEBUG][2019-12-04 15:18:13,167][file_interface.save_res_file():315]
+Saving results to /home/cs4li/Dev/dump/test_doodle_euroc/run_3/V2_03_difficult/results.zip...
