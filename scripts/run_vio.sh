@@ -244,6 +244,10 @@ if [[ ${estimator} == "vins_mono" ]]; then
             rate=1
         fi
 
+#        if [[ ${dense_opt} == "dense:=false" ]]; then
+#            rate=1
+#        fi
+
         run_vins_mono_ros ${launch_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${dense_opt} config_path:=${config_opt} ${rate}
         mv ${dump_dir}/vins_result_no_loop.csv ${results_dir}/${seq}_vins_result_no_loop.csv
         python ${vinsmono2tum_script} ${results_dir}/${seq}_vins_result_no_loop.csv

@@ -14,18 +14,31 @@
 #./multirun_vio.sh vins_mono euroc MH_05_difficult 5 run_only /home/cs4li/Dev/dump/test_doodle "test" --dense
 #./multirun_vio.sh vins_mono euroc MH_04_difficult 5 run_only /home/cs4li/Dev/dump/test_doodle "test" --dense
 
-./multirun_vio.sh vins_mono euroc MH_02_easy 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono euroc V1_01_easy 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono euroc V1_02_medium 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono euroc V1_03_difficult 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono euroc V2_02_medium 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono euroc MH_02_easy 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono euroc V1_01_easy 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono euroc V1_02_medium 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono euroc V1_03_difficult 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono euroc V2_02_medium 5 run_only /home/cs4li/Dev/dump/EUROC_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#
+#./multirun_vio.sh vins_mono tumvio corridor1 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono tumvio corridor3 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#
+#./multirun_vio.sh vins_mono tumvio room1 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono tumvio room2 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono tumvio room3 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono tumvio room4 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono tumvio room5 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono tumvio room6 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
 
-./multirun_vio.sh vins_mono tumvio corridor1 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono tumvio corridor3 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+#./multirun_vio.sh vins_mono tumvio room1 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
+#./multirun_vio.sh vins_mono tumvio room2 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
+#./multirun_vio.sh vins_mono tumvio room3 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
+#./multirun_vio.sh vins_mono tumvio room4 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
+#./multirun_vio.sh vins_mono tumvio room5 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
+#./multirun_vio.sh vins_mono tumvio room6 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
+#
+#./multirun_vio.sh vins_mono tumvio corridor2 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
+#./multirun_vio.sh vins_mono tumvio corridor4 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense
 
-./multirun_vio.sh vins_mono tumvio room1 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono tumvio room2 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono tumvio room3 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono tumvio room4 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono tumvio room5 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
-./multirun_vio.sh vins_mono tumvio room6 5 run_only /home/cs4li/Dev/dump/TUMVIO_VINS_Mono_DENSE_LK_refine_keep_LK_fails_stacked_5px "run" --dense
+./multirun_vio.sh vins_mono euroc all 5 run_only /home/cs4li/Dev/dump/test_doodle_euroc  "run" --dense
+./multirun_vio.sh vins_mono tumvio all 5 run_only /home/cs4li/Dev/dump/test_doodle_tumvio  "run" --dense

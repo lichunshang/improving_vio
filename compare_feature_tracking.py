@@ -45,15 +45,16 @@ class BlockingKeyInput(BlockingInput):
 class Compare(object):
     def __init__(self):
         # Here, we're using a GPU (use '/device:CPU:0' to run inference on the CPU)
-        gpu_devices = ['/device:GPU:0']
-        controller = '/device:GPU:0'
+        gpu_devices = ['/device:GPU:1']
+        controller = '/device:GPU:1'
 
         # More options...
         # Set the number of samples to visually inspect after inference
         # Set the path to the trained model (make sure you've downloaded it first from http://bit.ly/tfoptflow)
         # Set the batch size
-        ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-lg-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-595000'
-        ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-sm-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-592000'
+        # ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-lg-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-595000'
+        # ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-sm-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-592000'
+        ckpt_path = '/home/cs4li/Dev/dump/kitti_ft/pwcnet.ckpt-423000'
         batch_size = 1
 
         # Configure the model for inference, starting with the default options
@@ -97,6 +98,8 @@ class Compare(object):
 
         cur_pts = cur_pts.squeeze()
         nxt_pts_nn, flow = self.compute_nn_flow(im1_cv, im2_cv, cur_pts)
+        nxt_pts_lkr, status_lkr, err_lkr = cv2.calcOpticalFlowPyrLK(im1_cv, im2_cv, cur_pts, nxt_pts_nn.copy(), winSize=(21, 21,),
+                                                                 maxLevel=3, flags=cv2.OPTFLOW_USE_INITIAL_FLOW)
 
         nxt_pts_klt = nxt_pts_klt.squeeze()
         nxt_pts_klt = nxt_pts_klt[status.squeeze() == 1]
@@ -111,6 +114,7 @@ class Compare(object):
         ax[0, 1].scatter(cur_pts[:, 0], cur_pts[:, 1], s=3, c="b")
         ax[0, 1].scatter(nxt_pts_klt[:, 0], nxt_pts_klt[:, 1], s=3, c="r")
         ax[0, 1].scatter(nxt_pts_nn[:, 0], nxt_pts_nn[:, 1], s=3, c="g")
+        ax[0, 1].scatter(nxt_pts_lkr[:, 0], nxt_pts_lkr[:, 1], s=3, c="y")
 
         ax[1, 0].clear()
         ax[1, 0].imshow((im1_cv.astype(np.float32) * 0.5 + im2_cv.astype(np.float32) * 0.5).astype(np.uint8),
@@ -122,6 +126,10 @@ class Compare(object):
         for i in range(0, len(nxt_pts_nn)):
             ax[1, 0].annotate("", xy=nxt_pts_nn[i], xytext=cur_pts[i],
                               arrowprops=dict(arrowstyle="->", color="g", linewidth=1))
+
+        for i in range(0, len(nxt_pts_lkr)):
+            ax[1, 0].annotate("", xy=nxt_pts_lkr[i], xytext=cur_pts[i],
+                              arrowprops=dict(arrowstyle="->", color="y", linewidth=1))
 
         ax[1, 1].clear()
         ax[1, 1].imshow(visualize.flow_to_img(flow))
@@ -153,7 +161,11 @@ c = Compare()
 
 fig, ax = plt.subplots(2, 2, sharex=True, sharey=True)
 
-directory = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/cam0/data"
+directory = "/home/cs4li/Dev/EUROC/V2_03_difficult/mav0/cam0/data"
+# directory = "/home/cs4li/Dev/EUROC/V2_02_medium/mav0/cam0/data"
+# directory = "/home/cs4li/Dev/TUMVIO/dataset-corridor1_512_16/mav0/cam0/data"
+# directory = "/home/cs4li/Dev/TUMVIO/dataset-corridor1_512_16/mav0/cam0/data"
+# directory = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/UZH-FPV/indoor_45_13_snapdragon_with_gt/img"
 # directory = "/home/cs4li/Dev/UZH-FPV/outdoor_45_1_snapdragon_with_gt/img"
 # directory = "/home/cs4li/Dev/UZH-FPV/indoor_45_9_snapdragon_with_gt/img"

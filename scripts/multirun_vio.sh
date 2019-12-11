@@ -24,6 +24,7 @@ this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
 
 mkdir -p ${save_dir}
 
+echo "=== $(date +%Y_%m_%d-%H_%M_%S) ===" >> ${save_dir}/statement.txt
 echo ${statement} >> ${save_dir}/statement.txt
 
 if [[ ${mode} == "run_only" ]] || [[ ${mode} == "both" ]]; then
