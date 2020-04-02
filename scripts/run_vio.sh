@@ -271,6 +271,7 @@ if [[ ${estimator} == "vins_mono" ]]; then
 
         run_vins_mono_ros ${launch_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${dense_opt} config_path:=${config_opt} ${rate}
         mv ${dump_dir}/vins_result_no_loop.csv ${results_dir}/${seq}_vins_result_no_loop.csv
+        mv ${dump_dir}/vins_feature_stats.txt ${results_dir}/${seq}_vins_feature_stats.txt
         python ${vinsmono2tum_script} ${results_dir}/${seq}_vins_result_no_loop.csv
         mv ${results_dir}/vinsmono_output.tum ${results_dir}/${seq}_vins_mono_estimator_output.tum
     done
