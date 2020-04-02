@@ -42,6 +42,52 @@ class BlockingKeyInput(BlockingInput):
         return self.event_key
 
 
+class Undistorter(object):
+    def __init__(self, directory):
+        if "EUROC" in directory:
+            self.K = np.array([
+                [4.616e+02, 0, 3.630e+02],
+                [0, 4.603e+02, 2.481e+02],
+                [0, 0, 1]
+            ])
+            self.D = np.array([-2.917e-01, 8.228e-02, 5.333e-05, -1.578e-04])
+            self.thres = 3.0
+            self.distortion_type = "pinhole"
+        elif "UZH" in directory and "45" in directory:
+            self.K = np.array([
+                [275.46015578667294, 0, 274.9948095922592],
+                [0, 315.958384100568, 242.7123497822731],
+                [0, 0, 1]
+            ])
+            self.thres = 3.0
+            self.D = np.array([-6.545154718304953e-06, -0.010379525898159981, 0.014935312423953146, -0.005639061406567785])
+            self.distortion_type = "equidistant"
+        else:
+            raise NotImplementedError("Invalid dir %s" % directory)
+
+
+
+    def reject_wit_F(self, curr_pts, next_pts):
+        if self.distortion_type == "pinhole":
+            cur_pts_undistorted = cv2.undistortPoints(np.expand_dims(curr_pts, 0), self.K, self.D, P=self.K.copy())
+            nxt_pts_klt_undistorted = cv2.undistortPoints(np.expand_dims(next_pts, 0), self.K, self.D, P=self.K.copy())
+            print("Pinhole!")
+        elif self.distortion_type == "equidistant":
+            cur_pts_undistorted = cv2.fisheye.undistortPoints(np.expand_dims(curr_pts, 0), self.K, self.D, P=self.K.copy())
+            nxt_pts_klt_undistorted = cv2.fisheye.undistortPoints(np.expand_dims(next_pts, 0), self.K, self.D, P=self.K.copy())
+            print("fisheye!")
+        else:
+            raise NotImplementedError("Invalid distortion type %s" % self.distortion_type)
+
+        retval, mask = cv2.findFundamentalMat(cur_pts_undistorted, nxt_pts_klt_undistorted, cv2.FM_RANSAC,
+                                              param1=self.thres, param2=0.99)
+
+        cur_pts_non_outlier = curr_pts[mask.squeeze() == 1].squeeze()
+        next_pts_klt_non_outlier = next_pts[mask.squeeze() == 1].squeeze()
+
+        return cur_pts_undistorted, nxt_pts_klt_undistorted, cur_pts_non_outlier, next_pts_klt_non_outlier, mask
+
+
 class Compare(object):
     def __init__(self):
         # Here, we're using a GPU (use '/device:CPU:0' to run inference on the CPU)
@@ -53,8 +99,8 @@ class Compare(object):
         # Set the path to the trained model (make sure you've downloaded it first from http://bit.ly/tfoptflow)
         # Set the batch size
         # ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-lg-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-595000'
-        # ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-sm-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-592000'
-        ckpt_path = '/home/cs4li/Dev/dump/kitti_ft/pwcnet.ckpt-423000'
+        ckpt_path = './tfoptflow/tfoptflow/models/pwcnet-sm-6-2-multisteps-chairsthingsmix/pwcnet.ckpt-592000'
+        # ckpt_path = '/home/cs4li/Dev/dump/kitti_ft/pwcnet.ckpt-423000'
         batch_size = 1
 
         # Configure the model for inference, starting with the default options
@@ -89,21 +135,33 @@ class Compare(object):
 
         return cur_pts + flow_sampled, ret[0]
 
-    def compare_optical_flow(self, plt_name, im1, im2, fig, ax):
+    def compare_optical_flow(self, plt_name, im1, im2, fig, ax, undistorter):
         im1_cv = skimage.img_as_ubyte(im1)
         im2_cv = skimage.img_as_ubyte(im2)
+
+        clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
+        im1_cv = clahe.apply(im1_cv)
+        im2_cv = clahe.apply(im2_cv)
+
         cur_pts = cv2.goodFeaturesToTrack(im1_cv, 150, 0.01, 25)
         nxt_pts_klt, status, err = cv2.calcOpticalFlowPyrLK(im1_cv, im2_cv, cur_pts, None, winSize=(21, 21,),
                                                             maxLevel=3)
 
         cur_pts = cur_pts.squeeze()
         nxt_pts_nn, flow = self.compute_nn_flow(im1_cv, im2_cv, cur_pts)
-        nxt_pts_lkr, status_lkr, err_lkr = cv2.calcOpticalFlowPyrLK(im1_cv, im2_cv, cur_pts, nxt_pts_nn.copy(), winSize=(21, 21,),
-                                                                 maxLevel=3, flags=cv2.OPTFLOW_USE_INITIAL_FLOW)
+        nxt_pts_lkr, status_lkr, err_lkr = cv2.calcOpticalFlowPyrLK(im1_cv, im2_cv, cur_pts, nxt_pts_nn.copy(),
+                                                                    winSize=(21, 21,),
+                                                                    maxLevel=3, flags=cv2.OPTFLOW_USE_INITIAL_FLOW)
 
-        nxt_pts_klt = nxt_pts_klt.squeeze()
-        nxt_pts_klt = nxt_pts_klt[status.squeeze() == 1]
-        cur_pts_filtered = cur_pts[status.squeeze() == 1]
+        # nxt_pts_klt = nxt_pts_klt.squeeze()
+        # nxt_pts_klt = nxt_pts_klt[status.squeeze() == 1]
+        # cur_pts_filtered = cur_pts[status.squeeze() == 1]
+
+        nxt_pts_klt = nxt_pts_nn
+        cur_pts_filtered = cur_pts
+
+        _, _, cur_pts_klt_non_outlier, nxt_pts_klt_non_outlier, _ = undistorter.reject_wit_F(cur_pts_filtered,
+                                                                                             nxt_pts_klt)
 
         ax[0, 0].clear()
         ax[0, 0].imshow(im1_cv, cmap='gray')
@@ -113,23 +171,28 @@ class Compare(object):
         ax[0, 1].imshow(im2_cv, cmap='gray')
         ax[0, 1].scatter(cur_pts[:, 0], cur_pts[:, 1], s=3, c="b")
         ax[0, 1].scatter(nxt_pts_klt[:, 0], nxt_pts_klt[:, 1], s=3, c="r")
-        ax[0, 1].scatter(nxt_pts_nn[:, 0], nxt_pts_nn[:, 1], s=3, c="g")
-        ax[0, 1].scatter(nxt_pts_lkr[:, 0], nxt_pts_lkr[:, 1], s=3, c="y")
+        # ax[0, 1].scatter(nxt_pts_nn[:, 0], nxt_pts_nn[:, 1], s=3, c="g")
+        # ax[0, 1].scatter(nxt_pts_lkr[:, 0], nxt_pts_lkr[:, 1], s=3, c="y")
 
         ax[1, 0].clear()
         ax[1, 0].imshow((im1_cv.astype(np.float32) * 0.5 + im2_cv.astype(np.float32) * 0.5).astype(np.uint8),
                         cmap='gray')
+        ax[1, 0].scatter(cur_pts[:, 0], cur_pts[:, 1], s=3, c="b")
         for i in range(0, len(nxt_pts_klt)):
             ax[1, 0].annotate("", xy=nxt_pts_klt[i], xytext=cur_pts_filtered[i],
+                              arrowprops=dict(arrowstyle="->", color="y", linewidth=1))
+
+        for i in range(0, len(nxt_pts_klt_non_outlier)):
+            ax[1, 0].annotate("", xy=nxt_pts_klt_non_outlier[i], xytext=cur_pts_klt_non_outlier[i],
                               arrowprops=dict(arrowstyle="->", color="r", linewidth=1))
 
-        for i in range(0, len(nxt_pts_nn)):
-            ax[1, 0].annotate("", xy=nxt_pts_nn[i], xytext=cur_pts[i],
-                              arrowprops=dict(arrowstyle="->", color="g", linewidth=1))
+        # for i in range(0, len(nxt_pts_nn)):
+        #     ax[1, 0].annotate("", xy=nxt_pts_nn[i], xytext=cur_pts[i],
+        #                       arrowprops=dict(arrowstyle="->", color="g", linewidth=1))
 
-        for i in range(0, len(nxt_pts_lkr)):
-            ax[1, 0].annotate("", xy=nxt_pts_lkr[i], xytext=cur_pts[i],
-                              arrowprops=dict(arrowstyle="->", color="y", linewidth=1))
+        # for i in range(0, len(nxt_pts_lkr)):
+        #     ax[1, 0].annotate("", xy=nxt_pts_lkr[i], xytext=cur_pts[i],
+        #                       arrowprops=dict(arrowstyle="->", color="y", linewidth=1))
 
         ax[1, 1].clear()
         ax[1, 1].imshow(visualize.flow_to_img(flow))
@@ -161,27 +224,30 @@ c = Compare()
 
 fig, ax = plt.subplots(2, 2, sharex=True, sharey=True)
 
-directory = "/home/cs4li/Dev/EUROC/V2_03_difficult/mav0/cam0/data"
+# directory = "/home/cs4li/Dev/EUROC/V2_03_difficult/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/EUROC/V2_02_medium/mav0/cam0/data"
-# directory = "/home/cs4li/Dev/TUMVIO/dataset-corridor1_512_16/mav0/cam0/data"
+directory = "/home/cs4li/Dev/EUROC/V1_03_difficult/mav0/cam0/data"
+# directory = "/home/cs4nli/Dev/TUMVIO/dataset-corridor1_512_16/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/TUMVIO/dataset-corridor1_512_16/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/cam0/data"
+# directory = "/home/cs4li/Dev/TUMVIO/dataset-outdoors6_512_16/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/UZH-FPV/indoor_45_13_snapdragon_with_gt/img"
 # directory = "/home/cs4li/Dev/UZH-FPV/outdoor_45_1_snapdragon_with_gt/img"
 # directory = "/home/cs4li/Dev/UZH-FPV/indoor_45_9_snapdragon_with_gt/img"
+undistorter = Undistorter(directory)
 every_N_frames = 1
 imgs = natsort.natsorted(os.listdir(directory))
 
 prev_img = None
 prev_img_name = ""
 prev_img_idx = 0
-i = 0
+i = 347
 while i < len(imgs):
     if prev_img is not None:
         im = skimage.io.imread(os.path.join(directory, imgs[i]))
         print("reading " + os.path.join(directory, imgs[i]))
         plt_name = "%s: %s -> %s, %s -> %s" % (directory, prev_img_name, imgs[i], prev_img_idx, i)
-        key = c.compare_optical_flow(plt_name, prev_img, im, fig, ax)
+        key = c.compare_optical_flow(plt_name, prev_img, im, fig, ax, undistorter)
         prev_img = im
         prev_img_name = imgs[i]
         prev_img_idx = i

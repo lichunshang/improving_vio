@@ -132,6 +132,25 @@ function run_vins_mono_ros() {
     sleep 2
 }
 
+function run_vins_fusion_ros() {
+    config_file=$1
+    bag=$2
+    rate=$3
+    echo "*** Launch vins estimator"
+    rosrun vins vins_node ${config_file} &
+    pid=$!
+    echo "PID is ${pid}"
+    sleep 2
+    echo "*** playing bag"
+    rosbag play ${bag} -r ${rate}
+    echo "*** Killing everything"
+    kill -INT ${pid}
+    rosnode kill vins_estimator || true
+    rosnode kill feature_tracker || true
+    rosnode kill feature_tracker_dense || true
+    sleep 2
+}
+
 function run_okvis_ros() {
     bag=$2
     launch_file=$1
@@ -224,20 +243,22 @@ if [[ ${estimator} == "vins_mono" ]]; then
         seq=${seqs_to_run[$i]}
         if [[ ${dataset} == "euroc" ]]; then
             launch_file="euroc.launch"
-            rate=0.333
+            # rate=0.333
+            rate=1
         elif [[ ${dataset} == "tumvio" ]]; then
             launch_file="tum.launch"
-            rate=0.5
+            # rate=0.5
+            rate=1
         elif [[ ${dataset} == "uzh_fpv" ]]; then
             launch_file="uzh_fpv.launch"
             if [[ ${seq} =~ "indoor_45" ]]; then
-                config_opt="${okvis_uzh_fpv_configs_dir}/uzh_fpv_indoor_45_config.yaml"
+                config_opt="${vins_mono_uzh_fpv_configs_dir}/uzh_fpv_indoor_45_config.yaml"
             elif [[ ${seq} =~ "indoor_forward" ]]; then
-                config_opt="${okvis_uzh_fpv_configs_dir}/uzh_fpv_indoor_forward_config.yaml"
+                config_opt="${vins_mono_uzh_fpv_configs_dir}/uzh_fpv_indoor_forward_config.yaml"
             elif [[ ${seq} =~ "outdoor_45" ]]; then
-                config_opt="${okvis_uzh_fpv_configs_dir}/uzh_fpv_outdoor_45_config.yaml"
+                config_opt="${vins_mono_uzh_fpv_configs_dir}/uzh_fpv_outdoor_45_config.yaml"
             elif [[ ${seq} =~ "outdoor_forward" ]]; then
-                config_opt="${okvis_uzh_fpv_configs_dir}/uzh_fpv_outdoor_forward_config.yaml"
+                config_opt="${vins_mono_uzh_fpv_configs_dir}/uzh_fpv_outdoor_forward_config.yaml"
             else
                 exit 1
             fi
@@ -251,7 +272,24 @@ if [[ ${estimator} == "vins_mono" ]]; then
         run_vins_mono_ros ${launch_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${dense_opt} config_path:=${config_opt} ${rate}
         mv ${dump_dir}/vins_result_no_loop.csv ${results_dir}/${seq}_vins_result_no_loop.csv
         python ${vinsmono2tum_script} ${results_dir}/${seq}_vins_result_no_loop.csv
-        mv ${results_dir}/vinsmono_output.tum ${results_dir}/${seq}_okvis_estimator_output.tum
+        mv ${results_dir}/vinsmono_output.tum ${results_dir}/${seq}_vins_mono_estimator_output.tum
+    done
+elif [[ ${estimator} == "vins_fusion" ]]; then
+    for i in "${!seqs_to_run[@]}"
+    do
+        seq=${seqs_to_run[$i]}
+        if [[ ${dataset} == "euroc" ]]; then
+            config_file="$(rospack find vins)/../config/euroc/euroc_mono_imu_config.yaml"
+            rate=1
+        else
+            echo "NOT SUPPORTED"
+            exit 1
+        fi
+
+        run_vins_fusion_ros ${config_file} ${dataset_dir}/bags/$(fullseqname ${dataset} ${seq}).bag ${rate}
+        mv ${dump_dir}/vio.csv ${results_dir}/${seq}_vins_result_no_loop.csv
+        python ${vinsmono2tum_script} ${results_dir}/${seq}_vins_result_no_loop.csv
+        mv ${results_dir}/vinsmono_output.tum ${results_dir}/${seq}_vins_mono_estimator_output.tum
     done
 elif [[ ${estimator} == "okvis" ]]; then
     for i in "${!seqs_to_run[@]}"

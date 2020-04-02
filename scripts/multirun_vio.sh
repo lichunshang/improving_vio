@@ -2,7 +2,7 @@
 set -e
 trap 'exit 130' INT
 
-echo "Arguments: <estimator> <dataset> <x_times> <mode> <save_dir> <statement>"
+echo "Arguments: <estimator> <dataset> <seqs> <x_times> <mode> <save_dir> <statement>"
 estimator=$1
 dataset=$2
 seqs=$3
