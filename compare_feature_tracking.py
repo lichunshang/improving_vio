@@ -63,7 +63,15 @@ class Undistorter(object):
             self.D = np.array([-6.545154718304953e-06, -0.010379525898159981, 0.014935312423953146, -0.005639061406567785])
             self.distortion_type = "equidistant"
         else:
-            raise NotImplementedError("Invalid dir %s" % directory)
+            self.K = np.array([
+                [190.97847715128717, 0, 254.93170605935475],
+                [0, 190.9733070521226, 256.8974428996504],
+                [0, 0, 1]
+            ])
+            self.thres = 3.0
+            self.D = np.array([0.0034823894022493434, 0.0007150348452162257, -0.0020532361418706202, 0.00020293673591811182])
+            self.distortion_type = "equidistant"
+            # raise NotImplementedError("Invalid dir %s" % directory)
 
 
 
@@ -153,12 +161,12 @@ class Compare(object):
                                                                     winSize=(21, 21,),
                                                                     maxLevel=3, flags=cv2.OPTFLOW_USE_INITIAL_FLOW)
 
-        # nxt_pts_klt = nxt_pts_klt.squeeze()
-        # nxt_pts_klt = nxt_pts_klt[status.squeeze() == 1]
-        # cur_pts_filtered = cur_pts[status.squeeze() == 1]
+        nxt_pts_klt = nxt_pts_klt.squeeze()
+        nxt_pts_klt = nxt_pts_klt[status.squeeze() == 1]
+        cur_pts_filtered = cur_pts[status.squeeze() == 1]
 
-        nxt_pts_klt = nxt_pts_nn
-        cur_pts_filtered = cur_pts
+        # nxt_pts_klt = nxt_pts_nn
+        # cur_pts_filtered = cur_pts
 
         _, _, cur_pts_klt_non_outlier, nxt_pts_klt_non_outlier, _ = undistorter.reject_wit_F(cur_pts_filtered,
                                                                                              nxt_pts_klt)
@@ -171,24 +179,28 @@ class Compare(object):
         ax[0, 1].imshow(im2_cv, cmap='gray')
         ax[0, 1].scatter(cur_pts[:, 0], cur_pts[:, 1], s=3, c="b")
         ax[0, 1].scatter(nxt_pts_klt[:, 0], nxt_pts_klt[:, 1], s=3, c="r")
-        # ax[0, 1].scatter(nxt_pts_nn[:, 0], nxt_pts_nn[:, 1], s=3, c="g")
+        ax[0, 1].scatter(nxt_pts_nn[:, 0], nxt_pts_nn[:, 1], s=3, c="g")
         # ax[0, 1].scatter(nxt_pts_lkr[:, 0], nxt_pts_lkr[:, 1], s=3, c="y")
 
         ax[1, 0].clear()
         ax[1, 0].imshow((im1_cv.astype(np.float32) * 0.5 + im2_cv.astype(np.float32) * 0.5).astype(np.uint8),
                         cmap='gray')
         ax[1, 0].scatter(cur_pts[:, 0], cur_pts[:, 1], s=3, c="b")
+        # for i in range(0, len(nxt_pts_klt)):
+        #     ax[1, 0].annotate("", xy=nxt_pts_klt[i], xytext=cur_pts_filtered[i],
+        #                       arrowprops=dict(arrowstyle="->", color="y", linewidth=1))
+
+        # for i in range(0, len(nxt_pts_klt_non_outlier)):
+        #     ax[1, 0].annotate("", xy=nxt_pts_klt_non_outlier[i], xytext=cur_pts_klt_non_outlier[i],
+        #                       arrowprops=dict(arrowstyle="->", color="r", linewidth=1))
+
         for i in range(0, len(nxt_pts_klt)):
             ax[1, 0].annotate("", xy=nxt_pts_klt[i], xytext=cur_pts_filtered[i],
-                              arrowprops=dict(arrowstyle="->", color="y", linewidth=1))
+                              arrowprops=dict(arrowstyle="->", color="r", linewidth=1.5))
 
-        for i in range(0, len(nxt_pts_klt_non_outlier)):
-            ax[1, 0].annotate("", xy=nxt_pts_klt_non_outlier[i], xytext=cur_pts_klt_non_outlier[i],
-                              arrowprops=dict(arrowstyle="->", color="r", linewidth=1))
-
-        # for i in range(0, len(nxt_pts_nn)):
-        #     ax[1, 0].annotate("", xy=nxt_pts_nn[i], xytext=cur_pts[i],
-        #                       arrowprops=dict(arrowstyle="->", color="g", linewidth=1))
+        for i in range(0, len(nxt_pts_nn)):
+            ax[1, 0].annotate("", xy=nxt_pts_nn[i], xytext=cur_pts[i],
+                              arrowprops=dict(arrowstyle="->", color="g", linewidth=1.5))
 
         # for i in range(0, len(nxt_pts_lkr)):
         #     ax[1, 0].annotate("", xy=nxt_pts_lkr[i], xytext=cur_pts[i],
@@ -226,14 +238,14 @@ fig, ax = plt.subplots(2, 2, sharex=True, sharey=True)
 
 # directory = "/home/cs4li/Dev/EUROC/V2_03_difficult/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/EUROC/V2_02_medium/mav0/cam0/data"
-directory = "/home/cs4li/Dev/EUROC/V1_03_difficult/mav0/cam0/data"
+# directory = "/home/cs4li/Dev/EUROC/V1_03_difficult/mav0/cam0/data"
 # directory = "/home/cs4nli/Dev/TUMVIO/dataset-corridor1_512_16/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/TUMVIO/dataset-corridor1_512_16/mav0/cam0/data"
-# directory = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/cam0/data"
+directory = "/home/cs4li/Dev/TUMVIO/dataset-outdoors2_512_16/mav0/cam0/data"
 # directory = "/home/cs4li/Dev/TUMVIO/dataset-outdoors6_512_16/mav0/cam0/data"
-# directory = "/home/cs4li/Dev/UZH-FPV/indoor_45_13_snapdragon_with_gt/img"
-# directory = "/home/cs4li/Dev/UZH-FPV/outdoor_45_1_snapdragon_with_gt/img"
-# directory = "/home/cs4li/Dev/UZH-FPV/indoor_45_9_snapdragon_with_gt/img"
+# directory = "/home/cs4li/Dev/UZH_FPV/indoor_45_13_snapdragon_with_gt/img"
+# directory = "/home/cs4li/Dev/UZH_FPV/outdoor_45_1_snapdragon_with_gt/img"
+# directory = "/home/cs4li/Dev/UZH_FPV/indoor_45_9_snapdragon_with_gt/img"
 undistorter = Undistorter(directory)
 every_N_frames = 1
 imgs = natsort.natsorted(os.listdir(directory))
@@ -241,7 +253,7 @@ imgs = natsort.natsorted(os.listdir(directory))
 prev_img = None
 prev_img_name = ""
 prev_img_idx = 0
-i = 347
+i = 15672
 while i < len(imgs):
     if prev_img is not None:
         im = skimage.io.imread(os.path.join(directory, imgs[i]))
