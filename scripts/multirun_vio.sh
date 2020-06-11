@@ -29,6 +29,7 @@ echo ${statement} >> ${save_dir}/statement.txt
 
 if [[ ${mode} == "run_only" ]] || [[ ${mode} == "both" ]]; then
     for i in $(seq 1 ${run_x_times}); do
+        echo "***Making directory: "${save_dir}/run_${i}
         mkdir -p ${save_dir}/run_${i}
         ${this_script_dir}/run_vio.sh ${estimator} ${dataset} ${seqs} ${save_dir}/run_${i} ${dense}
     done
