@@ -81,9 +81,9 @@ this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
 stats_dump_file=${results_dir}/stats_dump.txt
 tumvio_mocap2tum_script="${this_script_dir}/tumvio_mocap2tum.py"
 uzh_fpv_gt2tum_script="${this_script_dir}/uzh_fpv_gt2tum.py"
-euroc_dataset_dir="/home/cs4li/Dev/EUROC"
-tumvio_dataset_dir="/home/cs4li/Dev/TUMVIO"
-uzh_fpv_dataset_dir="/home/cs4li/Dev/UZH_FPV"
+euroc_dataset_dir="/home/${USER}/Dev/EUROC"
+tumvio_dataset_dir="/home/${USER}/Dev/TUMVIO"
+uzh_fpv_dataset_dir="/home/${USER}/Dev/UZH_FPV"
 
 rm -rf ${stats_dump_file}*
 

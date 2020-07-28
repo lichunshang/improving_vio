@@ -101,14 +101,14 @@ seqs=$3
 this_script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
 results_dir=$4
 
-dump_dir="/home/cs4li/Dev/dump"
-vins_mono_uzh_fpv_configs_dir="/home/cs4li/Dev/catkin_ws/src/VINS-Mono/config/uzh_fpv"
-okvis_uzh_fpv_configs_dir="/home/cs4li/Dev/catkin_ws/src/okvis_ros/okvis/config"
+dump_dir="/home/${USER}/Dev/dump"
+vins_mono_uzh_fpv_configs_dir="/home/${USER}/Dev/catkin_ws/src/VINS-Mono/config/uzh_fpv"
+okvis_uzh_fpv_configs_dir="/home/${USER}/Dev/catkin_ws/src/okvis_ros/okvis/config"
 vinsmono2tum_script="${this_script_dir}/vinsmono_output2tum.py"
 okvis2tum_script="${this_script_dir}/okvis_output2tum.py"
-euroc_dataset_dir="/home/cs4li/Dev/EUROC"
-tumvio_dataset_dir="/home/cs4li/Dev/TUMVIO"
-uzh_fpv_dataset_dir="/home/cs4li/Dev/UZH_FPV"
+euroc_dataset_dir="/home/${USER}/Dev/EUROC"
+tumvio_dataset_dir="/home/${USER}/Dev/TUMVIO"
+uzh_fpv_dataset_dir="/home/${USER}/Dev/UZH_FPV"
 
 
 function run_vins_mono_ros() {
